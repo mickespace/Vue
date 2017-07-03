@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>首 页</title>
+    <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.css">
+    <link href="../../fonts/FontAwesome/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../lib/bootstrap/bootsnav.css">
+    <link rel="stylesheet" href="../../lib/bootstrap/animate.css">
+    <link rel="stylesheet" href="../../lib/bootstrap/overwrite.css">
+    <link rel="stylesheet" href="../../lib/carousel/carousel.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../../lib/common/footer.css">
+    <link rel="stylesheet" href="../../lib/common/busy.css">
+    <link rel="stylesheet" href="../../lib/toolbar/toolbar.css">
+</head>
+
+<body>
+    <div id="app">
+        <!--header start-->
+        <nav class="navbar navbar-default navbar-fixed navbar-transparent dark bootsnav">
+            <!-- search start -->
+            <div class="top-search">
+                <div class="container">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-search lg"></i></span>
+                        <input type="text" class="form-control" placeholder="请输入...">
+                        <span class="input-group-addon close-search"><i class="fa fa-close"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- search end -->
+            <!-- cat start -->
+            <div class="container">
+                <div class="attr-nav">
+                    <ul>
+                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user"></i>
+                        </a>
+                            <ul class="dropdown-menu cart-list">
+                                <li>
+                                    <a href="#" class="photo"><img class="lazy" data-original="../../assets/img/userinfo.png" class="cart-thumb" alt="" /></a>
+                                    <h6><a href="#">Delica omtantur </a></h6>
+                                    <p>2x - <span class="price">$99.99</span></p>
+                                </li>
+                                <li>
+                                    <a href="#" class="photo"><img src="../../assets/img/userinfo.png" class="cart-thumb" alt="" /></a>
+                                    <h6><a href="#">Omnes ocurreret</a></h6>
+                                    <p>1x - <span class="price">$33.33</span></p>
+                                </li>
+                                <li>
+                                    <a href="#" class="photo"><img  src="../../assets/img/userinfo.png" class="cart-thumb" alt="" /></a>
+                                    <h6><a href="#">Agam facilisis</a></h6>
+                                    <p>2x - <span class="price">$99.99</span></p>
+                                </li>
+                                <li class="total">
+                                    <span class="pull-right"><strong>Total</strong>: $0.00</span>
+                                    <a href="#" class="btn btn-default btn-cart">Cart</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="side-menu"><a href="#"><i class="fa fa-tags"></i><span class="badge">.</span></a></li>
+                    </ul>
+                </div>
+                <!-- cat end -->
+                <!-- logo start -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                    <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="#brand">
+                    <img src="../../assets/img/logo_white.png" class="logo logo-display" alt="">
+                    <img src="../../assets/img/logo_black.png" class="logo logo-scrolled" alt="">
+                </a>
+                </div>
+                <!-- logo end -->
+                <!-- menu start -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li><a style="color: #3498DB;" href="index.html">&nbsp;&nbsp;首&nbsp;页&nbsp;&nbsp;</a></li>
+                        <li class="dropdown megamenu-fw">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;产&nbsp;品&nbsp;&nbsp;</a>
+                            <ul class="dropdown-menu megamenu-content" role="menu">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-menu col-md-3">
+                                            <h6 class="title">BIM-STAR</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li><a href="#">产品简介</a></li>
+                                                    <li><a href="#">功能模块</a></li>
+                                                    <li><a href="#">产品下载</a></li>
+                                                    <li><a href="#">合作案例</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-menu col-md-3">
+                                            <h6 class="title">Title Menu Two</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-menu col-md-3">
+                                            <h6 class="title">Title Menu Three</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-menu col-md-3">
+                                            <h6 class="title">Title Menu Four</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;服&nbsp;务&nbsp;&nbsp;</a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="#">Custom Menu</a></li>
+                                <li><a href="#">Custom Menu</a></li>
+                                <li><a href="#">Custom Menu</a></li>
+                                <li><a href="#">Custom Menu</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sub Menu</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Custom Menu</a></li>
+                                        <li><a href="#">Custom Menu</a></li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sub Menu</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Custom Menu</a></li>
+                                                <li><a href="#">Custom Menu</a></li>
+                                                <li><a href="#">Custom Menu</a></li>
+                                                <li><a href="#">Custom Menu</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Custom Menu</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown megamenu-fw">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;关于筑星&nbsp;&nbsp;</a>
+                            <ul class="dropdown-menu megamenu-content" role="menu">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-menu col-md-3">
+                                            <h6 class="title">公司简介</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li><a href="#">公司文化</a></li>
+                                                    <li><a href="#">荣誉资质</a></li>
+                                                    <li><a href="#"></a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- end col-3 -->
+                                        <div class="col-menu col-md-3">
+                                            <h6 class="title">Title Menu Two</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- end col-3 -->
+                                        <div class="col-menu col-md-3">
+                                            <h6 class="title">Title Menu Three</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!--<div class="col-menu col-md-3">
+                                            <h6 class="title">Title Menu Four</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>-->
+                                        <!-- end col-3 -->
+                                    </div>
+                                    <!-- end row -->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- menu end -->
+            </div>
+
+            <!-- Start Side Menu -->
+            <div class="side">
+                <a href="#" class="close-side"><i class="fa fa-close "></i></a>
+                <div class="widget">
+                    <h6 class="title">Custom Pages</h6>
+                    <ul class="link">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="widget">
+                    <h6 class="title">Additional Links</h6>
+                    <ul class="link">
+                        <li><a href="#">Retina Homepage</a></li>
+                        <li><a href="#">New Page Examples</a></li>
+                        <li><a href="#">Parallax Sections</a></li>
+                        <li><a href="#">Shortcode Central</a></li>
+                        <li><a href="#">Ultimate Font Collection</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Side Menu -->
+        </nav>
+        <!--header end-->
+
+        <!--parallax start-->
+        <div class="row">
+            <div class="col-sm-12 col-md-12 ">
+                <div id="customCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#customCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#customCarousel" data-slide-to="1"></li>
+                        <li data-target="#customCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img class="first-slide lazy" data-original="assets/img/parallax_bg.jpg" alt="First slide">
+                            <div class="container" style="padding-top:150px;">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-6 wow  bounceInRight">
+                                        <h2 style="color:white;">
+                                            <i>RESPONSIVE VIDEO</i>
+                                            <br />
+                                            <i>SUPPORT AND</i>
+                                            <br />
+                                            <i>MANY MORE</i>
+                                        </h2>
+                                        <p>
+                                            <i>Lorem ipsum dolor amet</i>
+                                            <br />
+                                            <i>tempor incididunt ut</i>
+                                        </p>
+                                        <a href="#" class="btn btn-info btn-lg da-link">
+                                Read more
+                                             </a>
+                                    </div>
+                                    <div class="col-md-4 wow  bounceInLeft">
+                                        <div class="da-img">
+                                            <img src="assets/img/2.png" alt="image01" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img class="second-slide" src="assets/img/parallax_bg.jpg" alt="Second slide">
+                            <div class="container" style="padding-top:150px;">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-6 wow  bounceInRight">
+                                        <h2>
+                                            <i>RESPONSIVE VIDEO</i>
+                                            <br />
+                                            <i style="color:white;">SUPPORT AND</i>
+                                            <br />
+                                            <i>MANY MORE</i>
+                                        </h2>
+                                        <p>
+                                            <i>Lorem ipsum dolor amet</i>
+                                            <br />
+                                            <i>tempor incididunt ut</i>
+                                        </p>
+                                        <a href="#" class="btn btn-info btn-lg da-link">
+                                Read more
+                                             </a>
+                                    </div>
+                                    <div class="col-md-4 wow  bounceInLeft">
+                                        <div class="da-img">
+                                            <img src="assets/img/2.png" alt="image01" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img class="third-slide" src="assets/img/parallax_bg.jpg" alt="Third slide">
+                            <div class="container" style="padding-top:150px;">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-6 wow  bounceInRight">
+                                        <h2>
+                                            <i>RESPONSIVE VIDEO</i>
+                                            <br />
+                                            <i>SUPPORT AND</i>
+                                            <br />
+                                            <i>MANY MORE</i>
+                                        </h2>
+                                        <p style="color:white;">
+                                            <i>Lorem ipsum dolor amet</i>
+                                            <br />
+                                            <i>tempor incididunt ut</i>
+                                        </p>
+                                        <a href="#" class="btn btn-info btn-lg da-link">
+                                Read more
+                                             </a>
+                                    </div>
+                                    <div class="col-md-4 wow  bounceInLeft">
+                                        <div class="da-img">
+                                            <img src="assets/img/2.png" alt="image01" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#customCarousel" role="button" data-slide="prev">
+                        <span class="fa fa-chevron-left fa-2x" aria-hidden="true"></span>
+                    </a>
+                    <a class="right carousel-control" href="#customCarousel" role="button" data-slide="next">
+                        <span class="fa fa-chevron-right fa-2x"  aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- parallax end-->
+
+        <!-- product start -->
+        <div style="background:white;">
+
+            <div class="container text-center">
+                <div class="wow  bounceInLeft">
+                    <header>
+                        <br/>
+                        <h2>核心服务</h2>
+                    </header>
+
+                    <article>
+                        <br/>
+                        <p>任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了和人民群众的关系。好，这是好得很的事。好像是为了印证事物都是一分为二的道理一样，在赞颂程序的同时，我们也看到了程序冷酷的另一面。南宁见义勇为的英雄鲍光蛇在医院冷酷的程序中流尽了最后一滴血，公路收费站的值班人员因救护车交不出十元钱的过路费而坚决不放行救护车，终于使急需救助的患者丧命</p>
+                        <br/>
+
+                    </article>
+                </div>
+                <!-- four boxes  -->
+
+                <div class="row four-box-pan" role="four-box">
+
+
+
+                    <section v-for="service in services" class="col-xs-12 col-sm-6 col-md-3 wow  fadeInUp">
+
+                        <figure class="wow  fadeInUp"><i class="fa fa-rocket fa-5x" aria-hidden="true"></i></figure>
+                        <br/>
+                        <h5>{{service.Name}}</h5>
+                        <p>{{service.Abstract}}</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- product end -->
+
+        <!-- video strat-->
+
+        <div class="bs_video_bg">
+            <img class="bs_video_img lazy" data-original="assets/img/video_bg.jpg">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-xs-3 col-md-1 bs_video_play ">
+                        <div class="col-xs-12 col-md-12 bs_video_play_logo wow fadeInUp">
+                            <a href="#" data-toggle="modal" data-target="#myModal">
+                <i class="fa fa-caret-right fa-5x" aria-hidden="true"></i></a>
+                        </div>
+                        <br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="container text-center">
+                <div class="col-md-12">
+                    <div class="bs_video">
+                        <div class="modal-dialog" style="width:90%;">
+                            <div class="modal-content">
+                                <div class="modal-header text-left" style="padding:10px;">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+				</button>
+                                    <span>猜这个人是傻逼吗？</span>
+                                </div>
+                                <div class="modal-body" style="padding:0px;">
+                                    <video width="100%" height="100%" controls>
+                                        <source src="assets/video/product.mp4" type="video/mp4"> 您的浏览器不支持 HTML5 video 标签。
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- video end-->
+
+
+        <!-- project start -->
+        <div class="bs_project">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 text-center wow  bounceInLeft">
+                        <img class="lazy" data-original="assets/img/project_bg.jpg" width="100%" height="100%" alt="">
+                    </div>
+                    <div class="col-lg-6 col-sm-6 wow  bounceInRight">
+                        <h1>
+                            Mobile ready
+                        </h1>
+                        <hr>
+                        <p>
+                            <i class="fa fa-check fa-lg pr-10">
+              </i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener. natus error sit voluptatem
+                            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener. natus error
+                            sit voluptatem accusantiu.
+                        </p>
+                        <p>
+                            <i class="fa fa-check fa-lg pr-10">
+              </i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener. natus error sit voluptatem
+                            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener. natus error
+                            sit voluptatem accusantiu.
+                        </p>
+                        <p>
+                            <i class="fa fa-check fa-lg pr-10">
+              </i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.
+                        </p>
+                        <hr>
+                        <a href="javascript:;" class="btn btn-purchase">
+              Purchase now
+            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- project end-->
+        <!-- team start -->
+        <div class="text-center" style="background:white;">
+            <div class="container">
+                <div class="row">
+                    <div>
+                        <div class="wow bounceInLeft">
+                            <header>
+                                <br/>
+                                <h2>筑星团队</h2>
+                            </header>
+
+                            <article>
+                                <br/>
+                                <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac
+                                    consectetur ac, ves<br/> tibulum at eros. Vestibulum id ligula porta felis euismod semper.
+                                    Nulla vitae elit libero, a pharetra augue.<br/> Aenean eu leo quam. Pellentesque ornare
+                                    sem lacinia quam venenatis vestibulum. Maecenas mollis interdum!</p>
+                                <br/>
+
+                            </article>
+                        </div>
+                        <div v-for="team in teams" class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="thumbnail wow  fadeInUp">
+                                <img :src="team.ImgUrl" alt="">
+                                <div class="caption">
+                                    <h4>
+                                        {{team.Name}}
+                                    </h4>
+                                    <p>
+                                        {{team.Description}}
+                                    </p>
+                                    <div class="team-social-link">
+                                        <a href="#">
+                    <i class="fa fa-facebook fa-2x">
+                    </i>
+                  </a>
+                                        <a href="#">
+                    <i class="fa fa-twitter">
+                    </i>
+                  </a>
+                                        <a href="#">
+                    <i class="fa fa-pinterest">
+                    </i>
+                  </a>
+                                        <a href="#">
+                    <i class="fa fa-linkedin">
+                    </i>
+                  </a>
+                                        <a href="#">
+                    <i class="fa fa-google-plus">
+                    </i>
+                  </a>
+                                        <a href="#">
+                    <i class="fa fa-github">
+                    </i>
+                  </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- team end -->
+
+        <!--talk start-->
+        <div class="bs_quotation wow  bounceInLeft">
+            <div class="row text-center">
+                <i class="fa fa-quote-right fa-5x"></i><br/>
+                <h1>"更开放的姿态拥抱BIM"</h1>
+                <p>--陈祥祥 技术总监--</p>
+            </div>
+        </div>
+        <!--talk end-->
+
+        <!--content end-->
+
+        <!--toobar start-->
+        <ul id="menu" class="mfb-component--br mfb-zoomin wow bounceInUp" data-mfb-toggle="hover">
+            <li class="mfb-component__wrap">
+                <a href="#" class="mfb-component__button--main">
+                     <i class="mfb-component__main-icon--resting fa fa-plus fa-2x"></i>
+                     <i class="mfb-component__main-icon--active fa fa-close fa-2x"></i>
+                      </a>
+                <ul class="mfb-component__list">
+                    <li>
+                        <a href="#" data-mfb-label="" class="mfb-component__button--child">
+              <span class="mfb-component__child-icon ">试用</span>
+            </a>
+                    </li>
+                    <li>
+                        <a href="#" data-mfb-label="" class="mfb-component__button--child">
+              <span class="mfb-component__child-icon ">咨询</span>
+            </a>
+                    </li>
+
+                    <li>
+                        <a href="#app" data-mfb-label="" class="mfb-component__button--child">
+              <i class="mfb-component__child-icon fa fa-chevron-up fa-2x"></i>
+            </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!--toobar end-->
+
+        <!--footer start-->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-3 address wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                        <h1>
+                            联系方式
+                        </h1>
+                        <address>
+                            <p><i class="fa fa-copyright pr-10"></i>&nbsp; 名称 ：深圳筑星科技有限公司</p>
+                            <p><i class="fa fa-phone pr-10"></i>&nbsp;&nbsp; 电话 : 0755-86240165</p>
+                            <p><i class="fa fa-fax pr-10"></i> &nbsp;传真 : 0755-86240165</p>
+                            <p><i class="fa fa-envelope pr-10"></i>&nbsp; 邮箱 : <a href="javascript:;">szbstar@bstar5.com</a></p>
+                            <p><i class="fa fa-map-signs pr-10"></i> &nbsp;地址 : 深圳市南山区凯达尔集团中心大厦A座1201 </p>
+                        </address>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".3s">
+                        <h1>
+                            产品咨询
+                        </h1>
+                        <div id="owl-slide">
+                            <div class="tweet-box">
+                                <i class="fa fa-user-circle"> </i>蒋先生<br/>dial:
+                                <a href="javascript:;">13265731349</a>
+                            </div>
+                            <div class="tweet-box">
+                                <i class="fa fa-user-circle-o"> </i>伍先生<br/>dial:
+                                <a href="javascript:;">15118168052</a>
+                            </div>
+                            <div class="tweet-box">
+                                <i class="fa fa-user-circle"> </i>叶先生<br/>dial:
+                                <a href="javascript:;">18122776916</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3">
+                        <div class="page-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".5s">
+                            <h1>
+                                快速导航
+                            </h1>
+                            <ul class="page-footer-list">
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">公司简介</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">产品中心</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">解决方案</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">联系我们</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">加入我们</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3">
+
+                        <div class="text-footer wow fadeInUp" style="padding:0px;">
+                            <h1>
+                                关注我们
+                            </h1>
+                            <p>
+                                微信公众号，微博平台，已经发布，感谢大家的关（zhi）注（zhang）;
+                            </p>
+                            <p>
+                                <img class="col-lg-6 col-sm-6" src="../../assets/img/weixin_qrcode.png" />
+                                <img class="col-lg-6 col-sm-6" src="../../assets/img/weibo_qrcode.png" />
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+        <footer class="footer-small">
+            <div class="container">
+                <div class="row">
+                    <!--<div class="col-lg-4 col-sm-4 pull-right">
+                    </div>-->
+                    <div class="col-md-12">
+                        <div class="copyright">
+                            Copyright ©2016 深圳筑星科技有限公司 All Rights Reserved 粤ICP备15080540号
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <input type="button" v-on:click="showmessage" value="立即加载">
+        <!-- footer end -->
+        <img class="bs_busy" v-if="isbusy" src="../../assets/img/isbusy.gif" />
+    </div>
+    <script src="../../lib/require/require.js" defer async="async" data-main="index"></script>
+    <script src="../../lib/wow/wow.js"></script>
+    <script>
+        var wow = new WOW({
+            boxClass: 'wow',
+            animateClass: 'animated',
+            offset: 0,
+            mobile: true,
+            live: true
+        });
+        wow.init();
+    </script>
+</body>
+
+</html>

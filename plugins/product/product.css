@@ -1,0 +1,14 @@
+        ul.nav-pills {
+            top: 40%;
+            right: 10px;
+            position: fixed;
+        }
+
+        .bs_section {
+            width: 100%;
+            height: 900px;
+            background-color: palegreen;
+            border-bottom: 1 solid blue;
+        }
+
+        

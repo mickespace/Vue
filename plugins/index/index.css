@@ -1,0 +1,54 @@
+/*== Video ==*/
+
+.bs_video_bg {
+    width: 100%;
+    position: relative;
+}
+
+.bs_video {
+    margin: auto;
+    width: 100%;
+    overflow: hidden;
+    -webkit-transform: translate(0%, 100px);
+    -moz-transform: translate(0%, 100px);
+    -ms-transform: translate(0%, 100px);
+    -o-transform: translate(0%, 100px);
+    transform: translate(0%, 100px);
+}
+
+.bs_video_img {
+    width: 100%;
+}
+
+.bs_video_play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.bs_video_play_logo {
+    background-color: white;
+    padding-right: 5px;
+    border-radius: 15%;
+}
+
+
+/*== project ==*/
+
+.bs_project {
+    padding: 20px 0;
+}
+
+
+/*== quotation ==*/
+
+.bs_quotation {
+    padding: 20px 0;
+}

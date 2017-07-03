@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+
+</head>
+
+<body>
+    <div id="app">
+        <p>{{ message }}</p>
+        <input v-model="message" type="text">
+        <input type="button" v-bind:title="message" v-on:click="showmessage" value="fuck you">
+        <br/>
+        <p v-if="isshow">现在可以看得见。</p>
+
+        <ul>
+            <li v-for="item in messageData">
+                <input v-model="item.name" type="text">
+                <input type="button" v-bind:title="message" v-on:click="showmessage" v-model="item.detail">
+
+            </li>
+        </ul>
+        <br/>
+        <img class="lazy" data-original="../../assets/img/userinfo.png" class="cart-thumb" alt="" />
+        <input type="button" v-on:click="heightmessage" value="asdfasdf">
+        <a href="views/login/login.html">登录</a>
+        <ol>
+            <todo-item v-for="item in messageData" v-bind:todo="item"></todo-item>
+        </ol>
+    </div>
+    <div class="bs_busy text-center" v-if="isbusy">
+        <img class="bs_busy_img" v-if="isbusy" src="../../assets/img/isbusy.gif" width="75px" height="68px" />
+    </div>
+    <script src="../../lib/require/require.js" defer async="true" data-main="login"></script>
+</body>
+
+</html>
