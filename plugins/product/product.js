@@ -1,11 +1,15 @@
 require.config({
+    baseUrl: "../../lib",
     paths: {
-        "vue": "../../lib/vue/vue",
-        "jquery": "../../lib/jquery/jquery.min",
-        "bootstrap": "../../lib/bootstrap/bootstrap",
-        "bootsnav": "../../lib/bootstrap/bootsnav",
-        "toolbar": "../../lib/toolbar/toolbar",
-        "fullpage": "../../lib/fullpage/fullpage"
+        "vue": "vue/vue",
+        "jquery": "jquery/jquery.min",
+        "bootstrap": "bootstrap/bootstrap",
+        "bootsnav": "bootstrap/bootsnav",
+        "carousel": "carousel/carousel",
+        "modernizr": "parallax/modernizr",
+        "toolbar": "toolbar/toolbar",
+        "fullpage": "fullpage/fullpage",
+             "lazyload": "jquery/lazyload",
     },
     shim: {
         'vue': {
@@ -29,11 +33,15 @@ require.config({
         'fullpage': {
             deps: ['jquery'],
             export: 'fullpage'
+        },
+        'lazyload': {
+            deps: ['jquery'],
+            export: 'lazyload'
         }
     }
 });
 
-require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'toolbar', 'fullpage'], function (vue, jquery, bootstrap, bootsnav, toolbar, fullpage) {
+require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'toolbar', 'fullpage','lazyload'], function (vue, jquery, bootstrap, bootsnav, toolbar, fullpage,lazyload) {
     //data
     var app = new vue({
         el: '#app',
@@ -78,4 +86,8 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'toolbar', 'fullpage'], funct
             navigation: true
         });
     });
+    //lazyload
+      $("img.lazy").lazyload({
+        effect: "fadeIn"
+    })
 });
