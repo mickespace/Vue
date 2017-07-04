@@ -37,6 +37,8 @@ require.config({
 });
 
 require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'carousel', 'modernizr', 'toolbar', 'lazyload'], function (vue, jquery, bootstrap, bootsnav, carousel, modernizr, toolbar, lazyload) {
+    alert(window.location.search);
+    
     var app = new vue({
         el: '#app',
         data: {
