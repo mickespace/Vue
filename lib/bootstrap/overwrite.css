@@ -1,10 +1,6 @@
-html,
-body {
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+@font-face {
+    font-family: myFont;
+    src: url("../../fonts/FontAwesome/fontawesome-webfont.ttf")
 }
 
 body {
@@ -13,6 +9,11 @@ body {
     font-size: 14px;
     line-height: 20px;
     color: #6f6f6f;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
     background-image: url(../../assets/img//bg_content.jpg)
 }
 

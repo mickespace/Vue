@@ -64,7 +64,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="side-menu"><a href="#"><i class="fa fa-tags"></i><span class="badge">.</span></a></li>
+                        <li class="side-menu"><a href="#"><i class="fa fa-tags"></i><span class="badge">立即试用</span></a></li>
                     </ul>
                 </div>
                 <!-- cat end -->
@@ -278,91 +278,24 @@
                         <li data-target="#customCarousel" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img class="first-slide lazy" data-original="assets/img/parallax_bg.jpg" alt="First slide">
+                        <div class="item" v-bind:class="{active:parallax.IsFirst}" v-for="parallax in parallaxInfo.Parallaxs">
+                            <img class="first-slide lazy" v-bind:data-original="parallax.BgImgUrl" alt="First slide">
                             <div class="container" style="padding-top:150px;">
                                 <div class="row">
-                                    <div class="col-md-2"></div>
-                                    <div class="col-md-6 wow  bounceInRight">
+                                    <div class="col-sm-3 col-md-7 wow bounceInRight">
                                         <h2 style="color:white;">
-                                            <i>RESPONSIVE VIDEO</i>
+                                            <i>{{parallax.Title}}</i>
                                             <br />
-                                            <i>SUPPORT AND</i>
-                                            <br />
-                                            <i>MANY MORE</i>
                                         </h2>
                                         <p>
-                                            <i>Lorem ipsum dolor amet</i>
+                                            <i>{{parallax.Abstract}}</i>
                                             <br />
-                                            <i>tempor incididunt ut</i>
                                         </p>
-                                        <a href="#" class="btn btn-info btn-lg da-link">
-                                Read more
-                                             </a>
+                                        <a href="#" class="btn btn-info da-link">Read more</a>
                                     </div>
-                                    <div class="col-md-4 wow  bounceInLeft">
+                                    <div class="col-sm-3 col-md-4 wow  bounceInLeft">
                                         <div class="da-img">
-                                            <img src="assets/img/2.png" alt="image01" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img class="second-slide" src="assets/img/parallax_bg.jpg" alt="Second slide">
-                            <div class="container" style="padding-top:150px;">
-                                <div class="row">
-                                    <div class="col-md-2"></div>
-                                    <div class="col-md-6 wow  bounceInRight">
-                                        <h2>
-                                            <i>RESPONSIVE VIDEO</i>
-                                            <br />
-                                            <i style="color:white;">SUPPORT AND</i>
-                                            <br />
-                                            <i>MANY MORE</i>
-                                        </h2>
-                                        <p>
-                                            <i>Lorem ipsum dolor amet</i>
-                                            <br />
-                                            <i>tempor incididunt ut</i>
-                                        </p>
-                                        <a href="#" class="btn btn-info btn-lg da-link">
-                                Read more
-                                             </a>
-                                    </div>
-                                    <div class="col-md-4 wow  bounceInLeft">
-                                        <div class="da-img">
-                                            <img src="assets/img/2.png" alt="image01" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img class="third-slide" src="assets/img/parallax_bg.jpg" alt="Third slide">
-                            <div class="container" style="padding-top:150px;">
-                                <div class="row">
-                                    <div class="col-md-2"></div>
-                                    <div class="col-md-6 wow  bounceInRight">
-                                        <h2>
-                                            <i>RESPONSIVE VIDEO</i>
-                                            <br />
-                                            <i>SUPPORT AND</i>
-                                            <br />
-                                            <i>MANY MORE</i>
-                                        </h2>
-                                        <p style="color:white;">
-                                            <i>Lorem ipsum dolor amet</i>
-                                            <br />
-                                            <i>tempor incididunt ut</i>
-                                        </p>
-                                        <a href="#" class="btn btn-info btn-lg da-link">
-                                Read more
-                                             </a>
-                                    </div>
-                                    <div class="col-md-4 wow  bounceInLeft">
-                                        <div class="da-img">
-                                            <img src="assets/img/2.png" alt="image01" />
+                                            <img v-bind:src="parallax.ImgUrl" alt="image01" />
                                         </div>
                                     </div>
                                 </div>
@@ -382,29 +315,20 @@
 
         <!-- product start -->
         <div style="background:white;">
-
             <div class="container text-center">
                 <div class="wow  bounceInLeft">
                     <header>
                         <br/>
-                        <h2>核心服务</h2>
+                        <h2>{{ serviceInfo.Title }}</h2>
                     </header>
-
                     <article>
                         <br/>
-                        <p>任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了和人民群众的关系。好，这是好得很的事。好像是为了印证事物都是一分为二的道理一样，在赞颂程序的同时，我们也看到了程序冷酷的另一面。南宁见义勇为的英雄鲍光蛇在医院冷酷的程序中流尽了最后一滴血，公路收费站的值班人员因救护车交不出十元钱的过路费而坚决不放行救护车，终于使急需救助的患者丧命</p>
+                        <p>{{ serviceInfo.Abstract }}</p>
                         <br/>
-
                     </article>
                 </div>
-                <!-- four boxes  -->
-
                 <div class="row four-box-pan" role="four-box">
-
-
-
-                    <section v-for="service in services" class="col-xs-12 col-sm-6 col-md-3 wow  fadeInUp">
-
+                    <section v-for="service in serviceInfo.Services" class="col-xs-12 col-sm-6 col-md-3 wow  fadeInUp">
                         <figure class="wow  fadeInUp"><i class="fa fa-rocket fa-5x" aria-hidden="true"></i></figure>
                         <br/>
                         <h5>{{service.Name}}</h5>
@@ -416,9 +340,8 @@
         <!-- product end -->
 
         <!-- video strat-->
-
         <div class="bs_video_bg">
-            <img class="bs_video_img lazy" data-original="assets/img/video_bg.jpg">
+            <img class="bs_video_img lazy" v-bind:data-original="videoInfo.ImgUrl">
             <div class="container text-center">
                 <div class="row">
                     <div class="col-xs-3 col-md-1 bs_video_play ">
@@ -441,11 +364,11 @@
                                 <div class="modal-header text-left" style="padding:10px;">
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
 				</button>
-                                    <span>猜这个人是傻逼吗？</span>
+                                    <span>{{videoInfo.Title}}</span>
                                 </div>
                                 <div class="modal-body" style="padding:0px;">
                                     <video width="100%" height="100%" controls>
-                                        <source src="assets/video/product.mp4" type="video/mp4"> 您的浏览器不支持 HTML5 video 标签。
+                                        <source v-bind:src="videoInfo.VideoUrl" type="video/mp4"> 您的浏览器不支持 HTML5 video 标签。
                                     </video>
                                 </div>
                             </div>
@@ -460,38 +383,27 @@
         <!-- project start -->
         <div class="bs_project">
             <div class="container">
+                <div class="text-center wow  bounceInLeft">
+                    <header>
+                        <br/>
+                        <h2>{{ productInfo.Title }}</h2>
+                    </header>
+                    <article>
+                        <br/>
+                        <p>{{ productInfo.Abstract }}</p>
+                        <br/>
+                    </article>
+                </div>
                 <div class="row">
-                    <div class="col-lg-6 col-sm-6 text-center wow  bounceInLeft">
+                    <div class="col-lg-6 col-sm-6 text-center wow  bounceInLeft" data-wow-delay=".1s">
                         <img class="lazy" data-original="assets/img/project_bg.jpg" width="100%" height="100%" alt="">
                     </div>
                     <div class="col-lg-6 col-sm-6 wow  bounceInRight">
-                        <h1>
-                            Mobile ready
-                        </h1>
-                        <hr>
-                        <p>
-                            <i class="fa fa-check fa-lg pr-10">
-              </i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener. natus error sit voluptatem
-                            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener. natus error
-                            sit voluptatem accusantiu.
+
+                        <p v-for="product in productInfo.Products">
+                            <i class="fa fa-check fa-2x pr-10">
+              </i>{{product.Abstract}}
                         </p>
-                        <p>
-                            <i class="fa fa-check fa-lg pr-10">
-              </i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener. natus error sit voluptatem
-                            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener. natus error
-                            sit voluptatem accusantiu.
-                        </p>
-                        <p>
-                            <i class="fa fa-check fa-lg pr-10">
-              </i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.
-                        </p>
-                        <hr>
-                        <a href="javascript:;" class="btn btn-purchase">
-              Purchase now
-            </a>
                     </div>
                 </div>
             </div>
@@ -505,60 +417,29 @@
                         <div class="wow bounceInLeft">
                             <header>
                                 <br/>
-                                <h2>筑星团队</h2>
+                                <h2>{{teamInfo.Title}}</h2>
                             </header>
 
                             <article>
                                 <br/>
-                                <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac
-                                    consectetur ac, ves<br/> tibulum at eros. Vestibulum id ligula porta felis euismod semper.
-                                    Nulla vitae elit libero, a pharetra augue.<br/> Aenean eu leo quam. Pellentesque ornare
-                                    sem lacinia quam venenatis vestibulum. Maecenas mollis interdum!</p>
-                                <br/>
+                                <p>{{teamInfo.Abstract}}
+                                    <br/>
 
                             </article>
                         </div>
-                        <div v-for="team in teams" class="col-xs-12 col-sm-6 col-md-3">
-                            <div class="thumbnail wow  fadeInUp">
-                                <img :src="team.ImgUrl" alt="">
+                        <div v-for="team in teamInfo.Teams" class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="thumbnail wow  fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                                <img :src="team.ImgUrl" alt="" v-on:click="showmessage">
                                 <div class="caption">
                                     <h4>
                                         {{team.Name}}
                                     </h4>
                                     <p>
-                                        {{team.Description}}
+                                        {{team.Abstract}}
                                     </p>
-                                    <div class="team-social-link">
-                                        <a href="#">
-                    <i class="fa fa-facebook fa-2x">
-                    </i>
-                  </a>
-                                        <a href="#">
-                    <i class="fa fa-twitter">
-                    </i>
-                  </a>
-                                        <a href="#">
-                    <i class="fa fa-pinterest">
-                    </i>
-                  </a>
-                                        <a href="#">
-                    <i class="fa fa-linkedin">
-                    </i>
-                  </a>
-                                        <a href="#">
-                    <i class="fa fa-google-plus">
-                    </i>
-                  </a>
-                                        <a href="#">
-                    <i class="fa fa-github">
-                    </i>
-                  </a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -568,9 +449,9 @@
         <!--talk start-->
         <div class="bs_quotation wow  bounceInLeft">
             <div class="row text-center">
-                <i class="fa fa-quote-right fa-5x"></i><br/>
-                <h1>"更开放的姿态拥抱BIM"</h1>
-                <p>--陈祥祥 技术总监--</p>
+                <i class="fa fa-quote-right fa-3x"></i><br/>
+                <h2 v-once> {{ quotationInfo.Quotation }}</h2>
+                <p v-once>{{ quotationInfo.UserName }}</p>
             </div>
         </div>
         <!--talk end-->
@@ -672,7 +553,7 @@
                     </div>
                     <div class="col-lg-3 col-sm-3">
 
-                        <div class="text-footer wow fadeInUp" style="padding:0px;">
+                        <div class="text-footer wow fadeInUp" style="padding:0px;" data-wow-duration="2s" data-wow-delay=".7s">
                             <h1>
                                 关注我们
                             </h1>
@@ -696,7 +577,7 @@
                 <div class="row">
                     <!--<div class="col-lg-4 col-sm-4 pull-right">
                     </div>-->
-                    <div class="col-md-12">
+                    <div class="col-md-12 wow  bounceInLeft">
                         <div class="copyright">
                             Copyright ©2016 深圳筑星科技有限公司 All Rights Reserved 粤ICP备15080540号
                         </div>
@@ -704,7 +585,6 @@
                 </div>
             </div>
         </footer>
-        <input type="button" v-on:click="showmessage" value="立即加载">
         <!-- footer end -->
         <img class="bs_busy" v-if="isbusy" src="../../assets/img/isbusy.gif" />
     </div>
