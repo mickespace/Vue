@@ -46,8 +46,25 @@
 .bs_join_welfare {
     padding: 20px;
 }
+.bs_join_welfare_item{
+    padding: 10px;
+    height: 200px;
+    margin: 0px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.bs_join_welfare_item:hover{
+    color:white;
+    background-color: #505050;
+}
 
 
+
+.bs_join_welfare_item p{
+    text-align: left;
+    padding-left: 20px;     
+}
 /*== 公司活动 ==*/
 
 .bs_activity {}
@@ -58,16 +75,13 @@
 }
 
 .bs_activity_padding_bottom {
-    margin-bottom: 3px;
 }
 
 .bs_activity_padding_left {
-    margin-left: 3px;
 }
 
 .bs_activity img {
     width: 100%;
-    margin-left: 3px;
 }
 
 @media screen and (max-width:1024px) {
