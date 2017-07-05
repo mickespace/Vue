@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -21,106 +22,129 @@
     <div id="app">
         <!--header start-->
         <!--header end-->
-        <!--breadcrumbs start-->
-
-        <!--breadcrumbs end-->
-
-
-        <!--parallax start-->
-        <div class="row">
-            <div class="col-sm-12 col-md-12 ">
-                <div id="customCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#customCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#customCarousel" data-slide-to="1"></li>
-                        <li data-target="#customCarousel" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item" v-bind:class="{active:parallax.IsFirst}" v-for="parallax in parallaxInfo.Parallaxs">
-                            <img class="first-slide lazy" v-bind:data-original="parallax.BgImgUrl" alt="First slide">
-                            <div class="container" style="padding-top:150px;">
-                                <div class="row">
-                                    <div class="col-sm-3 col-md-7 wow bounceInRight">
-                                        <h2 style="color:white;">
-                                            <i>{{parallax.Title}}</i>
-                                            <br />
-                                        </h2>
-                                        <p>
-                                            <i>{{parallax.Abstract}}</i>
-                                            <br />
-                                        </p>
-                                        <a href="#" class="btn btn-info da-link">Read more</a>
-                                    </div>
-                                    <div class="col-sm-3 col-md-4 wow  bounceInLeft">
-                                        <div class="da-img">
-                                            <img v-bind:src="parallax.ImgUrl" alt="image01" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="left carousel-control" href="#customCarousel" role="button" data-slide="prev">
-                        <span class="fa fa-chevron-left fa-2x" aria-hidden="true"></span>
-                    </a>
-                    <a class="right carousel-control" href="#customCarousel" role="button" data-slide="next">
-                        <span class="fa fa-chevron-right fa-2x"  aria-hidden="true"></span>
-                    </a>
-                </div>
+        <!--intro start -->
+        <div id="intro">
+            <div class="container">
             </div>
         </div>
-        <!-- parallax end-->
+        <!--intro end-->
         <!--公司简介-->
-        <div class="row" style="background:white;">
+        <div style="background:white;">
             <div class="container bs_company">
-                <div class="col-md-6">
-                    <h2>{{ companyInfo.Title}}</h2>
-                    <br/>
-                    <p>
-                        {{ companyInfo.Abstract}}
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <img v-bind:src="companyInfo.ImgUrl" />
+                <div class="row">
+                    <div class="col-md-6 ">
+                        <br/>
+                        <h2>{{ companyInfo.Title}}</h2>
+                        <br/>
+                        <p>
+                            {{ companyInfo.Abstract}}
+                        </p>
+                        <br/>
+                    </div>
+                    <div class="col-md-6 ">
+                        <br/>
+                        <img v-bind:src="companyInfo.ImgUrl" style="width:100%;height:100%;" />
+                        <br/>
+                    </div>
                 </div>
             </div>
         </div>
         <!--荣誉资质-->
-        <div class="row">
+        <div class="row bs_honor">
             <div class="container text-center bs_company">
                 <br/>
                 <h2>{{honorInfo.Title}}</h2>
-                </header>
-
-                <article>
-                    <br/>
-                    <p>{{honorInfo.Abstract}}
-                        <br/>
-                </article>
+                <br/>
+                <p>{{honorInfo.Abstract}}</p>
+                <br/>
                 <div v-for="honor in honorInfo.ImgUrls" class="col-xs-12 col-sm-6 col-md-3">
                     <div class="thumbnail wow  fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                        <img v-bind:src="honor.ImgUrl" alt="">
+                        <img v-bind:src="honor.ImgUrl" alt="" style="width:100%;height:100%;">
+
                     </div>
                 </div>
             </div>
         </div>
         <!--谏言-->
         <div class="row">
-            <div class="container">
+            <div id="bs_speech">
+                <div class="container bs_company">
+                    <div class="row wow fadeInUp">
+                        <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                            <br/>
+                            <h2>{{teamInfo.Title}}</h2>
+                            <br/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" v-for="team in teamInfo.Teams">
+                            <div class="bs_speech_box wow fadeInUp">
+                                <blockquote>
+                                    <span class="quote"><span><i class="fa fa-quote-right"></i></span></span>
+                                    <p>{{team.Abstract}}</p>
+                                </blockquote>
+                                <p class="author">{{team.Name}}, {{team.Type}} / <span class="subtext">{{team.DateTime}}</span></p>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!--公司地址-->
-        <div class="row">
+        <div class="bs_company_address" class="row">
             <div class="container">
+                <div class="col-sm-0 col-md-0  col-lg-7">
 
+                </div>
+                <div class="col-sm-12 col-md-12  col-lg-5 bs_company_address_info">
+                    <div class="bs_company_address_info_bg"></div>
+                    <div class="bs_company_address_info_detail">
+                        <h3>{{addressInfo.Title}}</h3>
+                        <p>{{addressInfo.Abstract}}</p>
+                        <div>
+                            <span><i class="fa fa-copyright pr-10"></i>&nbsp; 名称 ：深圳筑星科技有限公司</span><br/>
+                            <span><i class="fa fa-phone pr-10"></i>&nbsp;&nbsp; 电话 : 0755-86240165</span><br/>
+                            <span><i class="fa fa-fax pr-10"></i> &nbsp;传真 : 0755-86240165</span><br/>
+                            <span><i class="fa fa-envelope pr-10"></i>&nbsp; 邮箱 : <a href="javascript:;">szbstar@bstar5.com</a></span><br/>
+                            <span><i class="fa fa-map-signs pr-10"></i> &nbsp;地址 : 深圳市南山区凯达尔集团中心大厦A座1201 </span><br/><br/>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" v-model:value="addressInfo.Feedback.Name" placeholder="姓名">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" v-model:value="addressInfo.Feedback.Email" placeholder="邮箱/手机号">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea name="" class="form-control" id="" cols="30" rows="7" style="resize:none;" v-model:value="addressInfo.Feedback.Message"
+                                        placeholder="想说的话"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="button" v-on:click="methods.feedback" value=" 提            交 " class="btn btn-primary">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
         <!--加入我们-->
-        <div class="row">
-            <div class="container">
-
+        <!--公司简介-->
+        <div class="row" style="background:white;">
+            <div class="container bs_company">
+                <div class="col-md-6">
+                    <h2>加入我们</h2>
+                </div>
             </div>
         </div>
         <!--footer start-->
@@ -129,6 +153,7 @@
     </div>
     <script src="../../lib/require/require.js" defer async="async" data-main="company"></script>
     <script src="../../lib/wow/wow.js"></script>
+
     <script>
         var wow = new WOW({
             boxClass: 'wow',

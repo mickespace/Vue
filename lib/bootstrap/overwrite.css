@@ -4,21 +4,14 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
     position: relative;
     font-size: 14px;
     line-height: 20px;
-    color: #6f6f6f;
     width: 100%;
-    height: auto;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     background-image: url(../../assets/img//bg_content.jpg)
-}
-
-a {
-    color: #6f6f6f;
 }
 
 a,
@@ -35,18 +28,6 @@ a:hover {
 
 a:hover {
     text-decoration: underline;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #3f3f3f;
-    margin: 0 0 15px 0;
-    letter-spacing: 1px;
-    font-weight: bold;
 }
 
 h1 {
@@ -81,8 +62,4 @@ h6 {
 
 p {
     margin-bottom: 20px;
-}
-
-.wrapper {
-    min-height: 800px;
 }

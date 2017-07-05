@@ -1,0 +1,78 @@
+.bs_join_video {
+    width: 100%;
+    z-index: 1;
+    background: url(assets/img/join_bg.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 600px;
+    padding: 0;
+}
+
+
+/*== 公司加入工作 ==*/
+
+.bs_join_job {
+    width: 100%;
+    padding: 20px;
+    color: white;
+    background: url(assets/img/job_bg.jpg);
+}
+
+.bs_join_job h2 {
+    color: white;
+}
+
+
+/*== 加入提示 ==*/
+
+.bs_join_tip {
+    padding: 20px;
+    margin: auto;
+    background-color: white;
+    -webkit-box-shadow: 3px 3px 3px #ccc;
+    -moz-box-shadow: 3px 3px 3px #ccc;
+    box-shadow: 3px 3px 3px #ccc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: -200px;
+    margin-bottom: 10px;
+}
+
+
+/*== 公司福利 ==*/
+
+.bs_join_welfare {
+    padding: 20px;
+}
+
+
+/*== 公司活动 ==*/
+
+.bs_activity {}
+
+.bs_activity div {
+    margin: 0px;
+    padding: 0px;
+}
+
+.bs_activity_padding_bottom {
+    margin-bottom: 3px;
+}
+
+.bs_activity_padding_left {
+    margin-left: 3px;
+}
+
+.bs_activity img {
+    width: 100%;
+    margin-left: 3px;
+}
+
+@media screen and (max-width:1024px) {
+    .bs_join_tip {
+        margin: auto;
+        background-color: white;
+    }
+}
