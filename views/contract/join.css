@@ -20,11 +20,6 @@
     background: url(assets/img/job_bg.jpg);
 }
 
-.bs_join_job h2 {
-    color: white;
-}
-
-
 /*== 加入提示 ==*/
 
 .bs_join_tip {
@@ -82,6 +77,22 @@
 
 .bs_activity img {
     width: 100%;
+}
+
+/*== 公司招聘 ==*/
+
+.bs_join_job_search{
+     margin: 10px 0px 10px 0;
+ padding: 10px;
+ background-color: white;
+ color:#808080;
+}
+
+.bs_join_job_table{
+ margin: 10px 0px 10px 0px;
+ padding:  10px 10px 0px 10px;
+ background-color: white;
+ color:#808080;
 }
 
 @media screen and (max-width:1024px) {
