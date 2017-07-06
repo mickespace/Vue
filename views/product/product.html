@@ -16,13 +16,12 @@
     <link rel="stylesheet" href="../../lib/common/footer.css">
     <link rel="stylesheet" href="../../lib/common/busy.css">
     <link rel="stylesheet" href="../../lib/toolbar/toolbar.css">
-
 </head>
 
 <body>
     <div id="app">
         <!--header start-->
-        <nav class="navbar navbar-default navbar-fixed navbar-transparent dark bootsnav">
+        <nav class="navbar navbar-default navbar-fixed  bootsnav">
             <!-- search start -->
             <div class="top-search">
                 <div class="container">
@@ -39,33 +38,7 @@
                 <div class="attr-nav">
                     <ul>
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-user"></i>
-                        </a>
-                            <ul class="dropdown-menu cart-list">
-                                <li>
-                                    <a href="#" class="photo"><img class="lazy" data-original="../../assets/img/userinfo.png" class="cart-thumb" alt="" /></a>
-                                    <h6><a href="#">Delica omtantur </a></h6>
-                                    <p>2x - <span class="price">$99.99</span></p>
-                                </li>
-                                <li>
-                                    <a href="#" class="photo"><img class="lazy" data-original="../../assets/img/userinfo.png" class="cart-thumb" alt="" /></a>
-                                    <h6><a href="#">Omnes ocurreret</a></h6>
-                                    <p>1x - <span class="price">$33.33</span></p>
-                                </li>
-                                <li>
-                                    <a href="#" class="photo"><img class="lazy" data-original="../../assets/img/userinfo.png" class="cart-thumb" alt="" /></a>
-                                    <h6><a href="#">Agam facilisis</a></h6>
-                                    <p>2x - <span class="price">$99.99</span></p>
-                                </li>
-                                <li class="total">
-                                    <span class="pull-right"><strong>Total</strong>: $0.00</span>
-                                    <a href="#" class="btn btn-default btn-cart">Cart</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="side-menu"><a href="#"><i class="fa fa-tags"></i><span class="badge">.</span></a></li>
+                        <li class="side-menu"><a href="#"><i class="fa fa-tags"></i><span class="badge">立即试用</span></a></li>
                     </ul>
                 </div>
                 <!-- cat end -->
@@ -74,7 +47,7 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                     <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="#brand">
+                    <a class="navbar-brand" href="../index/index.html">
                     <img src="../../assets/img/logo_white.png" class="logo logo-display" alt="">
                     <img src="../../assets/img/logo_black.png" class="logo logo-scrolled" alt="">
                 </a>
@@ -83,52 +56,58 @@
                 <!-- menu start -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li><a style="color: #3498DB;" href="index.html">&nbsp;&nbsp;首&nbsp;页&nbsp;&nbsp;</a></li>
-                        <li class="dropdown megamenu-fw">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;产&nbsp;品&nbsp;&nbsp;</a>
+                        <li><a href="../index/index.html">&nbsp;&nbsp;首&nbsp;页&nbsp;&nbsp;</a></li>
+                        <li class="dropdown">
+                            <a style="color: #3498DB;" href="../product/product.html" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;产&nbsp;品&nbsp;&nbsp;</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../product/product.html">产品简介</a></li>
+                                <li><a href="../product/plugin.html">功能模块</a></li>
+                                <li><a href="../product/download.html">产品下载</a></li>
+                                <li><a href="#">合作案例</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown  megamenu-fw">
+                            <a href="../service/service.html" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;服&nbsp;务&nbsp;&nbsp;</a>
                             <ul class="dropdown-menu megamenu-content" role="menu">
                                 <li>
                                     <div class="row">
-                                        <div class="col-menu col-md-3">
-                                            <h6 class="title">Title Menu One</h6>
+                                        <!-- end col-3 -->
+                                        <div class="col-menu col-md-4">
+                                            <h6 class="title">服务介绍</h6>
                                             <div class="content">
                                                 <ul class="menu-col">
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">服务指南</a></li>
+                                                    <li><a href="#">服务方案</a></li>
+                                                    <li><a href="#">服务体系</a></li>
+                                                    <li><a href="#">服务机构</a></li>
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="col-menu col-md-3">
-                                            <h6 class="title">Title Menu Two</h6>
+                                        <div class="col-menu col-md-4">
+                                            <h6 class="title">BIM方案</h6>
                                             <div class="content">
                                                 <ul class="menu-col">
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">项目策划</a></li>
+                                                    <li><a href="#">设计阶段</a></li>
+                                                    <li><a href="#">施工阶段</a></li>
+                                                    <li><a href="#">运维阶段</a></li>
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="col-menu col-md-3">
-                                            <h6 class="title">Title Menu Three</h6>
+
+                                        <!-- end col-3 -->
+                                        <div class="col-menu col-md-4">
+                                            <h6 class="title">项目案例</h6>
                                             <div class="content">
                                                 <ul class="menu-col">
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">实施项目</a></li>
+                                                    <li><a href="#">运维项目</a></li>
+                                                    <li><a href="#">监控项目</a></li>
+                                                    <li><a href="#">案例展示</a></li>
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="col-menu col-md-3">
+                                        <!--<div class="col-menu col-md-3">
                                             <h6 class="title">Title Menu Four</h6>
                                             <div class="content">
                                                 <ul class="menu-col">
@@ -140,100 +119,23 @@
                                                     <li><a href="#">Custom Menu</a></li>
                                                 </ul>
                                             </div>
-                                        </div>
+                                        </div>-->
+                                        <!-- end col-3 -->
                                     </div>
+                                    <!-- end row -->
                                 </li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;服&nbsp;务&nbsp;&nbsp;</a>
+                            <a href="../contract/company.html" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;关于筑星&nbsp;&nbsp;</a>
                             <ul class="dropdown-menu" role="menu">
 
-                                <li><a href="#">Custom Menu</a></li>
-                                <li><a href="#">Custom Menu</a></li>
-                                <li><a href="#">Custom Menu</a></li>
-                                <li><a href="#">Custom Menu</a></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sub Menu</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Custom Menu</a></li>
-                                        <li><a href="#">Custom Menu</a></li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sub Menu</a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Custom Menu</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="../contract/company.html">筑星简介</a></li>
+                                <li><a href="../contract/news.html">新闻动态</a></li>
+                                <li><a href="../contract/company.html#bsAddress">联系我们</a></li>
+                                <li><a href="../contract/join.html">加入我们</a></li>
                             </ul>
-                        </li>
-                        <li class="dropdown megamenu-fw">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;关于筑星&nbsp;&nbsp;</a>
-                            <ul class="dropdown-menu megamenu-content" role="menu">
-                                <li>
-                                    <div class="row">
-                                        <div class="col-menu col-md-3">
-                                            <h6 class="title">公司简介</h6>
-                                            <div class="content">
-                                                <ul class="menu-col">
-                                                    <li><a href="#">公司文化</a></li>
-                                                    <li><a href="#">荣誉资质</a></li>
-                                                    <li><a href="#"></a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <!-- end col-3 -->
-                                        <div class="col-menu col-md-3">
-                                            <h6 class="title">Title Menu Two</h6>
-                                            <div class="content">
-                                                <ul class="menu-col">
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <!-- end col-3 -->
-                                        <div class="col-menu col-md-3">
-                                            <h6 class="title">Title Menu Three</h6>
-                                            <div class="content">
-                                                <ul class="menu-col">
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-menu col-md-3">
-                                            <h6 class="title">Title Menu Four</h6>
-                                            <div class="content">
-                                                <ul class="menu-col">
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+
                         </li>
                     </ul>
                 </div>
@@ -271,277 +173,193 @@
         <!--content start-->
         <div>
             <div id="dowebok">
-                <div class="section">
-                    <!-- project start -->
-                    <div class="bs_project">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-6 col-sm-6 text-center   bounceInLeft">
-                                    <img class="lazy" data-original="assets/img/project_bg.jpg" width="100%" height="100%" alt="">
-                                </div>
-                                <div class="col-lg-6 col-sm-6   bounceInRight">
-                                    <h1>
-                                        Mobile ready
-                                    </h1>
-                                    <hr>
-                                    <p>
-                                        <i class="fa fa-check fa-lg pr-10">
-              </i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.
-                                        natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                                        eaque ipsa quae ablic jiener. natus error sit voluptatem accusantiu.
-                                    </p>
-                                    <p>
-                                        <i class="fa fa-check fa-lg pr-10">
-              </i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.
-                                        natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                                        eaque ipsa quae ablic jiener. natus error sit voluptatem accusantiu.
-                                    </p>
-                                    <p>
-                                        <i class="fa fa-check fa-lg pr-10">
-              </i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.
-                                    </p>
-                                    <hr>
-                                    <a href="javascript:;" class="btn btn-purchase">
-              Purchase now
-            </a>
-                                </div>
+                <!--模块-->
+                <div class="section" id="section1">
+                    <div class="container text-center">
+                        <br/>
+                        <h2>简单高效的工程项目多方协作云平台</h2>
+                        <br/>
+                        <h4>文档共享 任务流程 BIM协作 团队沟通</h4>
+                        <br/>
+                        <button class="btn btn-primary btn-lg">立即申请试用</button>
+                    </div>
+                </div>
+
+                <!--模块-->
+                <div class="section" id="section2">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h2>我们为你和团队提供全项目范围的协作</h2>
+                                <br/>
+                                <h5><a href="#">立即查看</a></h5>
+                                <br/>
                             </div>
                         </div>
-                    </div>
-                    <!-- project end-->
-                </div>
-                <div class="section">
-                    <!-- project start -->
-                    <div class="bs_project">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-6 col-sm-6 text-center bounceInLeft">
-                                    <img class="lazy" data-original="assets/img/project_bg.jpg" width="100%" height="100%" alt="">
-                                </div>
-                                <div class="col-lg-6 col-sm-6   bounceInRight">
-                                    <h1>
-                                        Mobile ready
-                                    </h1>
-                                    <hr>
-                                    <p>
-                                        <i class="fa fa-check fa-lg pr-10">
-              </i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.
-                                        natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                                        eaque ipsa quae ablic jiener. natus error sit voluptatem accusantiu.
-                                    </p>
-                                    <p>
-                                        <i class="fa fa-check fa-lg pr-10">
-              </i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.
-                                        natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                                        eaque ipsa quae ablic jiener. natus error sit voluptatem accusantiu.
-                                    </p>
-                                    <p>
-                                        <i class="fa fa-check fa-lg pr-10">
-              </i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.
-                                    </p>
-                                    <hr>
-                                    <a href="javascript:;" class="btn btn-purchase">
-              Purchase now
-            </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- project end-->
-                </div>
-                <div class="section">
-                    <!-- project start -->
-                    <div class="bs_project">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-6 col-sm-6 text-center   bounceInLeft">
-                                    <img class="lazy" data-original="assets/img/project_bg.jpg" width="100%" height="100%" alt="">
-                                </div>
-                                <div class="col-lg-6 col-sm-6   bounceInRight">
-                                    <h1>
-                                        Mobile ready
-                                    </h1>
-                                    <hr>
-                                    <p>
-                                        <i class="fa fa-check fa-lg pr-10">
-              </i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.
-                                        natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                                        eaque ipsa quae ablic jiener. natus error sit voluptatem accusantiu.
-                                    </p>
-                                    <p>
-                                        <i class="fa fa-check fa-lg pr-10">
-              </i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.
-                                        natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                                        eaque ipsa quae ablic jiener. natus error sit voluptatem accusantiu.
-                                    </p>
-                                    <p>
-                                        <i class="fa fa-check fa-lg pr-10">
-              </i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.
-                                    </p>
-                                    <hr>
-                                    <a href="javascript:;" class="btn btn-purchase">
-              Purchase now
-            </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- project end-->
-                </div>
-                <div class="section">
-                    <!-- project start -->
-                    <div class="bs_project">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-6 col-sm-6 text-center   bounceInLeft">
-                                    <img class="lazy" data-original="assets/img/project_bg.jpg" width="100%" height="100%" alt="">
-                                </div>
-                                <div class="col-lg-6 col-sm-6   bounceInRight">
-                                    <h1>
-                                        Mobile ready
-                                    </h1>
-                                    <hr>
-                                    <p>
-                                        <i class="fa fa-check fa-lg pr-10">
-              </i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.
-                                        natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                                        eaque ipsa quae ablic jiener. natus error sit voluptatem accusantiu.
-                                    </p>
-                                    <p>
-                                        <i class="fa fa-check fa-lg pr-10">
-              </i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.
-                                        natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                                        eaque ipsa quae ablic jiener. natus error sit voluptatem accusantiu.
-                                    </p>
-                                    <p>
-                                        <i class="fa fa-check fa-lg pr-10">
-              </i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.
-                                    </p>
-                                    <hr>
-                                    <a href="javascript:;" class="btn btn-purchase">
-              Purchase now
-            </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- project end-->
-                </div>
-                <div class="section" style="position:relative">
-                    <!--footer start-->
-                    <div style="position:absolute;bottom:0; width:100%;">
-                        <div class="footer">
+                        <div class="row">
                             <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-3 col-sm-3 address">
-                                        <h1>
-                                            联系方式
-                                        </h1>
-                                        <address>
-                                            <p><i class="fa fa-copyright pr-10"></i>&nbsp; 名称 ：深圳筑星科技有限公司</p>
-                                            <p><i class="fa fa-phone pr-10"></i>&nbsp;&nbsp; 电话 : 0755-86240165</p>
-                                            <p><i class="fa fa-fax pr-10"></i> &nbsp;传真 : 0755-86240165</p>
-                                            <p><i class="fa fa-envelope pr-10"></i>&nbsp; 邮箱 : <a href="javascript:;">szbstar@bstar5.com</a></p>
-                                            <p><i class="fa fa-map-signs pr-10"></i> &nbsp;地址 : 深圳市南山区凯达尔集团中心大厦A座1201 </p>
-                                        </address>
-                                    </div>
-                                    <div class="col-lg-3 col-sm-3">
-                                        <h1>
-                                            产品咨询
-                                        </h1>
-                                        <div id="owl-slide">
-                                            <div class="tweet-box">
-                                                <i class="fa fa-user-circle"> </i>蒋先生<br/>dial:
-                                                <a href="javascript:;">13265731349</a>
-                                            </div>
-                                            <div class="tweet-box">
-                                                <i class="fa fa-user-circle-o"> </i>伍先生<br/>dial:
-                                                <a href="javascript:;">15118168052</a>
-                                            </div>
-                                            <div class="tweet-box">
-                                                <i class="fa fa-user-circle"> </i>叶先生<br/>dial:
-                                                <a href="javascript:;">18122776916</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-sm-3">
-                                        <div class="page-footer ">
-                                            <h1>
-                                                快速导航
-                                            </h1>
-                                            <ul class="page-footer-list">
-                                                <li>
-                                                    <i class="fa fa-angle-right"></i>
-                                                    <a href="../contract/company.html">公司简介</a>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-angle-right"></i>
-                                                    <a href="../contract/company.html">产品中心</a>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-angle-right"></i>
-                                                    <a href="../contract/company.html">解决方案</a>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-angle-right"></i>
-                                                    <a href="../contract/company.html">联系我们</a>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-angle-right"></i>
-                                                    <a href="../contract/company.html">加入我们</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-sm-3">
-
-                                        <div class="text-footer " style="padding:0px;">
-                                            <h1>
-                                                关注我们
-                                            </h1>
-                                            <p>
-                                                微信公众号，微博平台，已经发布，感谢大家的关（zhi）注（zhang）;
-                                            </p>
-                                            <p>
-                                                <img class="col-lg-6 col-sm-6" src="../../assets/img/weixin_qrcode.png" />
-                                                <img class="col-lg-6 col-sm-6" src="../../assets/img/weibo_qrcode.png" />
-                                            </p>
-                                        </div>
-                                    </div>
-
+                                <div class="col-md-2">
                                 </div>
-
+                                <div class="col-md-2 ">
+                                    <div>
+                                        <i class="section_logo fa fa-dollar fa-4x"></i><br/>
+                                        <h4>文档管理</h4>
+                                        <p>一个傻逼的作品，非常傻逼，但非常完美！<br/>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 ">
+                                    <div>
+                                        <i class="section_logo fa fa-dollar fa-4x"></i><br/>
+                                        <h4>文档管理</h4>
+                                        <p>一个傻逼的作品，非常傻逼，但非常完美！<br/>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 ">
+                                    <div>
+                                        <i class="section_logo fa fa-dollar fa-4x"></i><br/>
+                                        <h4>文档管理</h4>
+                                        <p>一个傻逼的作品，非常傻逼，但非常完美！<br/>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 ">
+                                    <div>
+                                        <i class="section_logo fa fa-dollar fa-4x"></i><br/>
+                                        <h4>文档管理</h4>
+                                        <p>一个傻逼的作品，非常傻逼，但非常完美！<br/>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-
                         </div>
-                        <div class="footer-small">
+                        <div class="row">
                             <div class="container">
-                                <div class="row">
-                                    <!--<div class="col-lg-4 col-sm-4 pull-right">
-                    </div>-->
-                                    <div class="col-md-12">
-                                        <div class="copyright">
-                                            Copyright ©2016 深圳筑星科技有限公司 All Rights Reserved 粤ICP备15080540号
-                                        </div>
+                                <div class="col-md-2">
+                                </div>
+                                <div class="col-md-2 ">
+                                    <div>
+                                        <i class="section_logo fa fa-dollar fa-4x"></i><br/>
+                                        <h4>文档管理</h4>
+                                        <p>一个傻逼的作品，非常傻逼，但非常完美！<br/>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 ">
+                                    <div>
+                                        <i class="section_logo fa fa-dollar fa-4x"></i><br/>
+                                        <h4>文档管理</h4>
+                                        <p>一个傻逼的作品，非常傻逼，但非常完美！<br/>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 ">
+                                    <div>
+                                        <i class="section_logo fa fa-dollar fa-4x"></i><br/>
+                                        <h4>文档管理</h4>
+                                        <p>一个傻逼的作品，非常傻逼，但非常完美！<br/>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 ">
+                                    <div>
+                                        <i class="section_logo fa fa-dollar fa-4x"></i><br/>
+                                        <h4>文档管理</h4>
+                                        <p>一个傻逼的作品，非常傻逼，但非常完美！<br/>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <input type="button" v-on:click="showmessage" value="立即加载">
                     </div>
-                    <!-- footer end -->
+                </div>
+                <!--模块-->
+                <div class="section" id="section3">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>协筑，以项目为核心，连接各参建方团队</h2>
+                                <br/>
+                                <h4>在统一的平台上共享项目信息和进展，即时沟通，高效协同完成项目目标</h4>
+                                <br/>
+                                <img src="assets/img/products/section3.jpg" style="width:100%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--案例-->
+                <div class="section" id="section4">
+                    <div class="slide">
+                        <div class="container">
+                            <div class="text-center ">
+                                <br/>
+                                <h2>{{ productInfo.Title }}</h2>
+                                <br/>
+                                <p>{{ productInfo.Abstract }}</p>
+                                <br/>
+                            </div>
+                            <div class="row">
+                                <div class="section4_img col-lg-6 col-sm-6 text-center">
+                                    <img src="assets/img/project_bg.jpg" width="100%" height="100%" alt="">
+                                </div>
+                                <div class="col-lg-6 col-sm-6 ">
+
+                                    <p v-for="product in productInfo.Products">
+                                        <i class="fa fa-check fa-2x pr-10"></i>{{product.Abstract}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="row">
+                            <div class="container">
+                                <div class="text-center ">
+                                    <br/>
+                                    <h2>{{ productInfo.Title }}</h2>
+                                    <br/>
+                                    <p>{{ productInfo.Abstract }}</p>
+                                    <br/>
+                                </div>
+                                <div class="row">
+                                    <div class="section4_img col-lg-6 col-sm-6 text-center">
+                                        <img src="assets/img/project_bg.jpg" width="100%" height="100%" alt="">
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6 ">
+
+                                        <p v-for="product in productInfo.Products">
+                                            <i class="fa fa-check fa-2x pr-10"></i>{{product.Abstract}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="row">
+                            <div class="container">
+                                <div class="text-center ">
+                                    <br/>
+                                    <h2>{{ productInfo.Title }}</h2>
+                                    <br/>
+                                    <p>{{ productInfo.Abstract }}</p>
+                                    <br/>
+                                </div>
+                                <div class="row">
+                                    <div class="section4_img col-lg-6 col-sm-6 text-center">
+                                        <img src="assets/img/project_bg.jpg" width="100%" height="100%" alt="">
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6 ">
+
+                                        <p v-for="product in productInfo.Products">
+                                            <i class="fa fa-check fa-2x pr-10"></i>{{product.Abstract}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -574,8 +392,105 @@
             </li>
         </ul>
         <!--toobar end-->
+        <!--footer start-->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-3 address wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                        <h1>
+                            联系方式
+                        </h1>
+                        <address>
+                            <p><i class="fa fa-copyright pr-10"></i>&nbsp; 名称 ：深圳筑星科技有限公司</p>
+                            <p><i class="fa fa-phone pr-10"></i>&nbsp;&nbsp; 电话 : 0755-86240165</p>
+                            <p><i class="fa fa-fax pr-10"></i> &nbsp;传真 : 0755-86240165</p>
+                            <p><i class="fa fa-envelope pr-10"></i>&nbsp; 邮箱 : <a href="javascript:;">szbstar@bstar5.com</a></p>
+                            <p><i class="fa fa-map-signs pr-10"></i> &nbsp;地址 : 深圳市南山区凯达尔集团中心大厦A座1201 </p>
+                        </address>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".3s">
+                        <h1>
+                            产品咨询
+                        </h1>
+                        <div id="owl-slide">
+                            <div class="tweet-box">
+                                <i class="fa fa-user-circle"> </i>蒋先生<br/>dial:
+                                <a href="javascript:;">13265731349</a>
+                            </div>
+                            <div class="tweet-box">
+                                <i class="fa fa-user-circle-o"> </i>伍先生<br/>dial:
+                                <a href="javascript:;">15118168052</a>
+                            </div>
+                            <div class="tweet-box">
+                                <i class="fa fa-user-circle"> </i>叶先生<br/>dial:
+                                <a href="javascript:;">18122776916</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3">
+                        <div class="page-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".5s">
+                            <h1>
+                                快速导航
+                            </h1>
+                            <ul class="page-footer-list">
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">公司简介</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">产品中心</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">解决方案</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">联系我们</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">加入我们</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3">
 
+                        <div class="text-footer wow fadeInUp" style="padding:0px;" data-wow-duration="2s" data-wow-delay=".7s">
+                            <h1>
+                                关注我们
+                            </h1>
+                            <p>
+                                微信公众号，微博平台，已经发布，感谢大家的关（zhi）注（zhang）;
+                            </p>
+                            <p>
+                                <img class="col-lg-6 col-sm-6" src="../../assets/img/weixin_qrcode.png" />
+                                <img class="col-lg-6 col-sm-6" src="../../assets/img/weibo_qrcode.png" />
+                            </p>
+                        </div>
+                    </div>
 
+                </div>
+
+            </div>
+
+        </footer>
+        <footer class="footer-small">
+            <div class="container">
+                <div class="row">
+                    <!--<div class="col-lg-4 col-sm-4 pull-right">
+                    </div>-->
+                    <div class="col-md-12 wow  bounceInLeft">
+                        <div class="copyright">
+                            Copyright ©2016 深圳筑星科技有限公司 All Rights Reserved 粤ICP备15080540号
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
         <img class="bs_busy" v-if="isbusy" src="../../assets/img/isbusy.gif" />
     </div>
     <script src="../../lib/require/require.js" defer async="async" data-main="product"></script>

@@ -52,29 +52,8 @@
 }
 
 .bs_company_address_info {
-    margin: 50px;
-    position: relative;
-}
-
-.bs_company_address_info_bg {
-    z-index: 1;
-    background-color: white;
-    height: 500px;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    opacity: 0.8;
-    -webkit-opacity: 0.8;
-    -moz-opacity: 0.8;
-}
-
-.bs_company_address_info_detail {
-    z-index: 2;
-    padding: 20px;
-    position: absolute;
-    top: 0px;
-    right: 0px;
+    background-image: url(../../assets/img/bg_content.jpg);
+    margin-top: 50px;
 }
 
 
@@ -178,14 +157,6 @@
     margin-bottom: 30px;
 }
 
-@media screen and (max-width: 768px) {
-    .bs_speech,
-    .fh5co-team {
-        border-right: 0;
-        margin-bottom: 80px;
-    }
-}
-
 .bs_speech h2,
 .bs_speech figure,
 .bs_speech figure img,
@@ -240,6 +211,11 @@
         background: url(../../assets/img/bg_content.jpg);
         min-height: 0px;
         padding: 0;
+    }
+    .bs_speech,
+    .fh5co-team {
+        border-right: 0;
+        margin-bottom: 80px;
     }
     .bs_company_address_info {
         background-image: url(../../assets/img/bg_content.jpg);

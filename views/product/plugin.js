@@ -8,6 +8,7 @@ require.config({
         "carousel": "carousel/carousel",
         "modernizr": "parallax/modernizr",
         "toolbar": "toolbar/toolbar",
+        "fullpage": "fullpage/fullpagemin",
         "lazyload": "jquery/lazyload",
     },
     shim: {
@@ -36,7 +37,7 @@ require.config({
     }
 });
 
-require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'carousel', 'modernizr', 'toolbar', 'lazyload'], function (vue, jquery, bootstrap, bootsnav, carousel, modernizr, toolbar, lazyload) {
+require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'carousel', 'modernizr', 'toolbar', 'fullpage', 'lazyload'], function (vue, jquery, bootstrap, bootsnav, carousel, modernizr, toolbar, fullpage, lazyload) {
     var app = new vue({
         el: '#app',
         data: {
@@ -124,4 +125,20 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'carousel', 'modernizr', 'too
     $("img.lazy").lazyload({
         effect: "fadeIn"
     })
+    //fullpage
+    jquery(function () {
+        var runPage;
+        runPage = new FullPage({
+            id: 'pageContain',
+            slideTime: 800,
+            effect: {
+                transform: {
+                    translate: 'Y'
+                },
+                opacity: [0, 1]
+            },
+            mode: 'wheel, touch, nav:navBar',
+            easing: 'ease-out'
+        });
+    });
 });
