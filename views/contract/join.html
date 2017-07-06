@@ -340,18 +340,12 @@
                         <div class="bs_join_job_search">
                             <div class="input-group">
                                 <input type="text" class="form-control">
-                                <span class="input-group-btn">
-						<button class="btn btn-default" type="button">
-							<i class="fa fa-search"></i>
-						</button>
-					</span>
+                                <span class="input-group-btn"><button class="btn btn-default" type="button">
+							<i class="fa fa-search"></i></button></span>
                             </div>
                             <hr/>
-                            <div class="dropdown">
-                                <button type="button" class="btn dropdown-toggle" style="width:100%;text-algin:left;" id="dropdownMenu1" data-toggle="dropdown">
-		招聘类型
-		<span class="caret"></span>
-	</button>
+                            <div class="dropdowns">
+                                <button type="button" class="btn dropdown-toggle" style="width:100%;" id="dropdownMenu1" data-toggle="dropdown">招聘类型<span class="caret"></span></button>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                                     <li role="presentation">
                                         <a role="menuitem" tabindex="-1" href="#">Java</a>
@@ -370,10 +364,7 @@
                             </div>
                             <br/>
                             <div class="dropdown">
-                                <button type="button" class="btn dropdown-toggle" style="width:100%;text-algin:left;" id="dropdownMenu1" data-toggle="dropdown">
-		职位类型
-		<span class="caret"></span>
-	</button>
+                                <button type="button" class="btn dropdown-toggle" style="width:100%;text-algin:left;" id="dropdownMenu1" data-toggle="dropdown">职位类型<span class="caret"></span></button>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                                     <li role="presentation">
                                         <a role="menuitem" tabindex="-1" href="#">Java</a>
@@ -392,10 +383,7 @@
                             </div>
                             <br/>
                             <div class="dropdown">
-                                <button type="button" class="btn dropdown-toggle" style="width:100%;text-algin:left;" id="dropdownMenu1" data-toggle="dropdown">
-		所在地区
-		<span class="caret"></span>
-	</button>
+                                <button type="button" class="btn dropdown-toggle" style="width:100%;text-algin:left;" id="dropdownMenu1" data-toggle="dropdown">所在地区<span class="caret"></span></button>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                                     <li role="presentation">
                                         <a role="menuitem" tabindex="-1" href="#">Java</a>
@@ -429,49 +417,18 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <tr class="bs_join_toggle">
-                                            <td>产品1</td>
-                                            <td>23/11/2013</td>
-                                            <td>待发货</td>
-                                            <td>+</td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="4">
-                                                职位描述： 1、参与需求分析、设计评审，制定测试方案；
-                                                </br>
-                                                2、编写测试用例；</br>
-                                                3、自动化测试；</br>
-                                                4、测试质量分析与测试方法改进。 </br>
-                                                任职要求：</br>
-                                                1、3年以上手机测试/APP测试经验；</br>
-                                                2、负责APP软件测试，能对测试过程中的缺陷进行数据统计分析；</br>
-                                                3、根据需求定义和技术规格能单独编写测试计划、设计测试用例，熟悉软件测试流程；</br>
-                                                4、具备自动化测试能力，熟悉C/C++,Java,python等一种或多种语言。</br><br/>
+                                        <tr class="bs_join_toggle" v-for="job in jobInfo.Jobs">
+                                            <td colspan="3" v-show="job.IsShow">
+                                                <div v-html="job.Abstract"></div>
+                                                <br/>
                                                 <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-danger">立即申请</button>
                                             </td>
-                                        </tr>
-                                    </tr>
-                                    <tr>
-                                        <tr>
-                                            <td>产品1</td>
-                                            <td>23/11/2013</td>
-                                            <td>待发货</td>
-                                            <td>+</td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="4">
-                                                职位描述： 1、参与需求分析、设计评审，制定测试方案；
-                                                </br>
-                                                2、编写测试用例；</br>
-                                                3、自动化测试；</br>
-                                                4、测试质量分析与测试方法改进。 </br>
-                                                任职要求：</br>
-                                                1、3年以上手机测试/APP测试经验；</br>
-                                                2、负责APP软件测试，能对测试过程中的缺陷进行数据统计分析；</br>
-                                                3、根据需求定义和技术规格能单独编写测试计划、设计测试用例，熟悉软件测试流程；</br>
-                                                4、具备自动化测试能力，熟悉C/C++,Java,python等一种或多种语言。</br><br/>
-                                                <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-danger">立即申请</button>
-                                            </td>
+                                            <td v-show="job.IsShow" v-on:click="methods.handleJobShow(job.Id)"><i class="bs_join_close fa fa-remove"></i></td>
+                                            <td v-show="!job.IsShow" v-on:click="methods.handleJobShow(job.Id)">{{job.Name}}</td>
+                                            <td v-show="!job.IsShow" v-on:click="methods.handleJobShow(job.Id)">{{job.VocationTypeStr}}</td>
+                                            <td v-show="!job.IsShow" v-on:click="methods.handleJobShow(job.Id)">{{job.City}}</td>
+                                            <td v-show="!job.IsShow" v-on:click="methods.handleJobShow(job.Id)">+</td>
+
                                         </tr>
                                     </tr>
                                 </tbody>
