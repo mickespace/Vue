@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -20,13 +21,380 @@
 <body>
     <div id="app">
         <!--header start-->
+        <nav class="navbar navbar-default navbar-fixed bootsnav">
+            <!-- search start -->
+            <div class="top-search">
+                <div class="container">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-search lg"></i></span>
+                        <input type="text" class="form-control" placeholder="请输入...">
+                        <span class="input-group-addon close-search"><i class="fa fa-close"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- search end -->
+            <!-- cat start -->
+            <div class="container">
+                <div class="attr-nav">
+                    <ul>
+                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        <li class="side-menu"><a href="#"><i class="fa fa-tags"></i><span class="badge">立即试用</span></a></li>
+                    </ul>
+                </div>
+                <!-- cat end -->
+                <!-- logo start -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                    <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="../index/index.html">
+                    <img src="../../assets/img/logo_white.png" class="logo logo-display" alt="">
+                    <img src="../../assets/img/logo_black.png" class="logo logo-scrolled" alt="">
+                </a>
+                </div>
+                <!-- logo end -->
+                <!-- menu start -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li><a style="color: #3da8f5;" href="../index/index.html">&nbsp;&nbsp;首&nbsp;页&nbsp;&nbsp;</a></li>
+                        <li class="dropdown">
+                            <a href="../product/product.html" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;产&nbsp;品&nbsp;&nbsp;</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../product/product.html">产品简介</a></li>
+                                <li><a href="../product/plugin.html">功能模块</a></li>
+                                <li><a href="../product/download.html">产品下载</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown  megamenu-fw">
+                            <a href="../service/service.html" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;服&nbsp;务&nbsp;&nbsp;</a>
+                            <ul class="dropdown-menu megamenu-content" role="menu">
+                                <li>
+                                    <div class="row">
+                                        <!-- end col-3 -->
+                                        <div class="col-menu col-md-4">
+                                            <h6 class="title">服务介绍</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li><a href="#">服务指南</a></li>
+                                                    <li><a href="#">服务方案</a></li>
+                                                    <li><a href="#">服务体系</a></li>
+                                                    <li><a href="#">服务机构</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-menu col-md-4">
+                                            <h6 class="title">BIM方案</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li><a href="#">项目策划</a></li>
+                                                    <li><a href="#">设计阶段</a></li>
+                                                    <li><a href="#">施工阶段</a></li>
+                                                    <li><a href="#">运维阶段</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- end col-3 -->
+                                        <div class="col-menu col-md-4">
+                                            <h6 class="title">项目案例</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li><a href="#">实施项目</a></li>
+                                                    <li><a href="#">运维项目</a></li>
+                                                    <li><a href="#">监控项目</a></li>
+                                                    <li><a href="#">案例展示</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end row -->
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="../contract/company.html" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;关于筑星&nbsp;&nbsp;</a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="../contract/company.html">筑星简介</a></li>
+                                <li><a href="../contract/news.html">新闻动态</a></li>
+                                <li><a href="../contract/company.html#bsAddress">联系我们</a></li>
+                                <li><a href="../contract/join.html">加入我们</a></li>
+                            </ul>
+
+                        </li>
+                    </ul>
+                </div>
+                <!-- menu end -->
+            </div>
+
+            <!-- Start Side Menu -->
+            <div class="side">
+                <a href="#" class="close-side"><i class="fa fa-close "></i></a>
+                <div class="widget">
+                    <h4 class="title">免费试用</h4>
+                    <span style="color:white;">完成手机验证后立即开始试用</span><br/><br/>
+                    <input type="text" class="form-control" id="phone" placeholder="请输入手机号">
+                    <br/>
+                    <input type="text" class="form-control" id="phone" placeholder="请输入单位">
+                    <br/>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="输入红色数字">
+                        <span class="input-group-btn">
+                              <button class="btn btn-default" type="button">3<i style="color:red;">8</i>93<i style="color:red;">8</i>7<i style="color:red;">8</i></button>
+                        </span>
+                    </div>
+                    <br/>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="短信验证码">
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" id="send_code" type="button" data-complete-text="发送成功">获取验证码</button>
+                    </span>
+                    </div>
+                    <br/>
+                    <button class="btn btn-primary" style="width:100%;" type="button">立即试用</button>
+                </div>
+            </div>
+            <!-- End Side Menu -->
+        </nav>
         <!--header end-->
 
-<!--container start-->
-<h1>这是详细界面</h1>
-<!--container end-->
+        <!--container start-->
+        <!--container start-->
+        <div class="bs_newsdetail">
+            <div class="container">
+            </div>
+        </div>
+        <!--  <div class="bs_newsdetail_container">
+            <div class="container">
+                <div class="row">
+<div ></div>
+                </div>
+            </div>
+        </div>-->
+
+        <!--container start-->
+        <div class="container" style="padding:10px;">
+            <div class="row">
+                <!--blog start-->
+                <div class="col-lg-9">
+                    <div class="blog-item">
+                        <div class="row">
+                            <div class="col-lg-12 col-sm-12" style="background:white;">
+                                <img src="assets/img/news/newsdetail.jpg" alt="" style="width:100%;" />
+                                <h4>
+                                    <a href="#"> 震撼发布 </a>
+                                </h4>
+                                <p>
+                                    任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了
+                                </p>
+                                <blockquote>
+                                    <p>
+                                        我的内容
+                                    </p>
+                                    <small>
+              我的内容
+                    <cite title="Source Title">
+                我的内容
+                    </cite>
+                  </small>
+                                </blockquote>
+
+                                <div class="media">
+                                    <h3>
+                                        评论
+                                    </h3>
+                                    <hr>
+                                    <a class="pull-left" href="javascript:;"></a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">
+                                            傻逼<span> |</span> <span>2017-07-07</span>
+                                        </h4>
+                                        <p>
+                                            任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。因为有了规范的办事程序，
+                                        </p>
+                                        <a href="javascript:;">回复</a>
+                                        <hr>
+                                        <!-- Nested media object -->
+                                        <div class="media">
+                                            <h4 class="media-heading">
+                                                傻逼<span> |</span> <span>2017-07-07</span>
+                                            </h4>
+                                            <p>
+                                                任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。因为有了规范的办事程序，
+                                            </p>
+                                            <a href="javascript:;">回复</a>
+                                        </div>
+                                    </div>
+                                    <!--end media-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="blog-side-item">
+                        <div class="search-row">
+                            <div class="input-group">
+                                <input type="text" class="form-control">
+                                <span class="input-group-btn"><button class="btn btn-default" type="button">
+							<i class="fa fa-search"></i></button></span>
+                            </div>
+                        </div>
+                        <div class="post-comment">
+                            <h3 class="skills">
+                                填写评论
+                            </h3>
+                            <input type="text" placeholder="名称" class="col-lg-12 form-control">
+                            <br/>
+                            <br/>
+                            <input type="text" placeholder="邮箱" class="col-lg-12 form-control">
+                            <br/>
+                            <br/>
+                            <input type="text" placeholder="5+5=?" class="col-lg-12 form-control">
+                            <br/>
+                            <br/>
+                            <textarea placeholder="填写内容" rows="8" class=" form-control"> </textarea>
+                            <br/>
+                            <br/>
+                            <button type="submit" class="btn btn-info pull-right" style="width:100%;"> 提交评论 </button>
+
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="tags">
+                            <h3>
+                                标签
+                            </h3>
+                            <ul class="tag">
+                                <li>
+                                    <a href="#">
+                    <i class="fa fa-tags pr-5">
+                    </i>
+                    科技
+                  </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                    <i class="fa fa-tags pr-5">
+                    </i>
+                    傻逼
+                  </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <!--container end-->
+
+
+        <!--container end-->
 
         <!--footer start-->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-3 address wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                        <h1>
+                            联系方式
+                        </h1>
+                        <address>
+                            <p><i class="fa fa-copyright pr-10"></i>&nbsp; 名称 ：深圳筑星科技有限公司</p>
+                            <p><i class="fa fa-phone pr-10"></i>&nbsp;&nbsp; 电话 : 0755-86240165</p>
+                            <p><i class="fa fa-fax pr-10"></i> &nbsp;传真 : 0755-86240165</p>
+                            <p><i class="fa fa-envelope pr-10"></i>&nbsp; 邮箱 : <a href="javascript:;">szbstar@bstar5.com</a></p>
+                            <p><i class="fa fa-map-signs pr-10"></i> &nbsp;地址 : 深圳市南山区凯达尔集团中心大厦A座1201 </p>
+                        </address>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".3s">
+                        <h1>
+                            产品咨询
+                        </h1>
+                        <div id="owl-slide">
+                            <div class="tweet-box">
+                                <i class="fa fa-user-circle"> </i>蒋先生<br/>dial:
+                                <a href="javascript:;">13265731349</a>
+                            </div>
+                            <div class="tweet-box">
+                                <i class="fa fa-user-circle-o"> </i>伍先生<br/>dial:
+                                <a href="javascript:;">15118168052</a>
+                            </div>
+                            <div class="tweet-box">
+                                <i class="fa fa-user-circle"> </i>叶先生<br/>dial:
+                                <a href="javascript:;">18122776916</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3">
+                        <div class="page-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".5s">
+                            <h1>
+                                快速导航
+                            </h1>
+                            <ul class="page-footer-list">
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">公司简介</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">产品中心</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">解决方案</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">联系我们</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">加入我们</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3">
+
+                        <div class="text-footer wow fadeInUp" style="padding:0px;" data-wow-duration="2s" data-wow-delay=".7s">
+                            <h1>
+                                关注我们
+                            </h1>
+                            <p>
+                                微信公众号，微博平台，已经发布，感谢大家的关（zhi）注（zhang）;
+                            </p>
+                            <p>
+                                <img class="col-lg-6 col-sm-6" src="../../assets/img/weixin_qrcode.png" />
+                                <img class="col-lg-6 col-sm-6" src="../../assets/img/weibo_qrcode.png" />
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+        <footer class="footer-small">
+            <div class="container">
+                <div class="row">
+                    <!--<div class="col-lg-4 col-sm-4 pull-right">
+                    </div>-->
+                    <div class="col-md-12 wow  bounceInLeft">
+                        <div class="copyright">
+                            Copyright ©2016 深圳筑星科技有限公司 All Rights Reserved 粤ICP备15080540号
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
         <!-- footer end -->
         <img class="bs_busy" v-if="isbusy" src="../../assets/img/isbusy.gif" />
     </div>

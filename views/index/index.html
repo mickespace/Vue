@@ -56,14 +56,13 @@
                 <!-- menu start -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li><a style="color: #3498DB;" href="../index/index.html">&nbsp;&nbsp;首&nbsp;页&nbsp;&nbsp;</a></li>
+                        <li><a style="color: #3da8f5;" href="../index/index.html">&nbsp;&nbsp;首&nbsp;页&nbsp;&nbsp;</a></li>
                         <li class="dropdown">
                             <a href="../product/product.html" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;产&nbsp;品&nbsp;&nbsp;</a>
                             <ul class="dropdown-menu">
                                 <li><a href="../product/product.html">产品简介</a></li>
                                 <li><a href="../product/plugin.html">功能模块</a></li>
                                 <li><a href="../product/download.html">产品下载</a></li>
-                                <li><a href="#">合作案例</a></li>
                             </ul>
                         </li>
                         <li class="dropdown  megamenu-fw">
@@ -107,20 +106,6 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <!--<div class="col-menu col-md-3">
-                                            <h6 class="title">Title Menu Four</h6>
-                                            <div class="content">
-                                                <ul class="menu-col">
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                    <li><a href="#">Custom Menu</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>-->
-                                        <!-- end col-3 -->
                                     </div>
                                     <!-- end row -->
                                 </li>
@@ -146,24 +131,27 @@
             <div class="side">
                 <a href="#" class="close-side"><i class="fa fa-close "></i></a>
                 <div class="widget">
-                    <h6 class="title">Custom Pages</h6>
-                    <ul class="link">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="widget">
-                    <h6 class="title">Additional Links</h6>
-                    <ul class="link">
-                        <li><a href="#">Retina Homepage</a></li>
-                        <li><a href="#">New Page Examples</a></li>
-                        <li><a href="#">Parallax Sections</a></li>
-                        <li><a href="#">Shortcode Central</a></li>
-                        <li><a href="#">Ultimate Font Collection</a></li>
-                    </ul>
+                    <h4 class="title">免费试用</h4>
+                    <span style="color:white;">完成手机验证后立即开始试用</span><br/><br/>
+                    <input type="text" class="form-control" id="phone" placeholder="请输入手机号">
+                    <br/>
+                    <input type="text" class="form-control" id="phone" placeholder="请输入单位">
+                    <br/>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="输入红色数字">
+                        <span class="input-group-btn">
+                              <button class="btn btn-default" type="button">3<i style="color:red;">8</i>93<i style="color:red;">8</i>7<i style="color:red;">8</i></button>
+                        </span>
+                    </div>
+                    <br/>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="短信验证码">
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" id="send_code" type="button" data-complete-text="发送成功">获取验证码</button>
+                    </span>
+                    </div>
+                    <br/>
+                    <button class="btn btn-primary" style="width:100%;" type="button">立即试用</button>
                 </div>
             </div>
             <!-- End Side Menu -->
@@ -182,7 +170,7 @@
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="item" v-bind:class="{active:parallax.IsFirst}" v-for="parallax in parallaxInfo.Parallaxs">
-                            <img class="first-slide lazy" v-bind:data-original="parallax.BgImgUrl" alt="First slide">
+                            <img class="first-slide lazy" v-bind:src="parallax.BgImgUrl" alt="First slide">
                             <div class="container" style="padding-top:150px;">
                                 <div class="row">
                                     <div class="col-sm-3 col-md-7 wow bounceInRight">
@@ -290,7 +278,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-sm-6 text-center wow  bounceInLeft" data-wow-delay=".1s">
-                        <img class="lazy" data-original="assets/img/project_bg.jpg" width="100%" height="100%" alt="">
+                        <img class="lazy" v-bind:data-original="productInfo.ImgUrl" width="100%" height="100%" alt="">
                     </div>
                     <div class="col-lg-6 col-sm-6 wow  bounceInRight">
 
@@ -327,7 +315,7 @@
                         </div>
                         <div v-for="team in teamInfo.Teams" class="col-xs-12 col-sm-6 col-md-3">
                             <div class="thumbnail wow  fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                <img :src="team.ImgUrl" alt="" v-on:click="showmessage">
+                                <img class="lazy" v-bind:data-original="team.ImgUrl" alt="" v-on:click="showmessage">
                                 <div class="caption">
                                     <h4>
                                         {{team.Name}}

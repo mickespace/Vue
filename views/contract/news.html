@@ -21,7 +21,7 @@
 <body>
     <div id="app">
         <!--header start-->
-        <nav class="navbar navbar-default navbar-fixed navbar-transparent dark bootsnav">
+        <nav class="navbar navbar-default navbar-fixed bootsnav">
             <!-- search start -->
             <div class="top-search">
                 <div class="container">
@@ -56,7 +56,7 @@
                 <!-- menu start -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li><a style="color: #3498DB;" href="../index/index.html">&nbsp;&nbsp;首&nbsp;页&nbsp;&nbsp;</a></li>
+                        <li><a style="color: #3da8f5;" href="../index/index.html">&nbsp;&nbsp;首&nbsp;页&nbsp;&nbsp;</a></li>
                         <li class="dropdown">
                             <a href="../product/product.html" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;产&nbsp;品&nbsp;&nbsp;</a>
                             <ul class="dropdown-menu">
@@ -181,21 +181,33 @@
                 <div class="container">
                     <div class="col-md-3">
                         <div class="row">
-
+                            <div class="bs_news_search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-btn"><button class="btn btn-default" type="button">
+							<i class="fa fa-search"></i></button></span>
+                                </div>
+                                <div class="bs_news_label">
+                                    <span>筛选：</span><br/>
+                                    <span class="label label-default">新闻</span>
+                                    <span class="label label-primary">咨询</span>
+                                    <span class="label label-success">大事件</span>
+                                    <span class="label label-info">科技</span>
+                                    <span class="label label-default">人物</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-9">
-                        <div class="text-center">
-                            <h4>{{newsInfo.Title}}</h4>
-                        </div>
-                        <div class="row" v-for="news in newsInfo.News">
-                            <div class="col-md-4 bs_news_item_img">
+                        <div class="row bs_news_item" v-for="news in newsInfo.News">
+                            <div v-on:click="methods.handleDetail(news.Id)" class="col-md-4 bs_news_item_img">
                                 <img v-bind:src="news.ImgUrl" alt="">
                             </div>
                             <div class="col-md-8 bs_news_item_detail">
-                                <h4>{{news.Title}}</h4>
+                                <h4 v-on:click="methods.handleDetail(news.Id)">{{news.Title}}</h4>
                                 <span> 作者：{{news.Author}} 日期：{{news.CreateDate}}</span><br/>
                                 <p>{{news.Abstract}}</p>
+                                <h6 v-on:click="methods.handleDetail(news.Id)">查看内容</h6>
                             </div>
                         </div>
                         <div>

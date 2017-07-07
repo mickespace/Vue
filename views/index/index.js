@@ -46,22 +46,22 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'carousel', 'modernizr', 'too
                 Parallaxs: [{
                     Title: '震撼发布',
                     Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
-                    BgImgUrl: 'assets/img/parallax_bg.jpg',
-                    ImgUrl: 'assets/img/2.png',
+                    BgImgUrl: 'assets/img/index/parallax/1.png',
+                    ImgUrl: 'assets/img/index/parallax/side_1.png',
                     IsFirst: true
 
                 }, {
                     Title: 'BIM平台',
                     Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
-                    BgImgUrl: 'assets/img/parallax_bg.jpg',
-                    ImgUrl: 'assets/img/2.png',
+                    BgImgUrl: 'assets/img/index/parallax/2.png',
+                    ImgUrl: 'assets/img/index/parallax/side_2.png',
                     IsFirst: false
 
                 }, {
                     Title: '二次开发',
                     Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
-                    BgImgUrl: 'assets/img/parallax_bg.jpg',
-                    ImgUrl: 'assets/img/2.png',
+                    BgImgUrl: 'assets/img/index/parallax/3.png',
+                    ImgUrl: 'assets/img/index/parallax/side_3.png',
                     IsFirst: false
                 }]
             },
@@ -86,7 +86,7 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'carousel', 'modernizr', 'too
 
             videoInfo: {
                 Title: '这个人是傻逼吗？',
-                ImgUrl: 'assets/img/video_bg.jpg',
+                ImgUrl: 'assets/img/index/video_bg.png',
                 VideoUrl: 'assets/video/product.mp4'
             },
             teamInfo: {
@@ -95,26 +95,26 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'carousel', 'modernizr', 'too
                 Teams: [{
                     Name: 'SB GHH STAR',
                     Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
-                    ImgUrl: 'assets/img/team/member1.jpg'
+                    ImgUrl: 'assets/img/index/team/member1.jpg'
                 }, {
                     Name: '郭花花',
                     Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
-                    ImgUrl: 'assets/img/team/member2.jpg'
+                    ImgUrl: 'assets/img/index/team/member2.jpg'
                 }, {
                     Name: 'SB GHH STAR',
                     Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
-                    ImgUrl: 'assets/img/team/member3.jpg'
+                    ImgUrl: 'assets/img/index/team/member3.jpg'
                 }, {
                     Name: 'SB GHH STAR',
                     Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
-                    ImgUrl: 'assets/img/team/member4.jpg'
+                    ImgUrl: 'assets/img/index/team/member4.jpg'
                 }]
 
             },
             productInfo: {
                 Title: '产品中心',
                 Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
-                ImgUrl: 'assets/img/project_bg.jpg',
+                ImgUrl: 'assets/img/index/project_bg.png',
                 Content: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
                 Products: [{
                     Name: '筑星科技',
@@ -175,4 +175,11 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'carousel', 'modernizr', 'too
     $("img.lazy").lazyload({
         effect: "fadeIn"
     })
+    $(function () {
+        $("#send_code").click(function () {
+            $(this).button('loading').delay(1000).queue(function () {
+                $(this).button('complete');
+            });
+        });
+    });
 });

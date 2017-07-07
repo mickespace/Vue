@@ -68,7 +68,7 @@ nav.navbar.bootsnav ul.nav li.active>a:hover,
 nav.navbar.bootsnav ul.nav li.active>a:focus,
 nav.navbar.bootsnav ul.nav li.active>a {
     background-color: transparent;
-    color: #3498DB;
+    color: #3da8f5;
 }
 
 nav.navbar.bootsnav .navbar-toggle {
@@ -1362,13 +1362,13 @@ ul.cart-list>li.total>.btn {
         margin-top: 0;
     }
     nav.navbar .navbar-brand img.logo {
-        width: 50px;
+        width: 120px;
     }
     nav.navbar .navbar-brand {
         margin-top: 0;
     }
     nav.navbar .navbar-brand img.logo {
-        width: 50px;
+        width: 120px;
     }
     nav.navbar li.dropdown ul.dropdown-menu {
         border-top: solid 5px;
@@ -1432,7 +1432,7 @@ ul.cart-list>li.total>.btn {
         top: -2px;
     }
     nav.navbar .navbar-brand img.logo {
-        width: 30px;
+        width: 72px;
     }
     .attr-nav>ul>li>a {
         padding: 16px 15px 15px;
@@ -1673,7 +1673,7 @@ nav.navbar .dropdown .megamenu-content .col-menu.on .title,
 nav.navbar ul.nav>li>a:hover,
 nav.navbar ul.nav li.active>a,
 nav.navbar li.dropdown ul.dropdown-menu>li a:hover {
-    color: #3498DB;
+    color: #3da8f5;
 }
 
 nav.navbar.navbar-transparent ul.nav>li>a:hover,
@@ -1682,13 +1682,13 @@ nav.navbar ul.nav li.scroll.active>a,
 nav.navbar.navbar-dark ul.nav li.dropdown ul.dropdown-menu>li>a:hover,
 nav.navbar ul.nav li.dropdown.on>a,
 nav.navbar-dark ul.nav li.dropdown.on>a {
-    color: #3498DB !important;
+    color: #3da8f5 !important;
 }
 
 @media(max-width:920px) {
     nav.navbar .dropdown .megamenu-content .col-menu ul>li>a:hover,
     nav.navbar.navbar-dark .dropdown .megamenu-content .col-menu .title:hover {
-        color: #3498DB !important;
+        color: #3da8f5 !important;
     }
 }
 
@@ -1698,11 +1698,11 @@ Border
 =========================== */
 
 ul.cart-list>li.total>.btn {
-    border-color: #3498DB;
+    border-color: #3da8f5;
 }
 
 nav.navbar li.dropdown ul.dropdown-menu {
-    border-top-color: #3498DB !important;
+    border-top-color: #3da8f5 !important;
 }
 
 
@@ -1713,10 +1713,10 @@ Background
 ul.cart-list>li.total>.btn,
 nav.navbar .share ul>li>a:hover,
 nav.navbar .share ul>li>a:focus {
-    background-color: #3498DB;
+    background-color: #3da8f5;
 }
 
 ul.cart-list>li.total>.btn:hover,
 ul.cart-list>li.total>.btn:focus {
-    background-color: #3498DB !important;
+    background-color: #3da8f5 !important;
 }

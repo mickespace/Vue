@@ -3,17 +3,6 @@
     padding-top: 80px;
 }
 
-.bs_fullpage_side {
-    color: white;
-    text-align: right;
-    position: absolute;
-    z-index: 3;
-    right: 0px;
-    top: 200px;
-    margin-right: -20px;
-    overflow: hidden;
-}
-
 .bs_fullpage_content {
     color: white;
     text-align: left;
@@ -75,52 +64,101 @@
     -webkit-transition-duration: 0ms !important;
 }
 
-#navBar {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
+@media only screen and (max-width: 1024px) {
+    .bs_fullpage {
+        background-color: #505050;
+        padding-top: 110px;
+    }
+    .bs_fullpage_content {
+        display: none;
+        height: 50px;
+    }
+    .bs_fullpage_side {
+        height: 50px;
+        color: white;
+        text-align: right;
+        position: absolute;
+        z-index: 3;
+        bottom: 0px;
+        left: 50px;
+        float: left;
+        overflow: hidden;
+    }
+    #navBar {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+    }
+    #navBar li {
+        background-color: #808080;
+        color: white;
+        cursor: pointer;
+        height: 40px;
+        width: 40px;
+        line-height: 35px;
+        border-radius: 50%;
+        text-align: center;
+        float: left;
+        border: 3px solid white;
+    }
+    #navBar li:hover {
+        background-color: #239ae6;
+        color: white;
+        height: 40px;
+        width: 40px;
+        line-height: 30px;
+        border: 5px solid white;
+    }
+    #navBar .active {
+        background-color: #239ae6;
+        color: white;
+        line-height: 30px;
+        border: 5px solid white;
+    }
 }
 
-#navBar li {
-    background-color: #808080;
-    color: white;
-    cursor: pointer;
-    margin-bottom: 30px;
-    height: 40px;
-    width: 40px;
-    line-height: 35px;
-    border-radius: 50%;
-    text-align: center;
-    border: 3px solid white;
+@media screen and (min-width:1025px) {
+    .bs_fullpage_side {
+        color: white;
+        text-align: right;
+        position: absolute;
+        z-index: 3;
+        right: 0px;
+        top: 200px;
+        margin-right: -20px;
+        overflow: hidden;
+    }
+    #navBar {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+    }
+    #navBar li {
+        background-color: #808080;
+        color: white;
+        cursor: pointer;
+        margin-bottom: 30px;
+        height: 40px;
+        width: 40px;
+        line-height: 35px;
+        border-radius: 50%;
+        text-align: center;
+        border: 3px solid white;
+    }
+    #navBar li:hover {
+        background-color: #239ae6;
+        color: white;
+        height: 40px;
+        width: 40px;
+        line-height: 30px;
+        border: 5px solid white;
+    }
+    #navBar .active {
+        background-color: #239ae6;
+        color: white;
+        line-height: 30px;
+        border: 5px solid white;
+    }
 }
-
-#navBar li:hover {
-    background-color: #239ae6;
-    color: white;
-    height: 40px;
-    width: 40px;
-    line-height: 30px;
-    border: 5px solid white;
-}
-
-#navBar .active {
-    background-color: #239ae6;
-    color: white;
-    line-height: 30px;
-    border: 5px solid white;
-}
-
-
-/*#navBar li i {
-    background-color: #808080;
-    color: white;
-    cursor: pointer;
-    margin-bottom: 10px;
-    transition: all .7s ease;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 30px;
-}*/

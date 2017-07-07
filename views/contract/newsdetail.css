@@ -1,0 +1,11 @@
+.bs_newsdetail {
+    width: 100%;
+    z-index: 1;
+    background: url(assets/img/news/newsdetail.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 600px;
+    padding-top: 80px;
+}

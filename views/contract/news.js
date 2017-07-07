@@ -43,73 +43,51 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'carousel', 'modernizr', 'too
             isbusy: false,
             newsInfo: {
                 Title: '筑星新闻',
-                Abstract:'想了解我们更多，那就关注我们的新闻动态吧。',
+                Abstract: '想了解我们更多，那就关注我们的新闻动态吧。',
                 News: [{
+                    Id: 1,
                     Title: '震撼发布',
                     Abstract: '这就是新闻，具有傻逼性质的文字描述就是新闻，具有傻逼性质的文字描述就是新闻，具有傻逼性质的文字描述就是新闻，具有傻逼性质的文字描述就是新闻，具有傻逼性质的文字描述事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
                     Author: '陈俊良',
                     CreateDate: '2017-07-07',
-                    ImgUrl:'assets/img/news/news.jpg'
+                    ImgUrl: 'assets/img/news/news.jpg'
                 }, {
+                    Id: 2,
                     Title: '震撼发布',
-                    Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
+                    Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
                     Author: '陈俊良',
+                    Content: 'asdfasdfasdf',
                     CreateDate: '2017-07-07',
-                    ImgUrl:'assets/img/news/news.jpg'
-                },{
-                    Title: '震撼发布',
-                    Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
-                    Author: '陈俊良',
-                    CreateDate: '2017-07-07',
-                     ImgUrl:'assets/img/news/news.jpg'
+                    ImgUrl: 'assets/img/news/news.jpg'
                 }, {
+                    Id: 3,
                     Title: '震撼发布',
-                    Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
+                    Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
+                    Author: '陈俊良',
+                    Content: 'asdfasdfasdf',
+                    CreateDate: '2017-07-07',
+                    ImgUrl: 'assets/img/news/news.jpg'
+                }, {
+                    Id: 4,
+                    Title: '震撼发布',
+                    Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
+                    Author: '陈俊良',
+                    Content: 'asdfasdfasdf',
+                    CreateDate: '2017-07-07',
+                    ImgUrl: 'assets/img/news/news.jpg'
+                }, {
+                    Id: 5,
+                    Title: '震撼发布',
+                    Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
                     Author: '陈俊良',
                     CreateDate: '2017-07-07',
-                     ImgUrl:'assets/img/news/news.jpg'
-                },{
-                    Title: '震撼发布',
-                    Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
-                    Author: '陈俊良',
-                    CreateDate: '2017-07-07',
-                     ImgUrl:'assets/img/news/news.jpg'
-                },]
+                    Content: 'asdfasdfasdf',
+                    ImgUrl: 'assets/img/news/news.jpg'
+                }, ]
             },
-          
             methods: {
-                showmessage: function () {
-                    app.isbusy = true;
-                    jquery.ajax({
-                        type: 'get',
-                        timeout: 5000,
-                        url: 'http://192.16.10.100:19432/api/v1/user/login',
-                        data: {
-                            appKey: '908F0991-0E14-484F-91E7-DAAF0F4B2A37',
-                            userName: '13642520884',
-                            password: '123456'
-                        },
-                        dataType: 'json',
-                        success: function (res) {
-                            app.isbusy = false;
-                        },
-                        error: function () {
-                            app.isbusy = false;
-                            app.teamInfo.Teams = [{
-                                Name: 'SB GHH STAR',
-                                Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
-                                ImgUrl: 'assets/img/team/member1.jpg'
-                            }, {
-                                Name: 'SB GHH STAR',
-                                Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
-                                ImgUrl: 'assets/img/team/member3.jpg'
-                            }, {
-                                Name: 'SB GHH STAR',
-                                Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
-                                ImgUrl: 'assets/img/team/member4.jpg'
-                            }];
-                        }
-                    });
+                handleDetail: function (Id) {
+                    $(location).attr('href', 'newsdetail.html?newId=' + Id);
                 }
             }
         }
