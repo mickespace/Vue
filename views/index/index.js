@@ -86,7 +86,7 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'carousel', 'modernizr', 'too
 
             videoInfo: {
                 Title: '这个人是傻逼吗？',
-                ImgUrl: 'assets/img/index/video_bg.png',
+                ImgUrl: 'assets/img/index/video.jpg',
                 VideoUrl: 'assets/video/product.mp4'
             },
             teamInfo: {
@@ -114,7 +114,7 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'carousel', 'modernizr', 'too
             productInfo: {
                 Title: '产品中心',
                 Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
-                ImgUrl: 'assets/img/index/project_bg.png',
+                ImgUrl: 'assets/img/index/project.jpg',
                 Content: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
                 Products: [{
                     Name: '筑星科技',

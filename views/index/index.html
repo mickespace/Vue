@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>首 页</title>
     <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.css">
-    <link href="../../fonts/FontAwesome/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../lib/bootstrap/bootsnav.css">
     <link rel="stylesheet" href="../../lib/bootstrap/animate.css">
     <link rel="stylesheet" href="../../lib/bootstrap/overwrite.css">
@@ -16,6 +15,7 @@
     <link rel="stylesheet" href="../../lib/common/footer.css">
     <link rel="stylesheet" href="../../lib/common/busy.css">
     <link rel="stylesheet" href="../../lib/toolbar/toolbar.css">
+    <link href="../../fonts/FontAwesome/font-awesome.css" rel="stylesheet">
 </head>
 
 <body>
@@ -38,6 +38,7 @@
                 <div class="attr-nav">
                     <ul>
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                         <li class="side-menu"><a href="#"><i class="fa fa-tags"></i><span class="badge">立即试用</span></a></li>
                     </ul>
                 </div>
@@ -58,57 +59,19 @@
                     <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                         <li><a style="color: #3da8f5;" href="../index/index.html">&nbsp;&nbsp;首&nbsp;页&nbsp;&nbsp;</a></li>
                         <li class="dropdown">
-                            <a href="../product/product.html" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;产&nbsp;品&nbsp;&nbsp;</a>
+                            <a href="../product/product.html" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;开放平台&nbsp;&nbsp;</a>
                             <ul class="dropdown-menu">
-                                <li><a href="../product/product.html">产品简介</a></li>
-                                <li><a href="../product/plugin.html">功能模块</a></li>
+                                <li><a href="../product/product.html">平台介绍</a></li>
+                                <li><a href="../product/plugin.html">应用商店</a></li>
+                                <li><a href="../product/download.html">二次开发</a></li>
                                 <li><a href="../product/download.html">产品下载</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown  megamenu-fw">
-                            <a href="../service/service.html" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;服&nbsp;务&nbsp;&nbsp;</a>
-                            <ul class="dropdown-menu megamenu-content" role="menu">
-                                <li>
-                                    <div class="row">
-                                        <!-- end col-3 -->
-                                        <div class="col-menu col-md-4">
-                                            <h6 class="title">服务介绍</h6>
-                                            <div class="content">
-                                                <ul class="menu-col">
-                                                    <li><a href="#">服务指南</a></li>
-                                                    <li><a href="#">服务方案</a></li>
-                                                    <li><a href="#">服务体系</a></li>
-                                                    <li><a href="#">服务机构</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-menu col-md-4">
-                                            <h6 class="title">BIM方案</h6>
-                                            <div class="content">
-                                                <ul class="menu-col">
-                                                    <li><a href="#">项目策划</a></li>
-                                                    <li><a href="#">设计阶段</a></li>
-                                                    <li><a href="#">施工阶段</a></li>
-                                                    <li><a href="#">运维阶段</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <!-- end col-3 -->
-                                        <div class="col-menu col-md-4">
-                                            <h6 class="title">项目案例</h6>
-                                            <div class="content">
-                                                <ul class="menu-col">
-                                                    <li><a href="#">实施项目</a></li>
-                                                    <li><a href="#">运维项目</a></li>
-                                                    <li><a href="#">监控项目</a></li>
-                                                    <li><a href="#">案例展示</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end row -->
-                                </li>
+                        <li class="dropdown">
+                            <a href="../product/product.html" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;解决方案&nbsp;&nbsp;</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../product/product.html">服务介绍</a></li>
+                                <li><a href="../product/plugin.html">项目案例</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -129,7 +92,7 @@
 
             <!-- Start Side Menu -->
             <div class="side">
-                <a href="#" class="close-side"><i class="fa fa-close "></i></a>
+                <a href="#" class="close-side"><i class="fa fa-close"></i></a>
                 <div class="widget">
                     <h4 class="title">免费试用</h4>
                     <span style="color:white;">完成手机验证后立即开始试用</span><br/><br/>
@@ -227,7 +190,7 @@
 
         <!-- video strat-->
         <div class="bs_video_bg">
-            <img class="bs_video_img lazy" v-bind:data-original="videoInfo.ImgUrl">
+            <img class="bs_video_img lazy" v-bind:src="videoInfo.ImgUrl">
             <div class="container text-center">
                 <div class="row">
                     <div class="col-xs-3 col-md-1 bs_video_play ">
@@ -315,7 +278,7 @@
                         </div>
                         <div v-for="team in teamInfo.Teams" class="col-xs-12 col-sm-6 col-md-3">
                             <div class="thumbnail wow  fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                <img class="lazy" v-bind:data-original="team.ImgUrl" alt="" v-on:click="showmessage">
+                                <img class="lazy" v-bind:src="team.ImgUrl" alt="" v-on:click="showmessage">
                                 <div class="caption">
                                     <h4>
                                         {{team.Name}}

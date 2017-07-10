@@ -40,13 +40,14 @@
     border-style: none;
     content: "";
     display: block;
-    height: 22px;
+    height: 12px;
     left: 60px;
+    z-index: 0;
     position: absolute;
-    top: 65px;
+    top: 67px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-    width: 22px;
+    width: 12px;
 }
 
 .tweet-box a,

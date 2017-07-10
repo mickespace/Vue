@@ -32,5 +32,11 @@
 
 .carousel-control {
   position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.carousel-control span {
+  position: absolute;
   top: 50%;
 }
