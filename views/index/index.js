@@ -4,39 +4,25 @@ require.config({
         "vue": "vue/vue",
         "jquery": "jquery/jquery.min",
         "bootstrap": "bootstrap/bootstrap",
-        "bootsnav": "bootstrap/bootsnav",
         "carousel": "carousel/carousel",
         "modernizr": "parallax/modernizr",
-        "toolbar": "toolbar/toolbar",
         "lazyload": "jquery/lazyload",
     },
     shim: {
-        'vue': {
-            export: 'vue'
-        },
         'bootstrap': {
             deps: ['jquery'],
-            export: 'bootstrap'
-        },
-
-        'bootsnav': {
-            export: 'bootsnav'
         },
         'carousel': {
             deps: ['jquery'],
-            export: 'carousel'
-        },
-        'toolbar': {
-            export: 'toolbar'
         },
         'lazyload': {
             deps: ['jquery'],
-            export: 'lazyload'
         }
     }
 });
 
-require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'carousel', 'modernizr', 'toolbar', 'lazyload'], function (vue, jquery, bootstrap, bootsnav, carousel, modernizr, toolbar, lazyload) {
+require(['vue', 'jquery', 'bootstrap', 'carousel', 'modernizr', 'lazyload'], function (vue, jquery, bootstrap, carousel, modernizr, lazyload) {
+    alert('asdf');
     var app = new vue({
         el: '#app',
         data: {

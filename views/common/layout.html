@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>首 页</title>
+    <link href="../../fonts/FontAwesome/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../../lib/bootstrap/bootsnav.css">
+    <link rel="stylesheet" href="../../lib/bootstrap/animate.css">
+    <link rel="stylesheet" href="../../lib/bootstrap/bootsnavover.css">
+    <link rel="stylesheet" href="../../lib/common/footer.css">
+    <link rel="stylesheet" href="../../lib/toolbar/toolbar.css">
+    <link rel="stylesheet" href="layout.css">
+
+</head>
+
+<body>
+    <div id="app">
+        <!--header start-->
+        <nav class="navbar navbar-default navbar-fixed navbar-transparent dark bootsnav">
+            <!-- search start -->
+            <div class="top-search">
+                <div class="container">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-search lg"></i></span>
+                        <input type="text" class="form-control" placeholder="请输入...">
+                        <span class="input-group-addon close-search"><i class="fa fa-close"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- search end -->
+            <!-- cat start -->
+            <div class="container">
+                <div class="attr-nav">
+                    <ul>
+                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        <li><a class="btn big-login" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i></a></li>
+                        <li class="side-menu"><a href="#"><i class="fa fa-tags"></i><span class="badge">立即试用</span></a></li>
+                    </ul>
+                </div>
+                <div class="modal fade login" id="loginModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog login animated">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">Login with</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="box">
+                                    <div class="content">
+                                        <div class="social">
+                                            <a class="circle github" href="/auth/github">
+                                        <i class="fa fa-github fa-fw"></i>
+                                    </a>
+                                            <a id="google_login" class="circle google" href="/auth/google_oauth2">
+                                        <i class="fa fa-google-plus fa-fw"></i>
+                                    </a>
+                                            <a id="facebook_login" class="circle facebook" href="/auth/facebook">
+                                        <i class="fa fa-facebook fa-fw"></i>
+                                    </a>
+                                        </div>
+                                        <div class="division">
+                                            <div class="line l"></div>
+                                            <span>or</span>
+                                            <div class="line r"></div>
+                                        </div>
+                                        <div class="error"></div>
+                                        <div class="form loginBox">
+                                            <form method="post" action="/login" accept-charset="UTF-8">
+                                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+                                                <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <div class="content registerBox" style="display:none;">
+                                        <div class="form">
+                                            <form method="post" html="{:multipart=>true}" data-remote="true" action="/register" accept-charset="UTF-8">
+                                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+                                                <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
+                                                <input class="btn btn-default btn-register" type="submit" value="Create account" name="commit">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="forgot login-footer">
+                                    <span>Looking to 
+                                 <a href="javascript: showRegisterForm();">create an account</a>
+                            ?</span>
+                                </div>
+                                <div class="forgot register-footer" style="display:none">
+                                    <span>Already have an account?</span>
+                                    <a href="javascript: showLoginForm();">Login</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- cat end -->
+                <!-- logo start -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                    <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="../index/index.html">
+                    <img src="../../assets/img/logo_white.png" class="logo logo-display" alt="">
+                    <img src="../../assets/img/logo_black.png" class="logo logo-scrolled" alt="">
+                </a>
+                </div>
+                <!-- logo end -->
+                <!-- menu start -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li><a style="color: #3da8f5;" href="../index/index.html">&nbsp;&nbsp;首&nbsp;页&nbsp;&nbsp;</a></li>
+                        <li class="dropdown">
+                            <a href="../product/product.html" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;开放平台&nbsp;&nbsp;</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../product/product.html">平台介绍</a></li>
+                                <li><a href="../product/plugin.html">应用商店</a></li>
+                                <li><a href="../product/download.html">二次开发</a></li>
+                                <li><a href="../product/download.html">产品下载</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="../product/product.html" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;解决方案&nbsp;&nbsp;</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../product/product.html">服务介绍</a></li>
+                                <li><a href="../product/plugin.html">项目案例</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="../contract/company.html" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;关于筑星&nbsp;&nbsp;</a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="../contract/company.html">筑星简介</a></li>
+                                <li><a href="../contract/news.html">新闻动态</a></li>
+                                <li><a href="../contract/company.html#bsAddress">联系我们</a></li>
+                                <li><a href="../contract/join.html">加入我们</a></li>
+                            </ul>
+
+                        </li>
+                    </ul>
+                </div>
+                <!-- menu end -->
+            </div>
+
+            <!-- Start Side Menu -->
+            <div class="side">
+                <a href="#" class="close-side"><i class="fa fa-close"></i></a>
+                <div class="widget">
+                    <h4 class="title">免费试用</h4>
+                    <span style="color:white;">完成手机验证后立即开始试用</span><br/><br/>
+                    <input type="text" class="form-control" id="phone" placeholder="请输入手机号">
+                    <br/>
+                    <input type="text" class="form-control" id="phone" placeholder="请输入单位">
+                    <br/>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="输入红色数字">
+                        <span class="input-group-btn">
+                              <button class="btn btn-default" type="button">3<span style="color:red;">8</span>93
+                        <span style="color:red;">8</span>7<span style="color:red;">8</span></button>
+                        </span>
+                    </div>
+                    <br/>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="短信验证码">
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" id="send_code" type="button" data-complete-text="发送成功">获取验证码</button>
+                    </span>
+                    </div>
+                    <br/>
+                    <button class="btn btn-primary" style="width:100%;" type="button">立即试用</button>
+                </div>
+            </div>
+            <!-- End Side Menu -->
+        </nav>
+        <!--header end-->
+
+        <!--界面内容 start-->
+        <iframe id="mainFrame" name="mainFrame" scrolling="no" frameborder="0" style="padding: 0px; width: 100%; height:5000px;"
+            src="../index/index.html">
+
+        </iframe>
+        <!--界面内容 end-->
+
+
+        <!--footer start-->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-3 address wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                        <h1>
+                            联系方式
+                        </h1>
+                        <address>
+                            <p><i class="fa fa-copyright pr-10"></i>&nbsp; 名称 ：深圳筑星科技有限公司</p>
+                            <p><i class="fa fa-phone pr-10"></i>&nbsp;&nbsp; 电话 : 0755-86240165</p>
+                            <p><i class="fa fa-fax pr-10"></i> &nbsp;传真 : 0755-86240165</p>
+                            <p><i class="fa fa-envelope pr-10"></i>&nbsp; 邮箱 : <a href="javascript:;">szbstar@bstar5.com</a></p>
+                            <p><i class="fa fa-map-signs pr-10"></i> &nbsp;地址 : 深圳市南山区凯达尔集团中心大厦A座1201 </p>
+                        </address>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".3s">
+                        <h1>
+                            产品咨询
+                        </h1>
+                        <div id="owl-slide">
+                            <div class="tweet-box">
+                                <i class="fa fa-user-circle"> </i>蒋先生<br/>dial:
+                                <a href="javascript:;">13265731349</a>
+                            </div>
+                            <div class="tweet-box">
+                                <i class="fa fa-user-circle-o"> </i>伍先生<br/>dial:
+                                <a href="javascript:;">15118168052</a>
+                            </div>
+                            <div class="tweet-box">
+                                <i class="fa fa-user-circle"> </i>叶先生<br/>dial:
+                                <a href="javascript:;">18122776916</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3">
+                        <div class="page-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".5s">
+                            <h1>
+                                快速导航
+                            </h1>
+                            <ul class="page-footer-list">
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">公司简介</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">产品中心</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">解决方案</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">联系我们</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-angle-right"></i>
+                                    <a href="../contract/company.html">加入我们</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3">
+
+                        <div class="text-footer wow fadeInUp" style="padding:0px;" data-wow-duration="2s" data-wow-delay=".7s">
+                            <h1>
+                                关注我们
+                            </h1>
+                            <p>
+                                微信公众号，微博平台，已经发布，感谢大家的关（zhi）注（zhang）;
+                            </p>
+                            <p>
+                                <img class="col-lg-6 col-sm-6" src="../../assets/img/weixin_qrcode.png" />
+                                <img class="col-lg-6 col-sm-6" src="../../assets/img/weibo_qrcode.png" />
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+        <footer class="footer-small">
+            <div class="container">
+                <div class="row">
+                    <!--<div class="col-lg-4 col-sm-4 pull-right">
+                    </div>-->
+                    <div class="col-md-12 wow  bounceInLeft">
+                        <div class="copyright">
+                            Copyright ©2016 深圳筑星科技有限公司 All Rights Reserved 粤ICP备15080540号
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+        <!--toobar start-->
+        <ul id="menu" class="mfb-component--br mfb-zoomin wow bounceInUp" data-mfb-toggle="hover">
+            <li class="mfb-component__wrap">
+                <a href="#" class="mfb-component__button--main">
+                     <i class="mfb-component__main-icon--resting fa fa-plus"></i>
+                     <i class="mfb-component__main-icon--active fa fa-close"></i>
+                      </a>
+                <ul class="mfb-component__list">
+                    <li class="side-menu">
+                        <a href="#" data-mfb-label="" class="mfb-component__button--child">
+              <span class="mfb-component__child-icon ">试用</span>
+            </a>
+                    </li>
+                    <li>
+                        <a href="#" data-mfb-label="" class="mfb-component__button--child">
+              <span class="mfb-component__child-icon ">咨询</span>
+            </a>
+                    </li>
+
+                    <li>
+                        <a href="#app" data-mfb-label="" class="mfb-component__button--child">
+              <i class="mfb-component__child-icon fa fa-chevron-up fa-2x"></i>
+            </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!--toobar end-->
+    </div>
+    <script src="../../lib/require/require.js" defer async="async" data-main="layout"></script>
+    <script src="js/iframe.js"></script>
+    <script type="text/javascript">
+        startInit('mainFrame');
+    </script>
+</body>
+
+</html>

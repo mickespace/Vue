@@ -14,12 +14,10 @@
         <input type="button" v-bind:title="message" v-on:click="showmessage" value="fuck you">
         <br/>
         <p v-if="isshow">现在可以看得见。</p>
-
         <ul>
             <li v-for="item in messageData">
                 <input v-model="item.name" type="text">
                 <input type="button" v-bind:title="message" v-on:click="showmessage" v-model="item.detail">
-
             </li>
         </ul>
         <br/>
