@@ -1,19 +1,21 @@
 {
     "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "egde",
-            "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceRoot}"
+    "configurations": [{
+            "name": "Launch",
+            "type": "node",
+            "program": "${workspaceRoot}\\views\\common\\layout.html",
+            //这个配置成你要调试的文件"stopOnEntry": false,
+            "outFiles": "${workspaceRoot}\\views\\common\\layout.html",
+            "args": [
+
+            ],
+            "cwd": "${workspaceRoot}"
         },
         {
-            "type": "egde",
+            "name": "Attach",
+            "type": "node",
             "request": "attach",
-            "name": "Attach to Chrome",
-            "port": 9222,
-            "webRoot": "${workspaceRoot}"
+            "port": 5858
         }
     ]
 }

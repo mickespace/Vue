@@ -22,7 +22,6 @@ require.config({
 });
 
 require(['vue', 'jquery', 'bootstrap', 'carousel', 'modernizr', 'lazyload'], function (vue, jquery, bootstrap, carousel, modernizr, lazyload) {
-    alert('asdf');
     var app = new vue({
         el: '#app',
         data: {

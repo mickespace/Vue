@@ -6,6 +6,7 @@ require.config({
         "bootstrap": "bootstrap/bootstrap",
         "bootsnav": "bootstrap/bootsnav",
         "toolbar": "toolbar/toolbar",
+        "iframe": "iframe/iframe",
     },
     shim: {
         'vue': {
@@ -18,9 +19,18 @@ require.config({
         'bootsnav': {
             export: 'bootsnav'
         },
+        'iframe': {
+            export: 'iframe'
+        }
     }
 });
 
-require(['vue', 'jquery', 'bootstrap', 'bootsnav'], function (vue, jquery, bootstrap, bootsnav) {
-
+require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'iframe'], function (v, $) {
+    $(function () {
+        startInit('mainFrame');
+    });
+    var layout = new v({
+        el: '#layout',
+        data: {}
+    });
 });
