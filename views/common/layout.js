@@ -31,6 +31,54 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'iframe'], function (v, $) {
     });
     var layout = new v({
         el: '#layout',
-        data: {}
+        data: {
+            operModel: {
+                isLoginMode: true,
+                Name: '登录界面'
+            },
+            userInfo: {
+                Name: '陈俊良',
+                LoginTime: '2017-07-11',
+                Portrait: '2017-07-11',
+                IsLogin: false
+            },
+            loginModel: {
+                Account: '',
+                Password: ''
+            },
+            registerModel: {
+                Phone: '',
+
+            }
+        },
+        methods: {
+            SwitchMode: function () {
+                layout.operModel.isLoginMode = !layout.operModel.isLoginMode;
+                if (layout.operModel.isLoginMode) {
+                    Layout.operModel.Name = "登录界面";
+                } else {
+                    Layout.operModel.Name = "注册界面";
+                }
+            },
+
+            Login: function () {
+                //判断是否输入正确
+
+            },
+            Logout: function () {
+
+            },
+            Register: function () {
+
+            }
+        }
+    });
+
+    $(function () {
+        $("#send_code").click(function () {
+            $(this).button('loading').delay(1000).queue(function () {
+                $(this).button('complete');
+            });
+        });
     });
 });

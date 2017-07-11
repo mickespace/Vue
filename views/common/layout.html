@@ -130,15 +130,47 @@
 					&times;
 				</button>
                         <h4 class="modal-title" id="myModalLabel">
-                            登录界面
+                            {{operModel.Name}}
                         </h4>
                     </div>
                     <div class="modal-body">
-                        <div class="bs_login">
-
+                        <div class="bs_login" v-show="operModel.isLoginMode">
+                            <input type="text" v-model:value="loginModel.Account" class="form-control" id="phone" placeholder="请输入账号">
+                            <br/>
+                            <input type="password" v-model:value="loginModel.Password" class="form-control" id="phone" placeholder="请输入密码">
+                            <br/>
+                            <button class="btn btn-primary" v-on:click="Login" style="width:100%;" type="button">登录</button>
+                            <br/>
+                            <br/>
+                            <div class="text-center"><button v-on:click="SwitchMode">注册用户</button></div>
+                            <br/>
+                            <br/>
                         </div>
-                        <div class="">
+                        <div class="bs_register" v-show="!operModel.isLoginMode">
+                            <input type="text" class="form-control" id="phone" placeholder="请输入手机号">
+                            <br/>
 
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="输入红色数字">
+                                <span class="input-group-btn">
+                              <button class="btn btn-default" type="button">3<span style="color:red;">8</span>93
+                                <span style="color:red;">8</span>7<span style="color:red;">8</span></button>
+                                </span>
+                            </div>
+                            <br/>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="短信验证码">
+                                <span class="input-group-btn">
+                        <button class="btn btn-default" id="send_code" type="button" data-complete-text="发送成功">获取验证码</button>
+                    </span>
+                            </div>
+                            <br/>
+                            <input type="password" class="form-control" id="phone" placeholder="请输入密码">
+                            <br/>
+                            <input type="password" class="form-control" id="phone" placeholder="再次输入密码">
+                            <br/>
+
+                            <button class="btn btn-primary" style="width:100%;" type="button">立即试用</button>
                         </div>
                     </div>
                 </div>

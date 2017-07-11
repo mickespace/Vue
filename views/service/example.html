@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.css">
+    <link href="../../fonts/FontAwesome/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../lib/bootstrap/animate.css">
+    <link rel="stylesheet" href="../../lib/common/busy.css">
+    <link rel="stylesheet" href="example.css">
+</head>
+
+<body>
+    <div id="app">
+
+        <!--conent start-->
+        <div class="">
+            <div class="">
+            </div>
+
+        </div>
+
+        <!--content end-->
+
+
+        <img class="bs_busy" v-if="isbusy" src="../../assets/img/isbusy.gif" />
+    </div>
+    <script src="../../lib/require/require.js" defer async="async" data-main="example"></script>
+    <script src="../../lib/wow/wow.js"></script>
+    <script>
+        var wow = new WOW({
+            boxClass: 'wow',
+            animateClass: 'animated',
+            offset: 0,
+            mobile: true,
+            live: true
+        });
+        wow.init();
+    </script>
+</body>
+
+</html>

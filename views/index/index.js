@@ -160,11 +160,4 @@ require(['vue', 'jquery', 'bootstrap', 'carousel', 'modernizr', 'lazyload'], fun
     $("img.lazy").lazyload({
         effect: "fadeIn"
     })
-    $(function () {
-        $("#send_code").click(function () {
-            $(this).button('loading').delay(1000).queue(function () {
-                $(this).button('complete');
-            });
-        });
-    });
 });
