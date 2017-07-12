@@ -4,11 +4,8 @@ require.config({
         "vue": "vue/vue",
         "jquery": "jquery/jquery.min",
         "bootstrap": "bootstrap/bootstrap",
-        "bootsnav": "bootstrap/bootsnav",
-        "carousel": "carousel/carousel",
-        "modernizr": "parallax/modernizr",
-        "toolbar": "toolbar/toolbar",
         "lazyload": "jquery/lazyload",
+        "immersive": "immersive/immersive"
     },
     shim: {
         'vue': {
@@ -18,25 +15,18 @@ require.config({
             deps: ['jquery'],
             export: 'bootstrap'
         },
-
-        'bootsnav': {
-            export: 'bootsnav'
-        },
-        'carousel': {
-            deps: ['jquery'],
-            export: 'carousel'
-        },
-        'toolbar': {
-            export: 'toolbar'
-        },
         'lazyload': {
             deps: ['jquery'],
             export: 'lazyload'
+        },
+        'immersive': {
+            deps: ['jquery'],
+            export: 'immersive'
         }
     }
 });
 
-require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'carousel', 'modernizr', 'toolbar', 'lazyload'], function (vue, jquery, bootstrap, bootsnav, carousel, modernizr, toolbar, lazyload) {
+require(['vue', 'jquery', 'bootstrap', 'immersive', 'lazyload'], function (vue, jquery, bootstrap, immersive, lazyload) {
     var app = new vue({
         el: '#app',
         data: {
@@ -124,4 +114,9 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'carousel', 'modernizr', 'too
     $("img.lazy").lazyload({
         effect: "fadeIn"
     })
+    $(document).ready(function () {
+        $("#immersive_slider").immersive_slider({
+            container: ".bs_parallax"
+        });
+    });
 });
