@@ -1,0 +1,73 @@
+/*== iframe样式 ==*/
+
+.iframe {
+    width: 100%;
+    margin-top: 80px;
+    padding: 0;
+    border: 0 solid white;
+}
+
+@media only screen and (max-width: 1024px) {
+    .iframe {
+        width: 100%;
+        margin-top: 50px;
+    }
+}
+
+
+/*== 登录样式 ==*/
+
+.bs_login {
+    padding: 5px;
+    color: white;
+}
+
+.bs_login_title {
+    font-size: 18px;
+}
+
+.bs_login span {
+    color: #999999;
+    font-size: 12px;
+}
+
+.bs_login input {
+    margin-bottom: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.bs_login a {
+    line-height: 30px;
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.bs_login_group {
+    margin-bottom: 10px;
+}
+
+.bs_login_goregister {
+    text-align: right;
+}
+
+
+/*== 是否异步 ==*/
+
+.bs_busy {
+    width: 200px;
+    height: 200px;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9990;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}

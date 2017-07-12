@@ -124,31 +124,7 @@
         <!-- video end-->
 
 
-        <!-- project start -->
-        <div class="bs_project">
-            <div class="container">
-                <div class="text-center wow  bounceInLeft">
-                    <br/>
-                    <h2>{{ productInfo.Title }}</h2>
-                    <br/>
-                    <p>{{ productInfo.Abstract }}</p>
-                    <br/>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-sm-6 text-center wow  bounceInLeft" data-wow-delay=".1s">
-                        <img class="lazy" v-bind:data-original="productInfo.ImgUrl" width="100%" height="100%" alt="">
-                    </div>
-                    <div class="col-lg-6 col-sm-6 wow  bounceInRight">
 
-                        <p v-for="product in productInfo.Products">
-                            <i class="fa fa-check fa-2x pr-10">
-              </i>{{product.Abstract}}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- project end-->
 
         <!--talk start-->
         <div class="bs_quotation ">
@@ -191,9 +167,6 @@
         <!-- team end -->
 
         <!--content end-->
-
-
-        <img class="bs_busy" v-if="isbusy" src="../../assets/img/isbusy.gif" />
     </div>
     <script src="../../lib/require/require.js" defer async="async" data-main="index"></script>
     <script src="../../lib/wow/wow.js"></script>

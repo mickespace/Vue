@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.css">
     <link href="../../fonts/FontAwesome/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../lib/bootstrap/animate.css">
-    <link rel="stylesheet" href="../../lib/common/busy.css">
+    <link rel="stylesheet" href="../../lib/common/bstar.css">
     <link rel="stylesheet" href="example.css">
 </head>
 
@@ -16,16 +16,40 @@
     <div id="app">
 
         <!--conent start-->
-        <div class="">
-            <div class="">
-            </div>
-
-        </div>
-
+        <h1>案例介绍</h1>
+        <a href="../service/exampledetail.html?detailId=5">跳转到详细界面</a>
         <!--content end-->
+        <!-- project start -->
+        <div class="bs_project">
 
+            <div class="text-center wow  bounceInLeft">
+                <br/>
+                <h2>{{ projectInfo.Title }}</h2>
+                <br/>
+                <p>{{ projectInfo.Abstract }}</p>
+                <br/>
+            </div>
+        </div>
+        <div v-for="project in projectInfo.Projects">
+            <div v-bind:class="[{bs_project_item_bg: project.IsActive}]">
+                <div class="row bs_project_item">
+                    <div class="container">
+                        <div class="col-lg-6 col-sm-6 text-center wow  bounceInLeft" data-wow-delay=".1s">
+                            <img class="lazy" v-bind:data-original="project.ImgUrl" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="col-lg-6 col-sm-6 wow  bounceInRight">
 
-        <img class="bs_busy" v-if="isbusy" src="../../assets/img/isbusy.gif" />
+                            <p v-for="item in project.Items">
+                                <i class="fa fa-check fa-2x pr-10">
+              </i>{{item.Abstract}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- project end-->
     </div>
     <script src="../../lib/require/require.js" defer async="async" data-main="example"></script>
     <script src="../../lib/wow/wow.js"></script>

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="../../lib/bootstrap/bootsnav.css">
     <link rel="stylesheet" href="../../lib/bootstrap/animate.css">
-    <link rel="stylesheet" href="../../lib/bootstrap/bootsnavover.css">
+    <link rel="stylesheet" href="../../lib/common/header.css">
     <link rel="stylesheet" href="../../lib/common/footer.css">
     <link rel="stylesheet" href="../../lib/toolbar/toolbar.css">
     <link rel="stylesheet" href="layout.css">
@@ -33,22 +33,20 @@
             </div>
             <!-- search end -->
             <!-- cat start -->
-            <div class="container">
+            <div class="container" style="padding-bottom:0px; padding-top:0px;margin-top:0px; margin-bottom:0px;">
                 <div class="attr-nav">
                     <ul>
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                        <li><a class="btn big-login" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i></a></li>
-                        <li class="side-menu"><a href="#"><i class="fa fa-tags"></i><span class="badge">立即试用</span></a></li>
+                        <li class="side-menu"><a href="#"><i class="fa fa-user"></i><span  class="badge">&nbsp;试&nbsp;&nbsp;&nbsp;&nbsp;用&nbsp;</span></a></li>
                     </ul>
                 </div>
-
                 <!-- cat end -->
                 <!-- logo start -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                     <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="../index/index.html">
+                    <a class="navbar-brand" href="javascript:void(0)" v-on:click="NavigationTo('index/index', 'asdf')">
                     <img src="../../assets/img/logo_white.png" class="logo logo-display" alt="">
                     <img src="../../assets/img/logo_black.png" class="logo logo-scrolled" alt="">
                 </a>
@@ -57,130 +55,82 @@
                 <!-- menu start -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li><a style="color: #3da8f5;" href="../index/index.html">&nbsp;&nbsp;首&nbsp;页&nbsp;&nbsp;</a></li>
+                        <li><a href="javascript:void(0)" v-on:click="NavigationTo('index/index','','2950')">&nbsp;&nbsp;首&nbsp;页&nbsp;&nbsp;</a></li>
                         <li class="dropdown">
-                            <a href="../product/product.html" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;开放平台&nbsp;&nbsp;</a>
+                            <a href="javascript:void(0)" v-on:click="NavigationTo('product/product','','2000')" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;开放平台&nbsp;&nbsp;</a>
                             <ul class="dropdown-menu">
-                                <li><a href="../product/product.html">平台介绍</a></li>
-                                <li><a href="../product/plugin.html">应用商店</a></li>
-                                <li><a href="../product/download.html">二次开发</a></li>
-                                <li><a href="../product/download.html">产品下载</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/product','asdf','600')">平台介绍</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/store','asdf','600')">应用商店</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/plugin','asdf','600')">二次开发</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/download','asdf','600')">产品下载</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="../product/product.html" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;解决方案&nbsp;&nbsp;</a>
+                            <a href="javascript:void(0)" v-on:click="NavigationTo('service/service','','2000')" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;解决方案&nbsp;&nbsp;</a>
                             <ul class="dropdown-menu">
-                                <li><a href="../product/product.html">服务介绍</a></li>
-                                <li><a href="../product/plugin.html">项目案例</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('service/service','asdf','2000')">服务介绍</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('service/example','asdf','1000')">项目案例</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="../contract/company.html" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;关于筑星&nbsp;&nbsp;</a>
+                            <a href="javascript:void(0)" v-on:click="NavigationTo('contract/company','','2000')" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;关于筑星&nbsp;&nbsp;</a>
                             <ul class="dropdown-menu" role="menu">
 
-                                <li><a href="../contract/company.html">筑星简介</a></li>
-                                <li><a href="../contract/news.html">新闻动态</a></li>
-                                <li><a href="../contract/company.html#bsAddress">联系我们</a></li>
-                                <li><a href="../contract/join.html">加入我们</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('contract/company','','600')">筑星简介</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('contract/news','','2000')">新闻动态</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('contract/company','','600')">联系我们</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('contract/join','','1000')">加入我们</a></li>
                             </ul>
-
                         </li>
                     </ul>
                 </div>
                 <!-- menu end -->
             </div>
-
             <!-- Start Side Menu -->
             <div class="side">
                 <a href="#" class="close-side"><i class="fa fa-close"></i></a>
                 <div class="widget">
-                    <h4 class="title">免费试用</h4>
-                    <span style="color:white;">完成手机验证后立即开始试用</span><br/><br/>
-                    <input type="text" class="form-control" id="phone" placeholder="请输入手机号">
-                    <br/>
-                    <input type="text" class="form-control" id="phone" placeholder="请输入单位">
-                    <br/>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="输入红色数字">
-                        <span class="input-group-btn">
-                              <button class="btn btn-default" type="button">3<span style="color:red;">8</span>93
-                        <span style="color:red;">8</span>7<span style="color:red;">8</span></button>
-                        </span>
+                    <div class="bs_login" v-show="operModel.isLoginMode">
+                        <p class="bs_login_title">用户登录</p>
+                        <span><i class="fa fa-quote-left"></i>&nbsp;&nbsp;请输入用户名密码</span><br/><br/>
+
+                        <input type="text" class="form-control" id="phone" placeholder="请输入帐号">
+                        <input type="password" class="form-control" id="phone" placeholder="请输入密码">
+                        <button class="btn btn-primary" style="width:100%;" type="button">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+                        <div class="bs_login_goregister"><a v-on:click="SwitchMode">组册新用户&gt;&gt;</a></div>
                     </div>
-                    <br/>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="短信验证码">
-                        <span class="input-group-btn">
+                    <div class="bs_login" v-show="!operModel.isLoginMode">
+                        <p class="bs_login_title">创建用户</p>
+                        <span><i class="fa fa-quote-left"></i>&nbsp;&nbsp;完成手机验证创建用户</span><br/><br/>
+                        <input type="text" class="form-control" id="phone" placeholder="请输入手机号">
+                        <input type="text" class="form-control" id="phone" placeholder="请输入单位">
+                        <div class="input-group bs_login_group">
+                            <input type="text" class="form-control" placeholder="输入红色数字">
+                            <span class="input-group-btn">
+                              <button class="btn btn-default" type="button">3<span style="color:red;">8</span>93
+                            <span style="color:red;">8</span>7<span style="color:red;">8</span></button>
+                            </span>
+                        </div>
+                        <div class="input-group bs_login_group">
+                            <input type="text" class="form-control" placeholder="短信验证码">
+                            <span class="input-group-btn">
                         <button class="btn btn-default" id="send_code" type="button" data-complete-text="发送成功">获取验证码</button>
                     </span>
+                        </div>
+                        <button class="btn btn-primary" style="width:100%;" type="button">创建用户</button>
+                        <div><a v-on:click="SwitchMode">&lt;&lt;返回登录界面</a></div>
                     </div>
-                    <br/>
-                    <button class="btn btn-primary" style="width:100%;" type="button">立即试用</button>
                 </div>
             </div>
             <!-- End Side Menu -->
         </nav>
         <!--header end-->
-        <div class="modal fade" id="loginModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content" style="max-width:400px;">
-
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-					&times;
-				</button>
-                        <h4 class="modal-title" id="myModalLabel">
-                            {{operModel.Name}}
-                        </h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="bs_login" v-show="operModel.isLoginMode">
-                            <input type="text" v-model:value="loginModel.Account" class="form-control" id="phone" placeholder="请输入账号">
-                            <br/>
-                            <input type="password" v-model:value="loginModel.Password" class="form-control" id="phone" placeholder="请输入密码">
-                            <br/>
-                            <button class="btn btn-primary" v-on:click="Login" style="width:100%;" type="button">登录</button>
-                            <br/>
-                            <br/>
-                            <div class="text-center"><button v-on:click="SwitchMode">注册用户</button></div>
-                            <br/>
-                            <br/>
-                        </div>
-                        <div class="bs_register" v-show="!operModel.isLoginMode">
-                            <input type="text" class="form-control" id="phone" placeholder="请输入手机号">
-                            <br/>
-
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="输入红色数字">
-                                <span class="input-group-btn">
-                              <button class="btn btn-default" type="button">3<span style="color:red;">8</span>93
-                                <span style="color:red;">8</span>7<span style="color:red;">8</span></button>
-                                </span>
-                            </div>
-                            <br/>
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="短信验证码">
-                                <span class="input-group-btn">
-                        <button class="btn btn-default" id="send_code" type="button" data-complete-text="发送成功">获取验证码</button>
-                    </span>
-                            </div>
-                            <br/>
-                            <input type="password" class="form-control" id="phone" placeholder="请输入密码">
-                            <br/>
-                            <input type="password" class="form-control" id="phone" placeholder="再次输入密码">
-                            <br/>
-
-                            <button class="btn btn-primary" style="width:100%;" type="button">立即试用</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!--界面内容 start-->
-        <iframe id="mainFrame" name="mainFrame" scrolling="no" frameborder="0" src="../index/index.html" style="padding: 0px; width: 100%; "></iframe>
+        <div id="map">
+            <iframe class="iframe" id="mainFrame" name="mainFrame" scrolling="no" frameborder="0"></iframe>
+        </div>
         <!--界面内容 end-->
-
 
         <!--footer start-->
         <footer class="footer">
@@ -309,22 +259,10 @@
             </li>
         </ul>
         <!--toobar end-->
+
+        <img class="bs_busy" v-show="isbusy" src="../../assets/img/isbusy.gif" />
     </div>
     <script src="../../lib/require/require.js" defer async="async" data-main="layout"></script>
-    <!--<script type="text/javascript">
-        function SetCwinHeight() {
-            var iframeid = document.getElementById("mainFrame"); //iframe id
-            if (document.getElementById) {
-                if (iframeid && !window.opera) {
-                    if (iframeid.contentDocument && iframeid.contentDocument.body.offsetHeight) {
-                        iframeid.height = iframeid.contentDocument.body.offsetHeight;
-                    } else if (iframeid.Document && iframeid.Document.body.scrollHeight) {
-                        iframeid.height = iframeid.Document.body.scrollHeight;
-                    }
-                }
-            }
-        }
-    </script>-->
 </body>
 
 </html>

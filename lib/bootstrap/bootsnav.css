@@ -252,77 +252,6 @@ li.close-full-menu {
     padding: 3px 5px;
 }
 
-.attr-nav>ul>li.dropdown ul.dropdown-menu {
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px;
-    -o-border-radius: 0px;
-    border-radius: 0px;
-    -moz-box-shadow: 0px 0px 0px;
-    -webkit-box-shadow: 0px 0px 0px;
-    -o-box-shadow: 0px 0px 0px;
-    box-shadow: 0px 0px 0px;
-    border: solid 1px #e0e0e0;
-}
-
-ul.cart-list {
-    padding: 0 !important;
-    width: 250px !important;
-}
-
-ul.cart-list>li {
-    position: relative;
-    border-bottom: solid 1px #efefef;
-    padding: 15px 15px 23px 15px !important;
-}
-
-ul.cart-list>li>a.photo {
-    padding: 0 !important;
-    margin-right: 15px;
-    float: left;
-    display: block;
-    width: 50px;
-    height: 50px;
-    left: 15px;
-    top: 15px;
-}
-
-ul.cart-list>li img {
-    width: 50px;
-    height: 50px;
-    border: solid 1px #efefef;
-}
-
-ul.cart-list>li>h6 {
-    margin: 0;
-}
-
-ul.cart-list>li>h6>a.photo {
-    padding: 0 !important;
-    display: block;
-}
-
-ul.cart-list>li>p {
-    margin-bottom: 0;
-}
-
-ul.cart-list>li.total {
-    background-color: #f5f5f5;
-    padding-bottom: 15px !important;
-}
-
-ul.cart-list>li.total>.btn {
-    display: inline-block;
-    border-bottom: solid 1px #efefef !important;
-}
-
-ul.cart-list>li .price {
-    font-weight: bold;
-}
-
-ul.cart-list>li.total>span {
-    padding-top: 8px;
-}
-
 
 /* Top Search
 =================================*/
@@ -379,7 +308,7 @@ body.on-side {
     top: 0;
     right: -280px;
     width: 280px;
-    padding: 25px 30px;
+    padding: 20px 10px;
     height: 100%;
     display: block;
     background-color: #333;
@@ -523,9 +452,17 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked {
         padding-left: 30px;
         padding-right: 30px;
     }
+    .attr-nav {
+        border-left: 1px solid #ccc;
+        margin-top: 4px;
+    }
 }
 
 @media (min-width: 1024px) {
+    .attr-nav {
+        border-left: 1px solid #ccc;
+        margin-top: 4px;
+    }
     /* General Navbar
     =================================*/
     nav.navbar.bootsnav ul.nav .dropdown-menu .dropdown-menu {
@@ -643,21 +580,17 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked {
         padding-left: 15px;
     }
     nav.navbar.bootsnav.navbar-transparent.white {
-        background-color: rgba(255, 255, 255, 0.3);
+        background-color: rgba(255, 255, 255);
         border-bottom: solid 1px #bbb;
     }
     nav.navbar.navbar-inverse.bootsnav.navbar-transparent.dark,
     nav.navbar.bootsnav.navbar-transparent.dark {
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0);
         border-bottom: solid 1px #555;
     }
-    nav.navbar.bootsnav.navbar-transparent.white .attr-nav {
-        border-left: solid 1px #bbb;
-    }
+    nav.navbar.bootsnav.navbar-transparent.white .attr-nav {}
     nav.navbar.navbar-inverse.bootsnav.navbar-transparent.dark .attr-nav,
-    nav.navbar.bootsnav.navbar-transparent.dark .attr-nav {
-        border-left: solid 1px #555;
-    }
+    nav.navbar.bootsnav.navbar-transparent.dark .attr-nav {}
     nav.navbar.bootsnav.no-background.white .attr-nav>ul>li>a,
     nav.navbar.bootsnav.navbar-transparent.white .attr-nav>ul>li>a,
     nav.navbar.bootsnav.navbar-transparent.white ul.nav>li>a,
@@ -926,6 +859,9 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked {
 }
 
 @media (max-width: 992px) {
+    .attr-nav {
+        border-left: 0px solid white;
+    }
     /* Navbar Responsive
     =================================*/
     nav.navbar.bootsnav .navbar-brand {
@@ -1127,13 +1063,6 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked {
     .attr-nav>ul>li.dropdown>a.dropdown-toggle:before {
         display: none;
     }
-    .attr-nav>ul>li.dropdown ul.dropdown-menu {
-        margin-top: 2px;
-        margin-left: 55px;
-        width: 250px;
-        left: -250px;
-        border-top: solid 5px;
-    }
     .top-search .container {
         padding: 0 45px;
     }
@@ -1247,6 +1176,9 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked {
 }
 
 @media (max-width: 767px) {
+    .attr-nav {
+        border-left: 0px solid white;
+    }
     nav.navbar.bootsnav .navbar-header {
         padding-left: 15px;
         padding-right: 15px;
@@ -1397,20 +1329,20 @@ ul.cart-list>li.total>.btn {
     }
     /* Navbar Transparent & Fixed ------*/
     nav.navbar.bootsnav.navbar-transparent.white {
-        background-color: rgba(255, 255, 255, 0.3);
+        background-color: rgba(255, 255, 255, 0.8);
         border-bottom: solid 1px #bbb;
     }
     nav.navbar.navbar-inverse.bootsnav.navbar-transparent.dark,
     nav.navbar.bootsnav.navbar-transparent.dark {
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.8);
         border-bottom: solid 1px #555;
     }
     nav.navbar.bootsnav.navbar-transparent.white .attr-nav {
-        border-left: solid 1px #555;
+        border-left: solid 1px #bbb;
     }
     nav.navbar.navbar-inverse.bootsnav.navbar-transparent.dark .attr-nav,
     nav.navbar.bootsnav.navbar-transparent.dark .attr-nav {
-        border-left: solid 1px #555;
+        padding-left: 3px;
     }
     nav.navbar.bootsnav.no-background.white .attr-nav>ul>li>a,
     nav.navbar.bootsnav.navbar-transparent.white .attr-nav>ul>li>a,
@@ -1581,7 +1513,7 @@ nav.navbar-inverse.navbar-full .navbar-toggle {
         border-right: solid 1px #303030;
     }
     nav.navbar.navbar-inverse.navbar-transparent.dark {
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0);
         border-bottom: solid 1px #999;
     }
     nav.navbar.navbar-inverse.navbar-transparent.dark .attr-nav {

@@ -34,4 +34,60 @@
     <script src="../../lib/require/require.js" defer async="true" data-main="login"></script>
 </body>
 
+
+<div class="container">
+    <div class="attr-nav">
+        <ul>
+            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+            <li class="side-menu"><a href="#"><i class="fa fa-user"></i><span  class="badge">&nbsp;试&nbsp;&nbsp;&nbsp;&nbsp;用&nbsp;</span></a></li>
+        </ul>
+    </div>
+    <!-- cat end -->
+    <!-- logo start -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                    <i class="fa fa-bars"></i>
+                    </button>
+        <a class="navbar-brand" href="javacript:void()" v-on:click="NavigationTo('index/index', 'asdf')">
+                    <img src="../../assets/img/logo_white.png" class="logo logo-display" alt="">
+                    <img src="../../assets/img/logo_black.png" class="logo logo-scrolled" alt="">
+                </a>
+    </div>
+    <!-- logo end -->
+    <!-- menu start -->
+    <div class="collapse navbar-collapse" id="navbar-menu">
+        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+            <li><a href="javacript:void()" v-on:click="NavigationTo('index/index','asdf')">&nbsp;&nbsp;首&nbsp;页&nbsp;&nbsp;</a></li>
+            <li class="dropdown">
+                <a href="javacript:void()" v-on:click="NavigationTo('product/product','asdf')" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;开放平台&nbsp;&nbsp;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="javacript:void()" v-on:click="NavigationTo('product/product','asdf')">平台介绍</a></li>
+                    <li><a href="javacript:void()" v-on:click="NavigationTo('product/store','asdf')">应用商店</a></li>
+                    <li><a href="javacript:void()" v-on:click="NavigationTo('product/plugin','asdf')">二次开发</a></li>
+                    <li><a href="javacript:void()" v-on:click="NavigationTo('product/download','asdf')">产品下载</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="javacript:void()" v-on:click="NavigationTo('service/service','asdf')" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;解决方案&nbsp;&nbsp;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="javacript:void()" v-on:click="NavigationTo('service/service','asdf')">服务介绍</a></li>
+                    <li><a href="javacript:void()" v-on:click="NavigationTo('service/example','asdf')">项目案例</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="javacript:void()" v-on:click="NavigationTo('contract/company')" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;关于筑星&nbsp;&nbsp;</a>
+                <ul class="dropdown-menu" role="menu">
+
+                    <li><a href="javacript:void()" v-on:click="NavigationTo('contract/company')">筑星简介</a></li>
+                    <li><a href="javacript:void()" v-on:click="NavigationTo('contract/news')">新闻动态</a></li>
+                    <li><a href="javacript:void()" v-on:click="NavigationTo('contract/company')">联系我们</a></li>
+                    <li><a href="javacript:void()" v-on:click="NavigationTo('contract/join')">加入我们</a></li>
+                </ul>
+
+            </li>
+        </ul>
+    </div>
+    <!-- menu end -->
+</div>
+
 </html>
