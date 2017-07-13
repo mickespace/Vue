@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="../../lib/common/header.css">
     <link rel="stylesheet" href="../../lib/common/footer.css">
     <link rel="stylesheet" href="../../lib/toolbar/toolbar.css">
-    <link rel="stylesheet" href="layout.css">
 
 </head>
 
@@ -46,7 +45,7 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                     <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="javascript:void(0)" v-on:click="NavigationTo('index/index', 'asdf')">
+                    <a class="navbar-brand" href="javascript:void(0)" v-on:click="NavigationTo('index/index', 'asdf','3000')">
                     <img src="../../assets/img/logo_white.png" class="logo logo-display" alt="">
                     <img src="../../assets/img/logo_black.png" class="logo logo-scrolled" alt="">
                 </a>
@@ -55,31 +54,31 @@
                 <!-- menu start -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li><a href="javascript:void(0)" v-on:click="NavigationTo('index/index','','2950')">&nbsp;&nbsp;首&nbsp;页&nbsp;&nbsp;</a></li>
+                        <li><a href="javascript:void(0)" v-on:click="NavigationTo('index/index','','3100')">&nbsp;&nbsp;首&nbsp;页&nbsp;&nbsp;</a></li>
                         <li class="dropdown">
-                            <a href="javascript:void(0)" v-on:click="NavigationTo('product/product','','2000')" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;开放平台&nbsp;&nbsp;</a>
+                            <a href="javascript:void(0)" v-on:click="NavigationTo('product/product','','800')" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;开放平台&nbsp;&nbsp;</a>
                             <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/product','asdf','600')">平台介绍</a></li>
-                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/store','asdf','600')">应用商店</a></li>
-                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/plugin','asdf','600')">二次开发</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/product','asdf','800')">平台介绍</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/store','asdf','800')">应用商店</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/plugin','asdf','800')">二次开发</a></li>
                                 <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/download','asdf','600')">产品下载</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="javascript:void(0)" v-on:click="NavigationTo('service/service','','2000')" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;解决方案&nbsp;&nbsp;</a>
+                            <a href="javascript:void(0)" v-on:click="NavigationTo('service/service','','3000')" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;解决方案&nbsp;&nbsp;</a>
                             <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('service/service','asdf','2000')">服务介绍</a></li>
-                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('service/example','asdf','1000')">项目案例</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('service/service','asdf','2740')">服务介绍</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('service/example','asdf','2180')">项目案例</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="javascript:void(0)" v-on:click="NavigationTo('contract/company','','2000')" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;关于筑星&nbsp;&nbsp;</a>
+                            <a href="javascript:void(0)" v-on:click="NavigationTo('about/company','','3000')" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;关于筑星&nbsp;&nbsp;</a>
                             <ul class="dropdown-menu" role="menu">
 
-                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('contract/company','','600')">筑星简介</a></li>
-                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('contract/news','','2000')">新闻动态</a></li>
-                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('contract/company','','600')">联系我们</a></li>
-                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('contract/join','','1000')">加入我们</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('about/company','','3000')">筑星简介</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('about/news','','1600')">新闻动态</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('about/contact','','600')">联系我们</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('about/join','','2600')">加入我们</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -93,7 +92,6 @@
                     <div class="bs_login" v-show="operModel.isLoginMode">
                         <p class="bs_login_title">用户登录</p>
                         <span><i class="fa fa-quote-left"></i>&nbsp;&nbsp;请输入用户名密码</span><br/><br/>
-
                         <input type="text" class="form-control" id="phone" placeholder="请输入帐号">
                         <input type="password" class="form-control" id="phone" placeholder="请输入密码">
                         <button class="btn btn-primary" style="width:100%;" type="button">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
@@ -128,7 +126,7 @@
 
         <!--界面内容 start-->
         <div id="map">
-            <iframe class="iframe" id="mainFrame" name="mainFrame" scrolling="no" frameborder="0"></iframe>
+            <iframe class="iframe" id="mainFrame" marginheight=0 marginwidth=0 scrolling="no" name="mainFrame"></iframe>
         </div>
         <!--界面内容 end-->
 

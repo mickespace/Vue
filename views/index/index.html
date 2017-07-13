@@ -9,9 +9,9 @@
     <link href="../../fonts/FontAwesome/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../lib/bootstrap/animate.css">
     <link rel="stylesheet" href="../../lib/carousel/carousel.css">
-    <link rel="stylesheet" href="../../lib/common/busy.css">
     <link rel="stylesheet" href="../../lib/fullpage/fullpage.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../../lib/common/bstar.css">
 </head>
 
 <body>
@@ -29,21 +29,32 @@
                     <div class="carousel-inner" role="listbox">
                         <div class="item" v-bind:class="{active:parallax.IsFirst}" v-for="parallax in parallaxInfo.Parallaxs">
                             <img class="first-slide lazy" v-bind:src="parallax.BgImgUrl" alt="First slide">
-                            <div class="container" style="padding-top:150px;">
+                            <div class="container bs_parallax_item">
                                 <div class="row">
                                     <div class="col-sm-3 col-md-7 wow bounceInRight">
-                                        <h2 style="color:white;">
+                                        <!--<h2 style="color:white;">
                                             <i>{{parallax.Title}}</i>
                                             <br />
                                         </h2>
                                         <p style="color:white;">
                                             <i>{{parallax.Abstract}}</i>
                                             <br/>
-                                        </p>
+                                        </p>-->
                                     </div>
                                     <div class="col-sm-3 col-md-4 wow bounceInLeft">
-                                        <div class="da-img">
+                                        <!--<div class="da-img">
                                             <img v-bind:src="parallax.ImgUrl" alt="image01" />
+                                        </div>-->
+                                        <div class="bs_carousel_info">
+                                            <br/>
+                                            <br/>
+                                            <h1>BIM应用二次开发平台</h1>
+                                            <br/>
+                                            <br/>
+                                            <h3>建设领域的软件开发者，在BIMFACE提供的基础功能上进行二次开发， 就能为用户提供更加丰富的BIM应用
+                                            </h3>
+                                            <br/>
+                                            <button type="button" style="background-color:#e99002;" class="btn btn-primary btn-lg">立即试用</button>
                                         </div>
                                     </div>
                                 </div>
@@ -62,72 +73,191 @@
         <!-- parallax end-->
 
         <!-- product start -->
-        <div style="background:white;">
+        <div class="bs_platform">
             <div class="container text-center">
                 <div class="wow  bounceInLeft">
-                    <br/>
-                    <h2>{{ serviceInfo.Title }}</h2>
-                    <br/>
-                    <p>{{ serviceInfo.Abstract }}</p>
-                    <br/>
-                </div>
-                <div class="row four-box-pan" role="four-box">
-                    <section v-for="service in serviceInfo.Services" class="col-xs-12 col-sm-6 col-md-3 wow  fadeInUp">
-                        <figure class="wow  fadeInUp"><i class="fa fa-rocket fa-5x" aria-hidden="true"></i></figure>
-                        <br/>
-                        <h5>{{service.Name}}</h5>
-                        <p>{{service.Abstract}}</p>
-                    </section>
-                </div>
-            </div>
-        </div>
-        <!-- product end -->
-
-        <!-- video strat-->
-        <div class="bs_video_bg">
-            <img class="bs_video_img lazy" v-bind:src="videoInfo.ImgUrl">
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-xs-3 col-md-1 bs_video_play ">
-                        <div class="col-xs-12 col-md-12 bs_video_play_logo wow fadeInUp">
-                            <a href="#" data-toggle="modal" data-target="#myModal">
-                <i class="fa fa-caret-right fa-5x" aria-hidden="true"></i></a>
-                        </div>
+                    <div class="bs_title wow  bounceInLeft">
+                        <h1>开放平台</h1>
+                        <span>更开放的姿态拥抱BIM</span>
                         <br/>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- 模态框（Modal） -->
-        <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="container text-center">
-                <div class="col-md-12">
-                    <div class="bs_video">
-                        <div class="modal-dialog" style="width:90%;">
-                            <div class="modal-content">
-                                <div class="modal-header text-left" style="padding:10px;">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
-				</button>
-                                    <span>{{videoInfo.Title}}</span>
-                                </div>
-                                <div class="modal-body" style="padding:0px;">
-                                    <video width="100%" height="100%" controls>
-                                        <source v-bind:src="videoInfo.VideoUrl" type="video/mp4"> 您的浏览器不支持 HTML5 video 标签。
-                                    </video>
-                                </div>
+                <div class="row">
+                    <div v-for="service in serviceInfo.Services" class="col-xs-12 col-sm-6 col-md-4 wow  fadeInUp">
+                        <div class="bs_platform_item">
+                            <figure class="wow fadeInUp"><img class="bs_platform_img" v-bind:src="service.ImgUrl" width="100%" alt=""></figure>
+                            <br/>
+                            <h4>{{service.Name}}</h4>
+                            <p>{{service.Abstract}}</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="bs_platform_detail">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img class="lazy" src="assets/img/index/platform/platform_detail.png" width="100%">
+                            </div>
+                            <div class="col-md-6">
+                                <img class="lazy" src="assets/img/index/platform/platform_detail_logo.png" width="100px"><br/>
+                                <h2>平台介绍</h2>
+                                <p>介绍大爷，你妹呀，理念，与世界分享品质科技。 2015年5月14日，我们诞生了。我们选择智能手机作为实践梦想的第一步，秉承“不将就”的理念，与世界分享品质科技。 2015年5月14日，我们诞生了。我们选择智能手
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- video end-->
+        <!-- product end -->
+
+        <!--store start-->
+        <div class="bs_store">
+            <div class="container">
+                <div class="row">
+                    <div class="bs_title wow  bounceInLeft">
+                        <h1>应用商店</h1>
+                        <span>施工 | 运维</span>
+                        <br/>
+                        <br/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 text-center wow  bounceInLeft" data-wow-delay=".1s">
+                        <img class="lazy" src="assets/img/index/store/store_show.jpg" width="100%">
+                    </div>
+                    <div class="col-lg-6 col-sm-6 wow  bounceInRight">
+                        <div class="row">
+                            <div class="bs_store_item">
+                                <div class="col-lg-2 col-sm-2">
+                                    <img src="assets/img/index/store/store_item.png" width="100%">
+                                </div>
+                                <div class="col-lg-10 col-sm-10">
+                                    <h4>文档管理</h4>
+                                    <p>专为bim打造的应用商店,千万用户的选择</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="bs_store_item">
+                                <div class="col-lg-2 col-sm-2">
+                                    <img src="assets/img/index/store/store_item.png" width="100%">
+                                </div>
+                                <div class="col-lg-10 col-sm-10">
+                                    <h4>文档管理</h4>
+                                    <p>专为bim打造的应用商店,千万用户的选择</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="bs_store_item">
+                                <div class="col-lg-2 col-sm-2">
+                                    <img src="assets/img/index/store/store_item.png" width="100%">
+                                </div>
+                                <div class="col-lg-10 col-sm-10">
+                                    <h4>文档管理</h4>
+                                    <p>专为bim打造的应用商店,千万用户的选择</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="row">
+                            <div style="padding-left:40px;">
+                                <button class="btn btn-info">进入应用商店</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--store end-->
+        <!--store start-->
+        <div class="bs_example">
+            <div class="row">
+                <div class="bs_title wow  bounceInLeft">
+                    <h1>成功案例</h1>
+                    <span>丰富的合作案例 值得信耐</span>
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+            <div class="row">
+                <!--<div class="col-lg-3 col-sm-3 wow  bounceInRight">
+                        <div class="row">
+                            <div class="bs_example_item">
+                                <h4>文档管理</h4>
+                                <p>专为bim打造的应用商店,千万用户的选择</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="bs_example_item">
+                                <h4>文档管理</h4>
+                                <p>专为bim打造的应用商店,千万用户的选择</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="bs_example_item">
+                                <h4>文档管理</h4>
+                                <p>专为bim打造的应用商店,千万用户的选择</p>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                    </div>
+                    <div class="col-lg-9 col-sm-9 text-center wow  bounceInLeft" data-wow-delay=".1s">-->
+                <img src="assets/img/index/example/example.jpg" width="100%">
+                <!--</div>-->
+            </div>
+        </div>
+        <!--store end-->
 
 
-
-
+        <div class="bs_team">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="bs_title wow  bounceInLeft">
+                            <h1>筑星团队</h1>
+                            <span>顶尖人员</span>
+                            <br/>
+                            <br/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-4 wow  fadeInUp">
+                            <div class="bs_team_item">
+                                <img src="assets/img/index/team/team1.jpg" width="100%">
+                                <h4>郭教授 / 研究bim100年的叫兽</h4>
+                                <p>与世界分享品质科技。 2015年5月14日，我们诞生了。我们选择智能手机作为实践梦想的第一步，秉承“不将就”的理念，与世界分享品质科技。 2015年5月14日，我们诞生了。我们选择智能手机作为实践梦想的第一步，秉承“不将就”的理念，与世界分享品质科技
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-4 wow  fadeInUp">
+                            <div class="bs_team_item">
+                                <img src="assets/img/index/team/team2.jpg" width="100%">
+                                <h4>郭教授 / 研究bim100年的叫兽</h4>
+                                <p>与世界分享品质科技。 2015年5月14日，我们诞生了。我们选择智能手机作为实践梦想的第一步，秉承“不将就”的理念，与世界分享品质科技。 2015年5月14日，我们诞生了。我们选择智能手机作为实践梦想的第一步，秉承“不将就”的理念，与世界分享品质科技
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-4 wow  fadeInUp">
+                            <div class="bs_team_item">
+                                <img src="assets/img/index/team/team3.jpg" width="100%">
+                                <h4>郭教授 / 研究bim100年的叫兽</h4>
+                                <p>与世界分享品质科技。 2015年5月14日，我们诞生了。我们选择智能手机作为实践梦想的第一步，秉承“不将就”的理念，与世界分享品质科技。 2015年5月14日，我们诞生了。我们选择智能手机作为实践梦想的第一步，秉承“不将就”的理念，与世界分享品质科技
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--content end-->
         <!--talk start-->
-        <div class="bs_quotation ">
+        <div class="bs_talk ">
             <div class="row text-center wow  bounceInLeft">
                 <i class="fa fa-quote-right fa-3x"></i><br/>
                 <h2 v-once> {{ quotationInfo.Quotation }}</h2>
@@ -135,38 +265,6 @@
             </div>
         </div>
         <!--talk end-->
-        <!-- team start -->
-        <div class="text-center" style="background:white;">
-            <div class="container">
-                <div class="row">
-                    <div>
-                        <div class="wow bounceInLeft">
-                            <br/>
-                            <h2>{{teamInfo.Title}}</h2>
-                            <br/>
-                            <p>{{teamInfo.Abstract}}</p>
-                            <br/>
-                        </div>
-                        <div v-for="team in teamInfo.Teams" class="col-xs-12 col-sm-6 col-md-3">
-                            <div class="thumbnail wow  fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                <img class="lazy" v-bind:src="team.ImgUrl" alt="" v-on:click="showmessage">
-                                <div class="caption">
-                                    <h4>
-                                        {{team.Name}}
-                                    </h4>
-                                    <p>
-                                        {{team.Abstract}}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- team end -->
-
-        <!--content end-->
     </div>
     <script src="../../lib/require/require.js" defer async="async" data-main="index"></script>
     <script src="../../lib/wow/wow.js"></script>

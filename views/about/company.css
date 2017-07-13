@@ -8,12 +8,12 @@
 #intro {
     width: 100%;
     z-index: 1;
-    background: url(assets/img/company_bg.jpg);
+    background: url(assets/img/company_bg.png);
     background-position: center top;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
-    min-height: 600px;
+    background-size: 100%;
+    min-height: 500px;
     padding: 0;
 }
 
@@ -25,7 +25,7 @@
     color: white;
     width: 100%;
     z-index: 1;
-    background: url(assets/img/honor_bg.jpg);
+    background: url(assets/img/honor_bg.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -45,8 +45,7 @@
     z-index: 1;
     background: url(assets/img/baidu.png);
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    background-size: 100%;
     min-height: 600px;
     padding: 0;
 }

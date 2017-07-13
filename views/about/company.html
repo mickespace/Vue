@@ -8,13 +8,8 @@
     <title>公司简介</title>
     <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.css">
     <link href="../../fonts/FontAwesome/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../lib/bootstrap/bootsnav.css">
     <link rel="stylesheet" href="../../lib/bootstrap/animate.css">
-    <link rel="stylesheet" href="../../lib/bootstrap/overwrite.css">
-    <link rel="stylesheet" href="../../lib/carousel/carousel.css">
-    <link rel="stylesheet" href="../../lib/common/footer.css">
-    <link rel="stylesheet" href="../../lib/common/busy.css">
-    <link rel="stylesheet" href="../../lib/toolbar/toolbar.css">
+    <link rel="stylesheet" href="../../lib/common/bstar.css">
     <link rel="stylesheet" href="company.css">
 </head>
 
@@ -55,10 +50,20 @@
                 <br/>
                 <p>{{honorInfo.Abstract}}</p>
                 <br/>
-                <div v-for="honor in honorInfo.ImgUrls" class="col-xs-12 col-sm-6 col-md-3">
-                    <div class="thumbnail wow  fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                        <img v-bind:src="honor.ImgUrl" alt="" style="width:100%;height:100%;">
+                <div class="row">
+                    <div v-for="honor in honorInfo.ImgUrls" class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="thumbnail wow  fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                            <img v-bind:src="honor.ImgUrl" alt="" style="width:100%;height:100%;">
 
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div v-for="honor in honorInfo.ImgUrls" class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="thumbnail wow  fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                            <img v-bind:src="honor.ImgUrl" alt="" style="width:100%;height:100%;">
+
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,19 @@
+
+#intro {
+    width: 100%;
+    z-index: 1;
+    background: url(assets/img/example/example_bg.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 500px;
+    padding: 0;
+}
+
 .bs_project_item {
     margin: 2px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .bs_project_item_bg {

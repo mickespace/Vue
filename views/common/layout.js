@@ -75,7 +75,7 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'iframe'], function (v, $) {
     });
     $(function () {
         var bsiframe = $("#mainFrame");
-        bsiframe.attr("height", '2950px');
+        bsiframe.attr("height", '3200px');
         bsiframe.attr("src", '../index/index.html');
     })
     $(function () {

@@ -1,12 +1,12 @@
 .bs_join_video {
     width: 100%;
     z-index: 1;
-    background: url(assets/img/join_bg.jpg);
+    background: url(assets/img/join_bg.png);
     background-position: center top;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
-    min-height: 600px;
+    background-size: 100%;
+    min-height: 500px;
     padding: 0;
 }
 
@@ -103,14 +103,13 @@
     padding: 5px;
 }
 
-.bs_join_close{
-   color: red;
-   font-size: 18px;
-   width: 20px;
-   border-radius: 50%;
-   height: 20px;
+.bs_join_close {
+    color: red;
+    font-size: 18px;
+    width: 20px;
+    border-radius: 50%;
+    height: 20px;
 }
-
 
 @media screen and (max-width:1024px) {
     .bs_join_tip {

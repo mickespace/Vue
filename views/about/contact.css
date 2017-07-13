@@ -1,0 +1,39 @@
+.bs_company {
+    padding: 20px;
+}
+
+
+/*== 公司活动 ==*/
+
+
+/*== 公司地址 ==*/
+
+.bs_company_address {
+    width: 100%;
+    z-index: 1;
+    background: url(assets/img/baidu.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 800px;
+    padding: 0;
+}
+
+.bs_company_address_info {
+    background-image: url(../../assets/img/bg_content.jpg);
+    margin-top: 50px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .bs_company_address {
+        width: 100%;
+        z-index: 1;
+        background: url(../../assets/img/bg_content.jpg);
+        min-height: 0px;
+        padding: 0;
+    }
+    .bs_company_address_info {
+        background-image: url(../../assets/img/bg_content.jpg);
+        margin-top: 0px;
+    }
+}

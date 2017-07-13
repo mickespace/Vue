@@ -1,6 +1,5 @@
 .bs_fullpage {
     background-color: #505050;
-    padding-top: 80px;
 }
 
 .bs_fullpage_content {
@@ -67,7 +66,6 @@
 @media only screen and (max-width: 1024px) {
     .bs_fullpage {
         background-color: #505050;
-        padding-top: 110px;
     }
     .bs_fullpage_content {
         display: none;

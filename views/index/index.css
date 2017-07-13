@@ -1,88 +1,97 @@
-/*== Video ==*/
+/*== parallax ==*/
 
-.bs_video_bg {
+.bs_parallax_item {
     width: 100%;
-    position: relative;
+    min-height: 500px;
 }
 
-.bs_video {
-    margin: auto;
-    width: 100%;
-    overflow: hidden;
-    -webkit-transform: translate(0%, 100px);
-    -moz-transform: translate(0%, 100px);
-    -ms-transform: translate(0%, 100px);
-    -o-transform: translate(0%, 100px);
-    transform: translate(0%, 100px);
-}
-
-.bs_video_img {
-    width: 100%;
-}
-
-.bs_video_play {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+.bs_carousel_info {
+    padding: 20px;
     color: white;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    overflow: hidden;
 }
 
-.bs_video_play_logo {
+.bs_carousel_info h1 {
+    font-weight: bold;
+    color: white;
+}
+
+
+/*== platform ==*/
+
+.bs_platform {
     background-color: white;
-    padding-right: 5px;
-    border-radius: 15%;
+    padding: 20px;
+}
+
+.bs_platform_item {
+    cursor: pointer;
+}
+
+.bs_platform_item:hover {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #ccc;
+}
+
+.bs_platform_img {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+}
+
+.bs_platform section {
+    padding: 10px;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.bs_platform_detail {
+    padding-bottom: 20px;
+    text-align: left;
 }
 
 
-/*== project ==*/
+/*== store ==*/
 
-.bs_project {
-    padding: 20px 0;
+.bs_store {
+    background: url(assets/img/index/platform/platform_bg.jpg);
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 20px;
+}
+
+.bs_store_item {
+    padding: 20px;
 }
 
 
-/*== quotation ==*/
+/*== talk ==*/
 
-.bs_quotation {
+.bs_talk {
     padding: 20px 0;
-    background-color: #505050;
+    background-color: #888;
     color: white;
 }
 
-.bs_quotation h2 {
+.bs_talk h2 {
     color: white;
+}
+
+.bs_example {
+    background-color: white;
+    padding: 20px;
 }
 
 
 /*== team ==*/
 
 .bs_team {
+    background: url(assets/img/index/platform/platform_bg.jpg);
+    padding: 20px;
+}
+
+.bs_team_item {
+    background-color: white;
     border: 1px solid #ccc;
-    color: white;
-    width: 100%;
-    z-index: 1;
-    background: url(assets/img/team_bg.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    min-height: 600px;
-    padding: 0;
-}
-
-
-/*== team ==*/
-
-.bs_talk {
-    background-color: #3da8f5;
-    color: white;
-}
-
-.bs_talk h2 {
-    color: white;
+    padding: 5px;
 }
