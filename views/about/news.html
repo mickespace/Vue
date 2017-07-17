@@ -21,61 +21,58 @@
 <body>
     <div id="app">
         <!--container start-->
-        <div class="bs_news">
-            <div class="container">
-            </div>
-        </div>
         <!--container end-->
-        <div class="row">
-            <div class="container">
-                <div class="col-md-3">
-                    <div class="row">
-                        <div class="bs_news_search">
-                            <div class="input-group">
-                                <input type="text" class="form-control">
-                                <span class="input-group-btn"><button class="btn btn-default" type="button">
+        <div class="bs_news">
+            <div class="row">
+                <div class="container">
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="bs_news_search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-btn"><button class="btn btn-default" type="button">
 							<i class="fa fa-search"></i></button></span>
-                            </div>
-                            <div class="bs_news_label">
-                                <span>筛选：</span><br/>
-                                <span class="label label-default">新闻</span>
-                                <span class="label label-primary">咨询</span>
-                                <span class="label label-success">大事件</span>
-                                <span class="label label-info">科技</span>
-                                <span class="label label-default">人物</span>
+                                </div>
+                                <div class="bs_news_label">
+                                    <span>筛选：</span><br/>
+                                    <span class="label label-default">新闻</span>
+                                    <span class="label label-primary">咨询</span>
+                                    <span class="label label-success">大事件</span>
+                                    <span class="label label-info">科技</span>
+                                    <span class="label label-default">人物</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="row bs_news_item" v-for="news in newsInfo.News">
-                        <div v-on:click="methods.handleDetail(news.Id)" class="col-md-4 bs_news_item_img">
-                            <img v-bind:src="news.ImgUrl" alt="">
+                    <div class="col-md-9">
+                        <div class="row bs_news_item" v-for="news in newsInfo.News">
+                            <div v-on:click="methods.handleDetail(news.Id)" class="col-md-4 bs_news_item_img">
+                                <img v-bind:src="news.ImgUrl" alt="">
+                            </div>
+                            <div class="col-md-8 bs_news_item_detail">
+                                <h4 v-on:click="methods.handleDetail(news.Id)">{{news.Title}}</h4>
+                                <span> 作者：{{news.Author}} 日期：{{news.CreateDate}}</span><br/>
+                                <p>{{news.Abstract}}</p>
+                                <h6 v-on:click="methods.handleDetail(news.Id)">查看内容</h6>
+                            </div>
                         </div>
-                        <div class="col-md-8 bs_news_item_detail">
-                            <h4 v-on:click="methods.handleDetail(news.Id)">{{news.Title}}</h4>
-                            <span> 作者：{{news.Author}} 日期：{{news.CreateDate}}</span><br/>
-                            <p>{{news.Abstract}}</p>
-                            <h6 v-on:click="methods.handleDetail(news.Id)">查看内容</h6>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="text-center">
-                            <ul class="pagination">
-                                <li><a href="#">&laquo;</a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li class="disabled"><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">&raquo;</a></li>
-                            </ul>
+                        <div>
+                            <div class="text-center">
+                                <ul class="pagination">
+                                    <li><a href="#">&laquo;</a></li>
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li class="disabled"><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">&raquo;</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <img class="bs_busy" v-if="isbusy" src="../../assets/img/isbusy.gif" />
     </div>
     <script src="../../lib/require/require.js" defer async="async" data-main="news"></script>
     <script src="../../lib/wow/wow.js"></script>

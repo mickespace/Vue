@@ -4,11 +4,6 @@ require.config({
         "vue": "vue/vue",
         "jquery": "jquery/jquery.min",
         "bootstrap": "bootstrap/bootstrap",
-        "bootsnav": "bootstrap/bootsnav",
-        "carousel": "carousel/carousel",
-        "modernizr": "parallax/modernizr",
-        "toolbar": "toolbar/toolbar",
-        "lazyload": "jquery/lazyload",
     },
     shim: {
         'vue': {
@@ -17,26 +12,11 @@ require.config({
         'bootstrap': {
             deps: ['jquery'],
             export: 'bootstrap'
-        },
-
-        'bootsnav': {
-            export: 'bootsnav'
-        },
-        'carousel': {
-            deps: ['jquery'],
-            export: 'carousel'
-        },
-        'toolbar': {
-            export: 'toolbar'
-        },
-        'lazyload': {
-            deps: ['jquery'],
-            export: 'lazyload'
         }
     }
 });
 
-require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'carousel', 'modernizr', 'toolbar', 'lazyload'], function (vue, jquery, bootstrap, bootsnav, carousel, modernizr, toolbar, lazyload) {
+require(['vue', 'jquery', 'bootstrap'], function (vue, jquery, bootstrap) {
     var app = new vue({
         el: '#app',
         data: {
@@ -47,24 +27,7 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'carousel', 'modernizr', 'too
             },
             methods: {
                 showmessage: function () {
-                    app.isbusy = true;
-                    jquery.ajax({
-                        type: 'get',
-                        timeout: 5000,
-                        url: 'http://192.16.10.100:19432/api/v1/user/login',
-                        data: {
-                            appKey: '908F0991-0E14-484F-91E7-DAAF0F4B2A37',
-                            userName: '13642520884',
-                            password: '123456'
-                        },
-                        dataType: 'json',
-                        success: function (res) {
-                            app.isbusy = false;
-                        },
-                        error: function () {
-                            app.isbusy = false;
-                        }
-                    });
+
                 }
             }
         }

@@ -1,4 +1,4 @@
-.bs_news {
+/* .bs_news {
     width: 100%;
     z-index: 1;
     background: url(assets/img/news_bg.jpg);
@@ -8,6 +8,10 @@
     background-size: cover;
     min-height: 500px;
     padding: 0;
+} */
+
+.bs_news {
+    padding: 20px;
 }
 
 .bs_news_item {

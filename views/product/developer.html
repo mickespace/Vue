@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>二次开发</title>
+    <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.css">
+    <link href="../../fonts/FontAwesome/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../lib/bootstrap/animate.css">
+    <link rel="stylesheet" href="../../lib/common/bstar.css">
+    <link rel="stylesheet" href="developer.css">
+</head>
+
+<body>
+    <div id="app">
+        <!--container start-->
+        <div class="row">
+            <div class="container">
+                <!-- <div class="col-md-4 bs_developer_detail">
+                    <div class="row">
+                        <h4>
+                            公司地址
+                        </h4>
+                        <span>
+                     深圳市<br/>
+                     南山区<br/>
+                     凯达尔集团中心大厦A座1201
+</span>
+                    </div>
+                    <div class="row">
+                        <h4>
+                            上班时间
+                        </h4>
+                        <span>
+                     星期一 至 星期五<br/>
+                 9:00~18:00
+</span>
+                    </div>
+                    <div class="row">
+                        <h4>
+                            拨打电话
+                        </h4>
+                        <span>
+                  0755-86240165
+</span>
+                    </div>
+                </div> -->
+                <div class="col-md-12 bs_developer_form">
+                    <div class="row">
+                        <h4>提交你的信息，我们将第一时间与你联系</h4>
+                        <p>姓名</p>
+                        <input type="text" class="form-control" placeholder="请输入名字">
+                        <p>手机号码</p>
+                        <input type="text" class="form-control" placeholder="请输入手机号">
+                        <p>填写消息</p>
+                        <textarea type="text" class="form-control" rows="5" placeholder="请输入内容"></textarea>
+                        <button class="btn btn-info" class="form-control" type="button">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--container end-->
+    </div>
+    <script src="../../lib/require/require.js" defer async="async" data-main="developer"></script>
+    <script src="../../lib/wow/wow.js"></script>
+    <script>
+        var wow = new WOW({
+            boxClass: 'wow',
+            animateClass: 'animated',
+            offset: 0,
+            mobile: true,
+            live: true
+        });
+        wow.init();
+    </script>
+</body>
+
+</html>

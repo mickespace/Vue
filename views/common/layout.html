@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../../lib/common/header.css">
     <link rel="stylesheet" href="../../lib/common/footer.css">
     <link rel="stylesheet" href="../../lib/toolbar/toolbar.css">
-
+    <link rel="stylesheet" href="../../lib/common/bstar.css">
 </head>
 
 <body>
@@ -60,7 +60,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/product','asdf','800')">平台介绍</a></li>
                                 <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/store','asdf','800')">应用商店</a></li>
-                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/plugin','asdf','800')">二次开发</a></li>
+                                <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/developer','asdf','500')">二次开发</a></li>
                                 <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/download','asdf','600')">产品下载</a></li>
                             </ul>
                         </li>
@@ -230,7 +230,7 @@
         </footer>
         <!-- footer end -->
         <!--toobar start-->
-        <ul id="menu" class="mfb-component--br mfb-zoomin wow bounceInUp" data-mfb-toggle="hover">
+        <!-- <ul id="menu" class="mfb-component--br mfb-zoomin wow bounceInUp" data-mfb-toggle="hover">
             <li class="mfb-component__wrap">
                 <a href="#" class="mfb-component__button--main">
                      <i class="mfb-component__main-icon--resting fa fa-plus"></i>
@@ -255,7 +255,14 @@
                     </li>
                 </ul>
             </li>
-        </ul>
+        </ul> -->
+        <div>
+            <div class="row">
+                <div>
+
+                </div>
+            </div>
+        </div>
         <!--toobar end-->
 
         <img class="bs_busy" v-show="isbusy" src="../../assets/img/isbusy.gif" />

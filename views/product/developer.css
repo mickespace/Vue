@@ -1,0 +1,24 @@
+.bs_developer_form {
+    padding: 20px;
+}
+
+.bs_developer_form p {
+    padding: 0px 0px 0px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #808080;
+}
+
+.bs_developer_form h4 {
+    color: #808080;
+}
+
+.bs_developer_form button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.bs_developer_form input,
+.bs_developer_form textarea {
+    margin-bottom: 10px;
+}
