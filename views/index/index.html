@@ -16,46 +16,24 @@
 
 <body>
     <div id="app">
-        <!--parallax start-->
+        <!--图片轮播-->
         <div class="row">
             <div class="col-sm-12 col-md-12 ">
                 <div id="customCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
                     <ol class="carousel-indicators">
                         <li data-target="#customCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#customCarousel" data-slide-to="1"></li>
                         <li data-target="#customCarousel" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner" role="listbox">
-                        <div class="item" v-bind:class="{active:parallax.IsFirst}" v-for="parallax in parallaxInfo.Parallaxs">
-                            <img class="first-slide lazy" v-bind:src="parallax.BgImgUrl" alt="First slide">
+                        <div class="item" v-bind:class="{active:parallax.IsFirst}" v-for="parallax in ParallaxInfo">
+                            <img class="first-slide lazy" style="height:100%" v-bind:src="parallax.ImgUrl" alt="First slide">
                             <div class="container bs_parallax_item">
                                 <div class="row">
                                     <div class="col-sm-3 col-md-7 wow bounceInRight">
-                                        <!--<h2 style="color:white;">
-                                            <i>{{parallax.Title}}</i>
-                                            <br />
-                                        </h2>
-                                        <p style="color:white;">
-                                            <i>{{parallax.Abstract}}</i>
-                                            <br/>
-                                        </p>-->
                                     </div>
                                     <div class="col-sm-3 col-md-4 wow bounceInLeft">
-                                        <!--<div class="da-img">
-                                            <img v-bind:src="parallax.ImgUrl" alt="image01" />
-                                        </div>-->
-                                        <div class="bs_carousel_info">
-                                            <br/>
-                                            <br/>
-                                            <h1>BIM应用二次开发平台</h1>
-                                            <br/>
-                                            <br/>
-                                            <h3>建设领域的软件开发者，在BIMFACE提供的基础功能上进行二次开发， 就能为用户提供更加丰富的BIM应用
-                                            </h3>
-                                            <br/>
-                                            <button type="button" style="background-color:#e99002;" class="btn btn-primary btn-lg">立即试用</button>
-                                        </div>
+                                        <div v-html="parallax.Abstract"></div>
                                     </div>
                                 </div>
                             </div>
@@ -70,24 +48,23 @@
                 </div>
             </div>
         </div>
-        <!-- parallax end-->
 
-        <!-- product start -->
+        <!--开放平台-->
         <div class="bs_platform">
             <div class="container text-center">
                 <div class="wow  bounceInLeft">
                     <div class="bs_title wow  bounceInLeft">
-                        <h1>开放平台</h1>
-                        <span>更开放的姿态拥抱BIM</span>
+                        <h1>{{PlatformInfo.Title}}</h1>
+                        <span>{{PlatformInfo.Abstract}}</span>
                         <br/>
                     </div>
                 </div>
                 <div class="row">
-                    <div v-for="service in serviceInfo.Services" class="col-xs-12 col-sm-6 col-md-4 wow  fadeInUp">
+                    <div v-for="service in PlatformInfo.ServiceData" class="col-xs-12 col-sm-6 col-md-4 wow  fadeInUp">
                         <div class="bs_platform_item">
                             <figure class="wow fadeInUp"><img class="bs_platform_img" v-bind:src="service.ImgUrl" width="100%" alt=""></figure>
                             <br/>
-                            <h4>{{service.Name}}</h4>
+                            <h4>{{service.Title}}</h4>
                             <p>{{service.Abstract}}</p>
                         </div>
                     </div>
@@ -97,12 +74,13 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
-                                <img class="lazy" src="assets/img/index/platform/platform_detail.png" width="100%">
+                                <img class="lazy" v-bind:src="PlatformInfo.Detail.ShowImgUrl" width="100%">
                             </div>
                             <div class="col-md-6">
-                                <img class="lazy" src="assets/img/index/platform/platform_detail_logo.png" width="100px"><br/>
-                                <h2>平台介绍</h2>
-                                <p>介绍大爷，你妹呀，理念，与世界分享品质科技。 2015年5月14日，我们诞生了。我们选择智能手机作为实践梦想的第一步，秉承“不将就”的理念，与世界分享品质科技。 2015年5月14日，我们诞生了。我们选择智能手
+                                <img class="lazy" v-bind:src="PlatformInfo.Detail.LogoImgUrl" width="100px"><br/>
+                                <h2>{{PlatformInfo.Detail.Title}}</h2>
+                                <p>
+                                    {{PlatformInfo.Detail.Abstract}}
                                 </p>
                             </div>
                         </div>
@@ -270,7 +248,7 @@
                     </div>
                     <div class="col-md-3">
                         <h2>&nbsp;</h2>
-                        <button type="button" style="background-color:#e99002;" class="btn btn-primary btn-lg">立即试用</button>
+                        <button type="button" style="background-color:#e99002; border:0px;" class="btn btn-primary btn-lg">立即试用</button>
                     </div>
                 </div>
             </div>

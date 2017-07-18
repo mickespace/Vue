@@ -1252,7 +1252,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked {
         padding-bottom: 15px !important;
     }
     .attr-nav>ul>li>a span.badge {
-        visibility: hidden;
+        display: none;
     }
 }
 
@@ -1356,7 +1356,7 @@ ul.cart-list>li.total>.btn {
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     /* Navbar General ------*/
     nav.navbar .navbar-brand {
         margin-top: 0;
@@ -1391,6 +1391,17 @@ ul.cart-list>li.total>.btn {
     nav.navbar-full .navbar-brand {
         top: 0;
         padding-top: 10px;
+    }
+    nav.navbar.bootsnav.navbar-fixed.navbar-transparent .logo-scrolled,
+    nav.navbar.bootsnav.navbar-fixed.no-background .logo-scrolled {
+        display: block;
+    }
+    nav.navbar.bootsnav.navbar-fixed.navbar-transparent .logo-display,
+    nav.navbar.bootsnav.navbar-fixed.no-background .logo-display {
+        display: none;
+    }
+    .attr-nav>ul>li>a span.badge {
+        display: none;
     }
 }
 
@@ -1533,7 +1544,7 @@ nav.navbar-inverse.navbar-full .navbar-toggle {
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width:1024px) {
     nav.navbar.navbar-inverse .navbar-toggle {
         color: #eee;
         background-color: #222 !important;
@@ -1562,6 +1573,20 @@ nav.navbar-inverse.navbar-full .navbar-toggle {
     }
     nav.navbar.navbar-inverse.navbar-mobile .navbar-collapse {
         background-color: #222;
+    }
+    .attr-nav>ul>li>a span.badge {
+        display: none;
+    }
+    nav.navbar.bootsnav.navbar-fixed.navbar-transparent .logo-scrolled,
+    nav.navbar.bootsnav.navbar-fixed.no-background .logo-scrolled {
+        display: block;
+    }
+    nav.navbar.bootsnav.navbar-fixed.navbar-transparent .logo-display,
+    nav.navbar.bootsnav.navbar-fixed.no-background .logo-display {
+        display: none;
+    }
+    .attr-nav>ul>li>a span.badge {
+        display: none;
     }
 }
 
