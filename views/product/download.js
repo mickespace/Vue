@@ -4,6 +4,7 @@ require.config({
         "vue": "vue/vue",
         "jquery": "jquery/jquery.min",
         "bootstrap": "bootstrap/bootstrap",
+        "bstarData": "../views/product/downloadData",
     },
     shim: {
         'vue': {
@@ -16,24 +17,12 @@ require.config({
     }
 });
 
-require(['vue', 'jquery', 'bootstrap'], function (vue, jquery, bootstrap) {
+require(['vue', 'jquery', 'bootstrap', 'bstarData'], function (vue, jquery, bootstrap, bstarData) {
     var app = new vue({
         el: '#app',
         data: {
             isbusy: false,
-            downloadInfo: {
-                Title: '',
-                ImgUrl: 'assets/img/download/download.png'
-            },
-            methods: {
-                showmessage: function () {
-
-                }
-            }
+            DownloadInfo: bstarData.DownloadData,
         }
     });
-
-    $("img.lazy").lazyload({
-        effect: "fadeIn"
-    })
 });

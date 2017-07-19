@@ -15,24 +15,20 @@
 <body>
     <div id="app">
         <!--container start-->
-        <div class="bs_download row">
+        <div class="bs_download">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12 wow  bounceInLeft">
-                        <br/>
-                        <h2></h2>
-                        <br/>
-                        <br/>
-                    </div>
-                </div>
                 <div class="row ">
                     <div class="col-md-3">
-                        <h4 class=" wow  bounceInLeft">在电脑上使用</h4><br/>
-                        <button class=" wow  bounceInLeft" data-wow-duration="1s" data-wow-delay=".1s"><i class="fa fa-edge fa-2x "></i><span>&nbsp;&nbsp;&nbsp;&nbsp; 跳转到网页版</span></button><br/><br/><br/>
-                        <button class=" wow  bounceInLeft" data-wow-duration="1s" data-wow-delay=".2s"><i class="fa fa-windows fa-2x "></i><span>&nbsp;&nbsp;&nbsp;&nbsp; Window版下载</span></button><br/><br/><br/>
-                        <h4 class=" wow  bounceInLeft">在手机上使用</h4><br/>
-                        <button class=" wow  bounceInLeft" data-wow-duration="1s" data-wow-delay=".3s"><i class="fa fa-apple fa-2x"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp; IOS版下载</span></button><br/><br/>
-                        <button class=" wow  bounceInLeft" data-wow-duration="1s" data-wow-delay=".4s"><i class="fa fa-android fa-2x "></i> <span>&nbsp;&nbsp;&nbsp;&nbsp; Android版下载</span></button><br/>
+                        <h4 class=" wow  bounceInLeft">{{DownloadInfo.PcOperTip}}</h4><br/>
+                        <a v-bind:href="DownloadInfo.WebLink"><button class=" wow  bounceInLeft" data-wow-duration="1s" data-wow-delay=".1s"><i class="fa fa-edge fa-2x "></i><span>&nbsp;&nbsp;&nbsp;&nbsp; {{DownloadInfo.WebTip}}</span></button></a><br/><br/><br/>
+                        <a v-bind:href="DownloadInfo.WindowLink"><button class=" wow  bounceInLeft" data-wow-duration="1s" data-wow-delay=".2s"><i class="fa fa-windows fa-2x "></i><span>&nbsp;&nbsp;&nbsp;&nbsp; {{DownloadInfo.WindowTip}}</span></button></a><br/><br/><br/>
+                        <h4 class=" wow  bounceInLeft">{{DownloadInfo.MobOperTip}}</h4><br/>
+                        <a target="_blank" v-bind:href="DownloadInfo.IosLink"> <button class=" wow  bounceInLeft" data-wow-duration="1s" data-wow-delay=".3s"><i class="fa fa-apple fa-2x"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp; {{DownloadInfo.IosTip}}</span></button></a><br/><br/>
+                        <a v-bind:href="DownloadInfo.AndroidLink"><button class=" wow  bounceInLeft" data-wow-duration="1s" data-wow-delay=".4s"><i class="fa fa-android fa-2x "></i> <span>&nbsp;&nbsp;&nbsp;&nbsp; {{DownloadInfo.AndroidTip}}</span></button></a><br/>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-6">
+                        <img v-bind:src="DownloadInfo.ImgUrl" class=" wow  bounceInRight" data-wow-duration="1s">
                     </div>
                 </div>
             </div>

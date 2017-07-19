@@ -1,5 +1,9 @@
 /*== parallax ==*/
 
+#app {
+    color: #606060;
+}
+
 .bs_parallax_item {
     width: 100%;
     min-height: 500px;
@@ -69,13 +73,10 @@
 
 .bs_talk {
     padding: 20px 0;
-    background-color: #888;
-    color: white;
+    background-color: white;
 }
 
-.bs_talk h2 {
-    color: white;
-}
+.bs_talk h2 {}
 
 .bs_example {
     background-color: white;
@@ -93,5 +94,5 @@
 .bs_team_item {
     background-color: white;
     border: 1px solid #ccc;
-    padding: 5px;
+    padding: 15px;
 }

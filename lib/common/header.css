@@ -51,23 +51,3 @@
 .bs_login_goregister {
     text-align: right;
 }
-
-
-/*== 是否异步 ==*/
-
-.bs_busy {
-    width: 200px;
-    height: 200px;
-    top: 0px;
-    left: 0px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 9990;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    overflow: hidden;
-}

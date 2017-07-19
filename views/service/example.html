@@ -14,45 +14,49 @@
 
 <body>
     <div id="app">
-
-        <!--conent start-->
-      
-                <div id="intro">
+        <div id="intro">
             <div class="container">
-              <div class="text-center wow  bounceInLeft">
-                <br/>
-                <h2> <div v-html="projectInfo.Title"></div></h2>
-                <br/>
-                <p>{{ projectInfo.Abstract }}</p>
-                <br/>
-            </div>
-            </div>
-        </div>
-        <!--intro end-->
-        <!--content end-->
-        <!-- project start -->
-        <div class="bs_project">
-        </div>        
-        <div v-for="project in projectInfo.Projects">
-            <div v-bind:class="[{bs_project_item_bg: project.IsActive}]">
-                <div class="row bs_project_item">
-                    <div class="container">
-                        <div class="col-lg-6 col-sm-6 text-center wow  bounceInLeft" data-wow-delay=".1s">
-                            <img class="lazy" v-bind:data-original="project.ImgUrl" width="100%" height="100%" alt="">
-                        </div>
-                        <div class="col-lg-6 col-sm-6 wow  bounceInRight">
-
-                            <p v-for="item in project.Items">
-                                <i class="fa fa-check fa-2x pr-10">
-              </i>{{item.Abstract}}
-                            </p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="wow bounceInLeft">
+                            <br/>
+                            <br/>
+                            <h2>
+                                {{ExampleInfo.Title}}
+                            </h2>
+                            <br/>
+                            <p>{{ExampleInfo.Abstract}}</p>
+                            <br/>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <!-- <img class="wow bounceInRight" src="assets/img/example/notice_detail.png" width="100%" /> -->
+                    </div>
+
                 </div>
             </div>
         </div>
-    </div>
-    <!-- project end-->
+        <div v-for="example in ExampleInfo.ExampleList">
+            <div v-bind:class="[{bs_project_item_bg: example.IsActive}]">
+                <div class="bs_project_item">
+                    <div class="container">
+                        <h4>{{example.Name}}</h4>
+                    </div>
+                    <div class="row ">
+                        <div class="container">
+                            <div class="col-lg-6 col-sm-6 wow  fadeInUp">
+                                <div v-html="example.Content"></div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-4 col-sm-4 text-center wow  fadeInUp" data-wow-delay=".1s">
+                                <img class="lazy" v-bind:data-original="example.ImgUrl" width="100%" height="100%" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
     <script src="../../lib/require/require.js" defer async="async" data-main="example"></script>
     <script src="../../lib/wow/wow.js"></script>

@@ -7,6 +7,8 @@ require.config({
         "carousel": "carousel/carousel",
         "modernizr": "parallax/modernizr",
         "lazyload": "jquery/lazyload",
+        "bstarData": "../views/index/indexData",
+        "bstarData_en": "../views/index/indexData_en"
     },
     shim: {
         'bootstrap': {
@@ -21,16 +23,20 @@ require.config({
     }
 });
 
-require(['vue', 'jquery', 'bootstrap', 'carousel', 'modernizr', 'lazyload', '../views/index/indexData'], function (vue, jquery, bootstrap, carousel, modernizr, lazyload, indexData) {
+require(['vue', 'jquery', 'bootstrap', 'carousel', 'modernizr', 'lazyload', 'bstarData', 'bstarData_en'], function (vue, jquery, bootstrap, carousel, modernizr, lazyload, bstarData, bstarData_en) {
     var app = new vue({
         el: '#app',
         data: {
             isbusy: false,
-            ParallaxInfo: indexData.ParallaxData,
-            PlatformInfo: indexData.PlatformData,
+            ExampleInfo: bstarData.ExampleData,
+            ParallaxInfo: bstarData.ParallaxData,
+            PlatformInfo: bstarData.PlatformData,
+            StoreInfo: bstarData.StoreData,
+            TeamInfo: bstarData.TeamData,
+            TrialInfo: bstarData.TrialData
         },
         methods: {
-            showmessage: function () {
+            onload: function () {
                 app.isbusy = true;
                 jquery.ajax({
                     type: 'get',
@@ -47,6 +53,12 @@ require(['vue', 'jquery', 'bootstrap', 'carousel', 'modernizr', 'lazyload', '../
                     },
                     error: function () {
                         app.isbusy = false;
+                        app.ExampleInfo = bstarData_en.ExampleData;
+                        app.ParallaxInfo = bstarData_en.ParallaxData;
+                        app.PlatformInfo = bstarData_en.PlatformData;
+                        app.StoreInfo = bstarData_en.StoreData;
+                        app.TeamInfo = bstarData_en.TeamData;
+                        app.TrialInfo = bstarData_en.TrialData;
                     }
                 });
             }
@@ -56,4 +68,6 @@ require(['vue', 'jquery', 'bootstrap', 'carousel', 'modernizr', 'lazyload', '../
     $("img.lazy").lazyload({
         effect: "fadeIn"
     })
+
+    window.onload = app.onload();
 });
