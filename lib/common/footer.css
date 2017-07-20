@@ -3,7 +3,7 @@
 .footer {
     background: #404040;
     color: #fff;
-    padding: 10px 0 10px 0;
+    padding: 30px 0;
     display: inline-block;
     width: 100%;
     font-weight: 300;
@@ -32,7 +32,7 @@
     font-size: 14px;
 }
 
-.tweet-box:before {
+.tweet-box::after {
     background-color: #505050;
     border-color: #505050;
     border-image: none;
@@ -40,14 +40,9 @@
     border-style: none;
     content: "";
     display: block;
-    height: 12px;
-    left: 60px;
-    z-index: 0;
     position: absolute;
-    top: 67px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-    width: 12px;
 }
 
 .tweet-box a,

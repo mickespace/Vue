@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.css">
     <link href="../../fonts/FontAwesome/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../lib/bootstrap/animate.css">
-    <link rel="stylesheet" href="../../lib/immersive/immersive.css">
     <link rel="stylesheet" href="../../lib/common/bstar.css">
     <link rel="stylesheet" href="service.css">
 </head>
@@ -17,156 +16,64 @@
 <body>
     <div id="app">
         <!--header start-->
-        <!--header end-->
-        <!--intro start -->
-
-
-        <div class="bs_parallax">
-            <div class="bs_parallax_container">
-                <div id="immersive_slider">
-                    <div class="slide" data-blurred="assets/img/service/slide1_blurred.jpg">
-                        <div class="content">
-                            <h2><a href="http://www.htmleaf.com" target="_blank">htmleaf</a></h2>
-                            <p>It’s never been easier to watch YouTube on the big screen Send your favorite YouTube videos from
-                                your Android phone or tablet to TV with the touch of a button. It’s easy. No wires, no setup,
-                                no nothing. Find out more here.</p>
-                        </div>
-                        <div class="image">
-                            <a href="http://www.htmleaf.com" target="_blank">
-                <img src="assets/img/service/slide1.jpg" alt="Slider 1">
-              </a>
+        <!--顶部宣传-->
+        <div id="intro">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="wow bounceInLeft">
+                            <br/>
+                            <br/>
+                            <h2>
+                                {{NoticeInfo.Title}}
+                            </h2>
+                            <br/>
+                            <p>{{NoticeInfo.Abstract}}</p>
+                            <br/>
                         </div>
                     </div>
-                    <div class="slide" data-blurred="assets/img/service/slide2_blurred.jpg">
-                        <div class="content">
-                            <h2><a href="http://www.htmleaf.com/" target="_blank">htmleaf Apps</a></h2>
-                            <p>It’s never been easier to watch YouTube on the big screen Send your favorite YouTube videos from
-                                your Android phone or tablet to TV with the touch of a button. It’s easy. No wires, no setup,
-                                no nothing. Find out more here.</p>
-                        </div>
-                        <div class="image">
-                            <a href="http://www.htmleaf.com/" target="_blank"> <img src="assets/img/service/slide2.jpg" alt="Slider 1"></a>
-                        </div>
+                    <div class="col-md-6">
                     </div>
-                    <div class="slide" data-blurred="assets/img/service/slide3_blurred.jpg">
-                        <div class="content">
-                            <h2><a href="http://www.htmleaf.com" target="_blank">The Pete Design</a></h2>
-                            <p>It’s never been easier to watch YouTube on the big screen Send your favorite YouTube videos from
-                                your Android phone or tablet to TV with the touch of a button. It’s easy. No wires, no setup,
-                                no nothing. Find out more here.</p>
-                        </div>
-                        <div class="image">
-                            <a href="http://www.htmleaf.com/" target="_blank"><img src="assets/img/service/slide3.jpg" alt="Slider 1"></a>
-                        </div>
-                    </div>
-
-                    <a href="#" class="is-prev">&laquo;</a>
-                    <a href="#" class="is-next">&raquo;</a>
                 </div>
             </div>
         </div>
-        <div class=""></div>
-        <!--container start-->
-
+        <!--核心服务-->
         <div class="bs_service_tech">
             <div class="container">
                 <div class="row">
                     <div class="text-center">
                         <br/>
-                        <br/>
-                        <br/>
-                        <br/>
                         <h1>
-                            核心服务
+                            {{CoreInfo.Title}}
                         </h1>
                         <p>
                             &nbsp;&nbsp;
                         </p>
                     </div>
-                    <div class="services">
+                    <div class="services" v-for="service in CoreInfo.CoreList">
                         <div class="col-lg-6 col-sm-6">
                             <div class="icon-wrap ico-bg round-five wow zoomIn" data-wow-duration="1.5s" data-wow-delay=".1s">
-                                <i class="fa fa-desktop">
-                </i>
+                                <div v-html="service.Model1.ImgUrl"></div>
                             </div>
                             <div class="content  wow fadeInUp">
                                 <h3 class="title">
-                                    开放性接口
+                                    {{service.Model1.Title}}
                                 </h3>
                                 <p>
-                                    BIM-STAR提供多种API接口，支持与多种前端子系统进行无缝集成，全方位采集前端数据，在BIM可视化平台上实时展示与应用。
+                                    {{service.Model1.Abstract}}
                                 </p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-sm-6">
                             <div class="icon-wrap ico-bg round-five wow zoomIn" data-wow-duration="1.5s" data-wow-delay=".3s">
-                                <i class="fa fa-gift">
-                </i>
+                                <div v-html="service.Model2.ImgUrl"></div>
                             </div>
                             <div class="content wow fadeInUp">
                                 <h3 class="title">
-                                    多任务协同
+                                    {{service.Model2.Title}}
                                 </h3>
                                 <p>
-                                    BIM-STAR支持多任务、多专业、多用户、多设备跨平台协同办公，保障了项目参与各方工作的同步高效。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="services">
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="icon-wrap ico-bg round-five wow zoomIn" data-wow-duration="1.5s" data-wow-delay=".5s">
-                                <i class="fa fa-code">
-                </i>
-                            </div>
-                            <div class="content wow fadeInUp">
-                                <h3 class="title">
-                                    公有云、私有云架设
-                                </h3>
-                                <p>
-                                    筑星科技可针对客户实际需求，提供切合项目需求的BIM数据存储方案。
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="icon-wrap ico-bg round-five wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
-                                <i class="fa fa-book">
-                </i>
-                            </div>
-                            <div class="content wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.1s">
-                                <h3 class="title">
-                                    高效的数据引擎
-                                </h3>
-                                <p>
-                                    BIM-STAR采用请求/确认的客户端与服务交互模式，用户可以在服务器处理请求的同时进行其他的操作，大幅度提升了平台操作的响应速度。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="services">
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="icon-wrap ico-bg round-five wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.3s">
-                                <i class="fa fa-bullhorn"></i>
-                            </div>
-                            <div class="content wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">
-                                <h3 class="title">
-                                    插件式开发
-                                </h3>
-                                <p>
-                                    BIM-STAR采用插件式的开放方式，降低各模块之间的耦合性，极大地提升了系统的可维护性、开放性与扩展性。
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="icon-wrap ico-bg round-five wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
-                                <i class="fa fa-eye"></i>
-                            </div>
-                            <div class="content wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.5s">
-                                <h3 class="title">
-                                    全生命周期解决方案
-                                </h3>
-                                <p>
-                                    BIM-STAR平台提供包括设计、施工、运维在内项目全生命周期的整体解决方案。
+                                    {{service.Model2.Abstract}}
                                 </p>
                             </div>
                         </div>
@@ -174,124 +81,98 @@
                 </div>
             </div>
         </div>
-
-        <div class="bs_service_support">
+        <!--阶段性方案-->
+        <div class="bs_detail">
             <div class="container">
-                <div class="wow  bounceInLeft">
-                    <div class="bs_title wow  bounceInLeft">
-                        <h1>服务支持</h1>
-                        <span>fuck</span>
-                        <br/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div class="bs_support_item">
-                            <div class="bs_support_item_img "><i class="fa fa-user fa-4x wow fadeInUp"></i></div>
-                            <br/>
-                            <h4>完善的SDK</h4>
-                            <p>独家首发fuck</p>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div class="bs_support_item">
-                            <div class="bs_support_item_img "><i class="fa fa-user fa-4x wow fadeInUp"></i></div>
-                            <br/>
-                            <h4>完善的SDK</h4>
-                            <p>独家首发fuck</p>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div class="bs_support_item">
-                            <div class="bs_support_item_img "><i class="fa fa-user fa-4x wow fadeInUp"></i></div>
-                            <br/>
-                            <h4>完善的SDK</h4>
-                            <p>独家首发fuck</p>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div class="bs_support_item">
-                            <div class="bs_support_item_img "><i class="fa fa-user fa-4x wow fadeInUp"></i></div>
-                            <br/>
-                            <h4>完善的SDK</h4>
-                            <p>独家首发fuck</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--container end-->
-        <div class="bs_service_detail">
-            <div class="container">
-                <div class="bs_service_detail_item">
+                <div class="bs_detail_item">
                     <div class="row">
                         <div class="col-md-5">
                             <h1>
-                                多维度精准投放
+                                {{DesignInfo.Title}}
                             </h1>
-                            <p>
-                                广告系统直接对接当贝大数据系统，我们已经可以从用户属
-                            </p>
-                            <p>
-                                广告系统直接对接当贝大数据系统，我们已经可以从用户属
-                            </p>
+                            <div v-html="DesignInfo.Abstract"></div>
                         </div>
                         <div class="col-md-2 col-md-push-2">
-                            <img src="assets/img/service/detail1.png" width="100%">
+                            <img v-bind:src="DesignInfo.ImgUrl" width="100%">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="bs_service_detail_item2 text-center">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>
-                        多种广告展现形式
-                    </h1>
-                    <p>
-                        我们对市场上主流互联网电视推广形式做了全面支持，具有全屏广告、视频插片广告等多种展现形式。让你更放心的“尝鲜”互联网电视蓝海，体验优质的广告投放回报。
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="bs_service_detail_item3">
+        <!--阶段性方案-->
+        <div class="bs_detail_invert">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="assets/img/service/detail2.png" width="100%">
+                        <img v-bind:src="ProgressInfo.ImgUrl" width="100%">
                     </div>
                     <div class="col-md-5 col-md-push-3">
                         <h1>
-                            效果可监控
+                            {{ProgressInfo.Title}}
                         </h1>
-                        <p>
-                            广告系统左右独立的投放数据统计系统，
-                        </p>
-                        <p>
-                            广告系统左右独立的投放数据统计系统，
-                        </p>
-                        <p>
-                            广告系统左右独立的投放数据统计系统，
-                        </p>
-                        <p>
-                            广告系统左右独立的投放数据统计系统，
-                        </p>
 
+                        <div v-html="ProgressInfo.Abstract"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="bs_service_partner">
+        <!--阶段性方案-->
+        <div class="bs_detail">
             <div class="container">
-                <div class="row">
-                    <img src="assets/img/service/partner.png" width="100%">
-                    <button class="btn btn-info btn-lg">立即合作</button>
+                <div class="bs_detail_item">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <h1>
+                                {{OperInfo.Title}}
+                            </h1>
+                            <div v-html="OperInfo.Abstract"></div>
+                        </div>
+                        <div class="col-md-2 col-md-push-2">
+                            <img v-bind:src="OperInfo.ImgUrl" width="100%">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <!--container end-->
-
+        <!--服务支持-->
+        <div class="bs_support">
+            <div class="row">
+                <div class="col-lg-2">
+                </div>
+                <div class="col-lg-2 col-md-3 " v-for="support in SupportInfo.CoreList">
+                    <img class="bs_support_item_img" v-bind:src="support.ImgUrl">
+                    <div class="bs_support_item">
+                        <div>
+                            <div v-html="support.Logo"></div>
+                            <p>—</p>
+                            <h2>{{support.Title}}</h2>
+                            <span>{{support.Abstract}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <!--合作流程-->
+        <div class="bs_service_partner">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center">
+                        <br/>
+                        <h1>
+                            {{PartnerInfo.Title}}
+                        </h1>
+                        <p>
+                            &nbsp;&nbsp;
+                        </p>
+                    </div>
+                    <img v-bind:src="PartnerInfo.ImgUrl" width="100%">
+                    <a v-bind:href="PartnerInfo.Link"><button class="btn btn-info btn-lg">{{PartnerInfo.Tip}}</button></a>
+                </div>
+            </div>
+        </div>
         <!--footer start-->
         <!-- footer end -->
     </div>

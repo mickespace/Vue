@@ -8,13 +8,11 @@
 #intro {
     width: 100%;
     z-index: 1;
-    background: url(assets/img/company_bg.png);
-    background-position: center top;
+    background: url(assets/img/company/notice.jpg);
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: 100%;
-    min-height: 300px;
-    padding: 0;
+    padding: 20;
+    color: white;
 }
 
 
@@ -22,19 +20,14 @@
 
 .bs_honor {
     border: 1px solid #ccc;
-    color: white;
     width: 100%;
     z-index: 1;
-    background: url(assets/img/honor_bg.png);
+    background: url(assets/img/company/honor_bg.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     min-height: 600px;
     padding: 0;
-}
-
-.bs_honor h2 {
-    color: white;
 }
 
 
@@ -43,7 +36,7 @@
 .bs_company_address {
     width: 100%;
     z-index: 1;
-    background: url(assets/img/baidu.png);
+    background: url(assets/img/company/address.png);
     background-repeat: no-repeat;
     background-size: 100%;
     min-height: 600px;

@@ -176,4 +176,11 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'carousel', 'modernizr', 'too
     $("img.lazy").lazyload({
         effect: "fadeIn"
     })
+
+
+    $(document).ready(function () {
+        $("#immersive_slider").immersive_slider({
+            container: ".bs_parallax"
+        });
+    });
 });

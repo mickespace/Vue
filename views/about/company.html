@@ -18,6 +18,22 @@
         <!--intro start -->
         <div id="intro">
             <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="wow bounceInLeft">
+                            <br/>
+                            <br/>
+                            <h2>
+                                {{NoticeInfo.Title}}
+                            </h2>
+                            <br/>
+                            <div v-html="NoticeInfo.Abstract"></div>
+                            <br/>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
+                </div>
             </div>
         </div>
         <!--intro end-->
@@ -25,18 +41,16 @@
         <div style="background:white;">
             <div class="container bs_company">
                 <div class="row">
-                    <div class="col-md-6 ">
+                    <div class="col-md-6">
                         <br/>
-                        <h2>{{ companyInfo.Title}}</h2>
+                        <h2 class=" wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">{{ CompanyInfo.Title}}</h2>
                         <br/>
-                        <p>
-                            {{ companyInfo.Abstract}}
-                        </p>
+                        <div class=" wow fadeInUp" data-wow-duration="2s" data-wow-delay=".3s" v-html="CompanyInfo.Abstract"></div>
                         <br/>
                     </div>
-                    <div class="col-md-6 ">
+                    <div class="col-md-6 wow bounceInRight" data-wow-duration="2s" data-wow-delay=".3s">
                         <br/>
-                        <img v-bind:src="companyInfo.ImgUrl" style="width:100%;height:100%;" />
+                        <img v-bind:src="CompanyInfo.ImgUrl" style="width:100%;height:100%;" />
                         <br/>
                     </div>
                 </div>
@@ -46,20 +60,12 @@
         <div class="row bs_honor">
             <div class="container text-center bs_company">
                 <br/>
-                <h2>{{honorInfo.Title}}</h2>
+                <h2>{{HonorInfo.Title}}</h2>
                 <br/>
-                <p>{{honorInfo.Abstract}}</p>
+                <p>{{HonorInfo.Abstract}}</p>
                 <br/>
                 <div class="row">
-                    <div v-for="honor in honorInfo.ImgUrls" class="col-xs-12 col-sm-6 col-md-3">
-                        <div class="thumbnail wow  fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                            <img v-bind:src="honor.ImgUrl" alt="" style="width:100%;height:100%;">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div v-for="honor in honorInfo.ImgUrls" class="col-xs-12 col-sm-6 col-md-3">
+                    <div v-for="honor in HonorInfo.ImgUrls" class="col-xs-12 col-sm-6 col-md-3">
                         <div class="thumbnail wow  fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
                             <img v-bind:src="honor.ImgUrl" alt="" style="width:100%;height:100%;">
 
@@ -75,18 +81,18 @@
                     <div class="row wow fadeInUp">
                         <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                             <br/>
-                            <h2>{{teamInfo.Title}}</h2>
+                            <h2>{{QuotationInfo.Title}}</h2>
                             <br/>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4" v-for="team in teamInfo.Teams">
-                            <div class="bs_speech_box wow fadeInUp">
+                        <div class="col-md-4" v-for="quotation in QuotationInfo.QuotationList">
+                            <div class="bs_speech_box wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
                                 <blockquote>
                                     <span class="quote"><span><i class="fa fa-quote-right"></i></span></span>
-                                    <p>{{team.Abstract}}</p>
+                                    <p>{{quotation.Talk}}</p>
                                 </blockquote>
-                                <p class="author">{{team.Name}}, {{team.Type}} / <span class="subtext">{{team.DateTime}}</span></p>
+                                <p class="author">{{quotation.Name}} / {{quotation.Job}} <span class="subtext">{{quotation.TalkDate}}</span></p>
                             </div>
 
                         </div>
@@ -99,38 +105,38 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-12  col-lg-5 col-lg-offset-7 bs_company_address_info">
-                        <div class="bs_company_address_info_bg"></div>
+                        <div class="bs_company_address_info_bg wow bounceInRight"></div>
                         <div class="bs_company_address_info_detail">
-                            <h3>{{addressInfo.Title}}</h3>
-                            <p>{{addressInfo.Abstract}}</p>
-                            <div>
-                                <span><i class="fa fa-copyright pr-10"></i>&nbsp; 名称 ：深圳筑星科技有限公司</span><br/>
-                                <span><i class="fa fa-phone pr-10"></i>&nbsp;&nbsp; 电话 : 0755-86240165</span><br/>
-                                <span><i class="fa fa-fax pr-10"></i> &nbsp;传真 : 0755-86240165</span><br/>
-                                <span><i class="fa fa-envelope pr-10"></i>&nbsp; 邮箱 : <a href="javascript:;">szbstar@bstar5.com</a></span><br/>
-                                <span><i class="fa fa-map-signs pr-10"></i> &nbsp;地址 : 深圳市南山区凯达尔集团中心大厦A座1201 </span><br/><br/>
+                            <h3 class="wow bounceInRight">{{AddressInfo.Title}}</h3>
+                            <p class="wow bounceInRight">{{AddressInfo.Abstract}}</p>
+                            <div class="wow  bounceInRight" data-wow-duration="2s" data-wow-delay=".1s">
+                                <span><i class="fa fa-copyright pr-10"></i>&nbsp;{{AddressInfo.Name}}</span><br/>
+                                <span><i class="fa fa-phone pr-10"></i>&nbsp;&nbsp;{{AddressInfo.Phone}}</span><br/>
+                                <span><i class="fa fa-fax pr-10"></i> &nbsp;{{AddressInfo.Fax}}</span><br/>
+                                <span><i class="fa fa-envelope pr-10"></i>&nbsp;{{AddressInfo.Email}}</span><br/>
+                                <span><i class="fa fa-map-signs pr-10"></i> &nbsp;{{AddressInfo.Address}}</span><br/><br/>
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-6 wow  bounceInRight" data-wow-duration="2s" data-wow-delay=".1s">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" v-model:value="addressInfo.Feedback.Name" placeholder="姓名">
+                                        <input type="text" class="form-control" v-model:value="AddressInfo.Feedback.Name" v-bind:placeholder="AddressInfo.Feedback.NameTip">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6  wow  bounceInRight" data-wow-duration="2s" data-wow-delay=".2s">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" v-model:value="addressInfo.Feedback.Email" placeholder="邮箱/手机号">
+                                        <input type="text" class="form-control" v-model:value="AddressInfo.Feedback.Email" v-bind:placeholder="AddressInfo.Feedback.EmailTip">
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-12  wow  bounceInRight" data-wow-duration="2s" data-wow-delay=".3s">
                                     <div class="form-group">
-                                        <textarea name="" class="form-control" id="" cols="30" rows="7" style="resize:none;" v-model:value="addressInfo.Feedback.Message"
-                                            placeholder="想说的话"></textarea>
+                                        <textarea name="" class="form-control" id="" cols="30" rows="7" style="resize:none;" v-model:value="AddressInfo.Feedback.Message"
+                                            v-bind:placeholder="AddressInfo.Feedback.MessageTip"></textarea>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-12  wow  bounceInRight" data-wow-duration="2s" data-wow-delay=".4s">
                                     <div class="form-group">
-                                        <input type="button" v-on:click="methods.feedback" value=" 提            交 " class="btn btn-primary">
+                                        <input type="button" v-on:click="feedback" v-bind:value="AddressInfo.Feedback.SubmitTip" class="btn btn-primary">
                                     </div>
                                 </div>
                             </div>
