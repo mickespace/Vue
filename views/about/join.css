@@ -1,13 +1,14 @@
 .bs_join_video {
     width: 100%;
     z-index: 1;
-    background: url(assets/img/join_bg.png);
+    background: url(assets/img/join/notice.png);
     background-position: center top;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100%;
+    background-size: 100% 100%;
     min-height: 500px;
     padding: 0;
+    color: white;
 }
 
 
@@ -17,7 +18,7 @@
     width: 100%;
     padding: 20px;
     color: white;
-    background: url(assets/img/job_bg.jpg);
+    background: url(assets/img/join/search.jpg);
 }
 
 
@@ -82,6 +83,10 @@
 
 
 /*== 公司招聘 ==*/
+
+.bs_job{
+    background-color:white;
+}
 
 .bs_join_job_search {
     margin: 10px 0px 10px 0;

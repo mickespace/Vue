@@ -5,53 +5,52 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>公司简介</title>
+    <title>联系方式</title>
     <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.css">
     <link href="../../fonts/FontAwesome/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../lib/bootstrap/bootsnav.css">
     <link rel="stylesheet" href="../../lib/bootstrap/animate.css">
+    <link rel="stylesheet" href="../../lib/common/bstar.css">
     <link rel="stylesheet" href="contact.css">
 </head>
 
 <body>
     <div id="app">
-        <!--公司地址-->
         <div class="bs_company_address" id="bsAddress" name="bsAddress">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-12  col-lg-5 col-lg-offset-7 bs_company_address_info">
-                        <div class="bs_company_address_info_bg"></div>
+                        <div class="bs_company_address_info_bg wow bounceInRight"></div>
                         <div class="bs_company_address_info_detail">
-                            <h3>{{addressInfo.Title}}</h3>
-                            <p>{{addressInfo.Abstract}}</p>
-                            <div>
-                                <span><i class="fa fa-copyright pr-10"></i>&nbsp; 名称 ：深圳筑星科技有限公司</span><br/>
-                                <span><i class="fa fa-phone pr-10"></i>&nbsp;&nbsp; 电话 : 0755-86240165</span><br/>
-                                <span><i class="fa fa-fax pr-10"></i> &nbsp;传真 : 0755-86240165</span><br/>
-                                <span><i class="fa fa-envelope pr-10"></i>&nbsp; 邮箱 : <a href="javascript:;">szbstar@bstar5.com</a></span><br/>
-                                <span><i class="fa fa-map-signs pr-10"></i> &nbsp;地址 : 深圳市南山区凯达尔集团中心大厦A座1201 </span><br/><br/>
+                            <h3 class="wow bounceInRight">{{AddressInfo.Title}}</h3>
+                            <p class="wow bounceInRight">{{AddressInfo.Abstract}}</p>
+                            <div class="wow  bounceInRight" data-wow-duration="2s" data-wow-delay=".1s">
+                                <span><i class="fa fa-copyright pr-10"></i>&nbsp;{{AddressInfo.Name}}</span><br/>
+                                <span><i class="fa fa-phone pr-10"></i>&nbsp;&nbsp;{{AddressInfo.Phone}}</span><br/>
+                                <span><i class="fa fa-fax pr-10"></i> &nbsp;{{AddressInfo.Fax}}</span><br/>
+                                <span><i class="fa fa-envelope pr-10"></i>&nbsp;{{AddressInfo.Email}}</span><br/>
+                                <span><i class="fa fa-map-signs pr-10"></i> &nbsp;{{AddressInfo.Address}}</span><br/><br/>
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-6 wow  bounceInRight" data-wow-duration="2s" data-wow-delay=".1s">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" v-model:value="addressInfo.Feedback.Name" placeholder="姓名">
+                                        <input type="text" class="form-control" v-model:value="AddressInfo.Feedback.Name" v-bind:placeholder="AddressInfo.Feedback.NameTip">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6  wow  bounceInRight" data-wow-duration="2s" data-wow-delay=".2s">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" v-model:value="addressInfo.Feedback.Email" placeholder="邮箱/手机号">
+                                        <input type="text" class="form-control" v-model:value="AddressInfo.Feedback.Email" v-bind:placeholder="AddressInfo.Feedback.EmailTip">
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-12  wow  bounceInRight" data-wow-duration="2s" data-wow-delay=".3s">
                                     <div class="form-group">
-                                        <textarea name="" class="form-control" id="" cols="30" rows="7" style="resize:none;" v-model:value="addressInfo.Feedback.Message"
-                                            placeholder="想说的话"></textarea>
+                                        <textarea name="" class="form-control" id="" cols="30" rows="7" style="resize:none;" v-model:value="AddressInfo.Feedback.Message"
+                                            v-bind:placeholder="AddressInfo.Feedback.MessageTip"></textarea>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-12  wow  bounceInRight" data-wow-duration="2s" data-wow-delay=".4s">
                                     <div class="form-group">
-                                        <input type="button" v-on:click="methods.feedback" value=" 提            交 " class="btn btn-primary">
+                                        <input type="button" v-on:click="feedback" v-bind:value="AddressInfo.Feedback.SubmitTip" class="btn btn-primary">
                                     </div>
                                 </div>
                             </div>

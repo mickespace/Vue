@@ -1,14 +1,16 @@
-/* .bs_news {
+#intro {
     width: 100%;
     z-index: 1;
-    background: url(assets/img/news_bg.jpg);
+    background: url(assets/img/news/notice.jpg);
     background-position: center top;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    min-height: 500px;
+    background-size: 100%;
+    min-height: 300px;
+    /* background-color: #373d41; */
     padding: 0;
-} */
+    color: white;
+}
+
 
 .bs_news {
     padding: 20px;

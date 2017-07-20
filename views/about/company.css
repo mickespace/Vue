@@ -38,14 +38,14 @@
     z-index: 1;
     background: url(assets/img/company/address.png);
     background-repeat: no-repeat;
-    background-size: 100%;
-    min-height: 600px;
+    background-size: 100% 100%;
     padding: 0;
 }
 
 .bs_company_address_info {
     background-image: url(../../assets/img/bg_content.jpg);
-    margin-top: 50px;
+    margin-top: 30px;
+        margin-bottom: 30px;
 }
 
 
@@ -211,6 +211,7 @@
     }
     .bs_company_address_info {
         background-image: url(../../assets/img/bg_content.jpg);
-        margin-top: 0px;
+          margin-top: 0px;
+        margin-bottom: 0px;
     }
 }

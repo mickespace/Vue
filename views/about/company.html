@@ -56,6 +56,8 @@
                 </div>
             </div>
         </div>
+
+
         <!--荣誉资质-->
         <div class="row bs_honor">
             <div class="container text-center bs_company">
@@ -67,7 +69,7 @@
                 <div class="row">
                     <div v-for="honor in HonorInfo.ImgUrls" class="col-xs-12 col-sm-6 col-md-3">
                         <div class="thumbnail wow  fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                            <img v-bind:src="honor.ImgUrl" alt="" style="width:100%;height:100%;">
+                            <img class="xzoom" v-bind:src="honor.ImgUrl" alt="" style="width:100%;height:100%;">
 
                         </div>
                     </div>

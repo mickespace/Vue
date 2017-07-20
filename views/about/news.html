@@ -10,11 +10,6 @@
     <link href="../../fonts/FontAwesome/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../lib/bootstrap/bootsnav.css">
     <link rel="stylesheet" href="../../lib/bootstrap/animate.css">
-    <link rel="stylesheet" href="../../lib/bootstrap/overwrite.css">
-    <link rel="stylesheet" href="../../lib/carousel/carousel.css">
-    <link rel="stylesheet" href="../../lib/common/footer.css">
-    <link rel="stylesheet" href="../../lib/common/busy.css">
-    <link rel="stylesheet" href="../../lib/toolbar/toolbar.css">
     <link rel="stylesheet" href="news.css">
 </head>
 
@@ -22,10 +17,32 @@
     <div id="app">
         <!--container start-->
         <!--container end-->
+        <div id="intro">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="wow bounceInLeft">
+                            <br/>
+                            <br/>
+                            <h2>
+                                {{NoticeInfo.Title}}
+                            </h2>
+                            <br/>
+                            <p>{{NoticeInfo.Abstract}}</p>
+                            <br/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- <img class="wow bounceInRight" v-bind:src="ExampleInfo.ImgUrl" width="100%" /> -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
         <div class="bs_news">
             <div class="row">
                 <div class="container">
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                         <div class="row">
                             <div class="bs_news_search">
                                 <div class="input-group">
@@ -43,9 +60,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="row bs_news_item" v-for="news in newsInfo.News">
+                    </div> -->
+                    <div class="col-md-12">
+                        <div class="row bs_news_item" v-for="news in NewsInfo.NewsList">
                             <div v-on:click="methods.handleDetail(news.Id)" class="col-md-4 bs_news_item_img">
                                 <img v-bind:src="news.ImgUrl" alt="">
                             </div>

@@ -35,7 +35,12 @@ require(['vue', 'jquery', 'bootstrap', 'lazyload', 'bstarData'], function (vue, 
         methods: {
             feedback: function () {
                 alert(app.addressInfo.Feedback.Name + "-" + app.addressInfo.Feedback.Email + "-" + app.addressInfo.Feedback.Message);
+            },
+            Onload: function () {
+                //加载言论数据
+
             }
+
         }
     });
 

@@ -8,124 +8,71 @@
     <title>加入我们</title>
 
     <link href="../../fonts/FontAwesome/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../lib/bootstrap/bootsnav.css">
     <link rel="stylesheet" href="../../lib/bootstrap/animate.css">
-    <link rel="stylesheet" href="../../lib/bootstrap/overwrite.css">
-    <link rel="stylesheet" href="../../lib/carousel/carousel.css">
-    <link rel="stylesheet" href="../../lib/common/footer.css">
-    <link rel="stylesheet" href="../../lib/common/busy.css">
-    <link rel="stylesheet" href="../../lib/toolbar/toolbar.css">
     <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../../lib/common/bstar.css">
     <link rel="stylesheet" href="join.css">
 </head>
 
 <body>
     <div id="app">
-        <!--container start-->
+        <!--活动菜单-->
         <div class="bs_join_video">
             <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class=" text-center wow bounceInLeft">
+                            <br/>
+                            <h2>
+                                {{NoticeInfo.Title}}
+                            </h2>
+                            <br/>
+                            <div v-html="NoticeInfo.Abstract"></div>
+                            <br/>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
+                </div>
             </div>
         </div>
-
+        <!--加入简介-->
         <div class="container row bs_join_tip">
-            <h2 class="text-center">加入<b>筑星科技</b> ，撰写你的故事</h2>
+            <h2 class="text-center">{{JoinInfo.Title}}</h2>
             <br/>
             <div class="col-md-6">
-                <img src="assets/img/join_tip.png" style="width:100%;height:100%;">
+                <img v-bind:src="JoinInfo.ImgUrl" style="width:100%;height:100%;">
             </div>
             <div class="col-md-6">
-                2015年5月14日，我们诞生了。我们选择智能手机作为实践梦想的第一步，秉承“不将就”的理念，与世界分享品质科技。<br/> 2015年5月14日，我们诞生了。我们选择智能手机作为实践梦想的第一步，秉承“不将就”的理念，与世界分享品质科技。
-                <br/> 2015年5月14日，我们诞生了。我们选择智能手机作为实践梦想的第一步，秉承“不将就”的理念，与世界分享品质科技。
-                <br/> 2015年5月14日，我们诞生了。我们选择智能手机作为实践梦想的第一步，秉承“不将就”的理念，与世界分享品质科技。
-                <br/>
+                <div v-html="JoinInfo.Abstract"></div>
             </div>
         </div>
         <div class="bs_join_job text-center">
-            <h2>看看哪个职位你最擅长</h2>
+            <h2>{{SearchInfo.Title}}</h2>
             <br/>
             <h4>
-                做自己喜欢并擅长的工作，不仅仅能给你带来丰厚的回报，更能带来十足的快乐和幸福。
+                {{SearchInfo.Abstract}}
             </h4>
             <br/>
-            <a href="#job"><button class="btn btn-default btn-lg">查看所有职位</button></a>
+            <a href="#job"><button class="btn btn-default btn-lg">{{SearchInfo.SearchTip}}</button></a>
         </div>
         <!--公司福利-->
         <div class="bs_join_welfare text-center">
             <div class="row">
-                <h2>公司福利</h2>
+                <h2>{{WelfareInfo.Title}}</h2>
                 <br/>
                 <p>
-                    我们就是一个大家庭，让你我之间充满爱。
+                    <div v-html="WelfareInfo.Abstract"></div>
                 </p>
                 <br/>
             </div>
             <div class="row">
                 <div class="container">
-                    <div class="col-md-3">
+                    <div class="col-md-3" v-for="welfare in WelfareInfo.WelfareList">
                         <div class="bs_join_welfare_item">
-                            <i class="fa fa-dollar fa-4x"></i><br>
-                            <h5>薪酬五险一金</h5>
-                            <p>- 有竞争力的薪酬：月薪+绩效年终制度，生活充满保障<br/>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="bs_join_welfare_item">
-                            <i class="fa fa-plane fa-4x"></i><br>
-                            <h5>带薪年假</h5>
-                            <p>- 除法定节假日以外，每位员工都享有带薪年假
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="bs_join_welfare_item">
-                            <i class="fa fa-heart fa-4x"></i><br>
-                            <h5>节庆关怀</h5>
-                            <p>- 各种节假日小活动/小礼物陪你过节，更有贺礼在你生日、结婚、生子时降临
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="bs_join_welfare_item">
-                            <i class="fa fa-child fa-4x"></i><br>
-                            <h5>健身房及运动日</h5>
-                            <p>- 每周三晚的运动日，健康的体魄是革命的根本
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="container">
-                    <div class="col-md-3">
-                        <div class="bs_join_welfare_item">
-                            <i class="fa  fa-life-ring fa-4x"></i><br>
-                            <h5>周年活动</h5>
-                            <p>- 游山玩水、面朝大海，让你释放青春
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="bs_join_welfare_item">
-                            <i class="fa fa-clock-o fa-4x"></i><br>
-                            <h5>加班福利</h5>
-                            <p>- 有了零食和打车报销，加班也充满能量
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="bs_join_welfare_item">
-                            <i class="fa fa-coffee fa-4x"></i><br>
-                            <h5>下午茶</h5>
-                            <p>- 一碗浓浓爱心的糖水，我干了，你随意
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="bs_join_welfare_item">
-                            <i class="fa fa-home fa-4x"></i><br>
-                            <h5>筑星宿舍</h5>
-                            <p>- 一个温暖的小窝，都市中的爱情公寓。
+                            <div v-html="welfare.ImgUrl"></div>
+                            <h4>{{welfare.Title}}</h4>
+                            <p>- {{welfare.Abstarct}}<br/>
                             </p>
                         </div>
                     </div>
@@ -195,101 +142,35 @@
             </div>
         </div>
         <!--公司职位-->
-        <div id="job">
+        <div class="bs_job">
             <div class="row">
                 <div class="container">
-                    <div class="col-md-3">
-                        <div class="bs_join_job_search">
-                            <div class="input-group">
-                                <input type="text" class="form-control">
-                                <span class="input-group-btn"><button class="btn btn-default" type="button">
-							<i class="fa fa-search"></i></button></span>
-                            </div>
-                            <hr/>
-                            <div class="dropdowns">
-                                <button type="button" class="btn dropdown-toggle" style="width:100%;" id="dropdownMenu1" data-toggle="dropdown">招聘类型<span class="caret"></span></button>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">Java</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">数据通信/网络</a>
-                                    </li>
-                                    <li role="presentation" class="divider"></li>
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">分离的链接</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <br/>
-                            <div class="dropdown">
-                                <button type="button" class="btn dropdown-toggle" style="width:100%;" id="dropdownMenu1" data-toggle="dropdown">职位类型<span class="caret"></span></button>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">Java</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">数据通信/网络</a>
-                                    </li>
-                                    <li role="presentation" class="divider"></li>
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">分离的链接</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <br/>
-                            <div class="dropdown">
-                                <button type="button" class="btn dropdown-toggle" style="width:100%;" id="dropdownMenu1" data-toggle="dropdown">所在地区<span class="caret"></span></button>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">Java</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">数据通信/网络</a>
-                                    </li>
-                                    <li role="presentation" class="divider"></li>
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">分离的链接</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
+                    <div class="col-md-12">
                         <div class="bs_join_job_table">
                             <table class="table table-hover table-responsive">
                                 <thead>
 
                                     <tr>
-                                        <th>职位名称</th>
-                                        <th>职位分类</th>
-                                        <th>城市</th>
+                                        <th>{{JobInfo.NameTip}}</th>
+                                        <th>{{JobInfo.VocationTypeTip}}</th>
+                                        <th>{{JobInfo.AddressTip}}</th>
                                         <th>&nbsp;</th>
                                     </tr>
 
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <tr class="bs_join_toggle" v-for="job in jobInfo.Jobs">
+                                        <tr class="bs_join_toggle" v-for="job in JobInfo.JobList">
                                             <td colspan="3" v-show="job.IsShow">
-                                                <div v-on:click="methods.handleJobShow(job.Id)" style="border-bottom:1px solid #ccc; padding-bottom:10px;">{{job.Name}}&nbsp;&nbsp;&nbsp;<span class="badge">{{job.JobTypeStr}}</span></div>
-                                                <div style="padding-top:10px;" v-html="job.Abstract"></div>
+                                                <div v-on:click="methods.handleJobShow(job.Id)" style="border-bottom:1px solid #ccc; padding-bottom:10px;">{{job.Name}}&nbsp;&nbsp;&nbsp;<span class="badge">{{job.TypeStr}}</span></div>
+                                                <div style="padding-top:10px;" v-html="job.Content"></div>
                                                 <br/>
                                                 <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-danger">立即申请</button>
                                             </td>
                                             <td v-show="job.IsShow" v-on:click="methods.handleJobShow(job.Id)"><i class="bs_join_close fa fa-remove"></i></td>
-                                            <td v-show="!job.IsShow" v-on:click="methods.handleJobShow(job.Id)">{{job.Name}}&nbsp;&nbsp;&nbsp;<span class="badge">{{job.JobTypeStr}}</span></td>
+                                            <td v-show="!job.IsShow" v-on:click="methods.handleJobShow(job.Id)">{{job.Name}}&nbsp;&nbsp;&nbsp;<span class="badge">{{job.TypeStr}}</span></td>
                                             <td v-show="!job.IsShow" v-on:click="methods.handleJobShow(job.Id)">{{job.VocationTypeStr}}</td>
-                                            <td v-show="!job.IsShow" v-on:click="methods.handleJobShow(job.Id)">{{job.City}}</td>
+                                            <td v-show="!job.IsShow" v-on:click="methods.handleJobShow(job.Id)">{{job.Address}}</td>
                                             <td v-show="!job.IsShow" v-on:click="methods.handleJobShow(job.Id)">+</td>
 
                                         </tr>
