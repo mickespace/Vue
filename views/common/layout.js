@@ -44,6 +44,7 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'iframe', 'config', 'layoutDa
                 layout.LoginInfo.IsLoginMode = !layout.LoginInfo.IsLoginMode;
             },
 
+
             Login: function () {
                 //判断是否输入正确
                 var tip = "请输入用户名密码";
@@ -69,10 +70,14 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'iframe', 'config', 'layoutDa
                     dataType: 'json',
                     success: function (res) {
                         layout.isbusy = false;
-                        var result = res.Data;
+                        var result = JSON.stringify(res.Data);
+                        alert(result);
                         //处理登录信息(保存到浏览器中)
                         var storage = window.localStorage;
                         storage["currentUser"] = result;
+                        layout.LoginInfo.LoginModel.ErrorTip = '登录成功';
+                        $("nav.navbar.bootsnav > .side").removeClass("on");
+                        $("body").removeClass("on-side");
                     },
                     error: function () {
                         layout.isbusy = false;
@@ -80,28 +85,17 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'iframe', 'config', 'layoutDa
                     }
                 });
             },
-            Logout: function () {
-
-            },
-            Register: function () {
-
-            },
-            CreateValidationCode: function () {
-
-            },
             NavigationTo: function (routerUrl, data, height) {
                 var iframeurl = "../" + routerUrl + ".html?data=" + data;
-                var bsiframe = $("#mainFrame");
-                bsiframe.attr("height", height + 'px');
-                bsiframe.attr("src", iframeurl);
+                window.location.href = iframeurl;
             }
         }
     });
-    $(function () {
-        var bsiframe = $("#mainFrame");
-        bsiframe.attr("height", '3200px');
-        bsiframe.attr("src", '../index/index.html');
-    })
+    // $(function () {
+    //     var bsiframe = $("#mainFrame");
+    //     bsiframe.attr("height", '3200px');
+    //     bsiframe.attr("src", '../index/index.html');
+    // })
     $(function () {
         $("#send_code").click(function () {
             $(this).button('loading').delay(1000).queue(function () {
