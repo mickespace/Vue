@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.css">
     <link href="../../fonts/FontAwesome/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../lib/bootstrap/animate.css">
+    <link rel="stylesheet" href="../../lib/bootstrap/bootsnav.css">
+    <link rel="stylesheet" href="../../lib/common/header.css">
+    <link rel="stylesheet" href="../../lib/common/footer.css">
     <link rel="stylesheet" href="product.css">
 </head>
 
@@ -132,29 +135,6 @@
                 </div>
             </div>
             <!--案例-->
-            <div class="section" id="section4">
-                <div class="slide" v-for="product in productInfo.Products">
-                    <div class="container">
-                        <div class="text-center ">
-                            <br/>
-                            <h2>{{ product.Name }}</h2>
-                            <br/>
-                            <p>{{ product.Abstract }}</p>
-                            <br/>
-                        </div>
-                        <div class="row">
-                            <div class="section4_img col-lg-6 col-sm-6 text-center">
-                                <img v-bind:src="product.ImgUrl" width="100%" height="100%" alt="">
-                            </div>
-                            <div class="col-lg-6 col-sm-6 ">
-                                <p v-for="itemProduct in product.ItemAbstract">
-                                    <i class="fa fa-check fa-2x pr-10"></i>{{itemProduct.Abstract}}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <!--content end-->
     </div>

@@ -2,7 +2,7 @@ define(function () {
     return {
         ParallaxData: [{
             Title: 'BIM应用二次开发平台',
-            Abstract: '建设领域的软件开发者，在BIMFACE提供的基础功能上进行二次开发， 就能为用户提供更加丰富的BIM应用',
+            Abstract: '高效的建设领域BIM应用二次开发平台，丰富的BIM应用商店',
             ImgUrl: 'assets/img/index/parallax/1.png',
             Tip: '立即使用',
             Link: '../product/download.html',

@@ -8,8 +8,8 @@
     <title>首 页</title>
     <link href="../../fonts/FontAwesome/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="../../lib/bootstrap/bootsnav.css">
     <link rel="stylesheet" href="../../lib/bootstrap/animate.css">
+    <link rel="stylesheet" href="../../lib/bootstrap/bootsnav.css">
     <link rel="stylesheet" href="../../lib/common/header.css">
     <link rel="stylesheet" href="../../lib/common/footer.css">
     <link rel="stylesheet" href="../../lib/toolbar/toolbar.css">
@@ -20,7 +20,6 @@
     <div id="layout">
         <!--header start-->
         <nav class="navbar navbar-default navbar-fixed navbar-transparent dark bootsnav">
-            <!-- search start -->
             <div class="top-search">
                 <div class="container">
                     <div class="input-group">
@@ -30,8 +29,6 @@
                     </div>
                 </div>
             </div>
-            <!-- search end -->
-            <!-- cat start -->
             <div class="container" style="padding-bottom:0px; padding-top:0px;margin-top:0px; margin-bottom:0px;">
                 <div class="attr-nav">
                     <ul>
@@ -39,8 +36,6 @@
                         <li class="side-menu"><a href="#"><i class="fa fa-user"></i><span  class="badge">&nbsp;试&nbsp;&nbsp;&nbsp;&nbsp;用&nbsp;</span></a></li>
                     </ul>
                 </div>
-                <!-- cat end -->
-                <!-- logo start -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                     <i class="fa fa-bars"></i>
@@ -50,8 +45,6 @@
                     <img src="../../assets/img/logo_black.png" class="logo logo-scrolled" alt="">
                 </a>
                 </div>
-                <!-- logo end -->
-                <!-- menu start -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                         <li><a href="javascript:void(0)" v-on:click="NavigationTo('index/index','','3100')">&nbsp;&nbsp;首&nbsp;页&nbsp;&nbsp;</a></li>
@@ -74,7 +67,6 @@
                         <li class="dropdown">
                             <a href="javascript:void(0)" v-on:click="NavigationTo('about/company','','3000')" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;关于筑星&nbsp;&nbsp;</a>
                             <ul class="dropdown-menu" role="menu">
-
                                 <li><a href="javascript:void(0)" v-on:click="NavigationTo('about/company','','3000')">筑星简介</a></li>
                                 <li><a href="javascript:void(0)" v-on:click="NavigationTo('about/news','','1600')">新闻动态</a></li>
                                 <li><a href="javascript:void(0)" v-on:click="NavigationTo('about/contact','','600')">联系我们</a></li>
@@ -83,44 +75,36 @@
                         </li>
                     </ul>
                 </div>
-                <!-- menu end -->
             </div>
-            <!-- Start Side Menu -->
             <div class="side">
                 <a href="#" class="close-side"><i class="fa fa-close"></i></a>
                 <div class="widget">
-                    <div class="bs_login" v-show="operModel.isLoginMode">
+                    <div class="bs_login" v-show="LoginInfo.IsLoginMode">
                         <p class="bs_login_title">用户登录</p>
-                        <span><i class="fa fa-quote-left"></i>&nbsp;&nbsp;请输入用户名密码</span><br/><br/>
-                        <input type="text" class="form-control" id="phone" placeholder="请输入帐号">
-                        <input type="password" class="form-control" id="phone" placeholder="请输入密码">
-                        <button class="btn btn-primary" style="width:100%;" type="button">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+                        <span><i class="fa fa-quote-left"></i>&nbsp;&nbsp;<span>{{LoginInfo.LoginModel.ErrorTip}}</span></span><br/><br/>
+                        <input type="text" class="form-control" v-model:value="LoginInfo.LoginModel.Account" id="phone" placeholder="请输入帐号">
+                        <input type="password" class="form-control" v-model:value="LoginInfo.LoginModel.Password" id="phone" placeholder="请输入密码">
+                        <button class="btn btn-primary" style="width:100%;" v-on:click="Login" type="button">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
                         <div class="bs_login_goregister"><a v-on:click="SwitchMode">组册新用户&gt;&gt;</a></div>
                     </div>
-                    <div class="bs_login" v-show="!operModel.isLoginMode">
+                    <div class="bs_login" v-show="!LoginInfo.IsLoginMode">
                         <p class="bs_login_title">创建用户</p>
                         <span><i class="fa fa-quote-left"></i>&nbsp;&nbsp;完成手机验证创建用户</span><br/><br/>
                         <input type="text" class="form-control" id="phone" placeholder="请输入手机号">
-                        <input type="text" class="form-control" id="phone" placeholder="请输入单位">
-                        <div class="input-group bs_login_group">
-                            <input type="text" class="form-control" placeholder="输入红色数字">
-                            <span class="input-group-btn">
-                              <button class="btn btn-default" type="button">3<span style="color:red;">8</span>93
-                            <span style="color:red;">8</span>7<span style="color:red;">8</span></button>
-                            </span>
-                        </div>
                         <div class="input-group bs_login_group">
                             <input type="text" class="form-control" placeholder="短信验证码">
                             <span class="input-group-btn">
                         <button class="btn btn-default" id="send_code" type="button" data-complete-text="发送成功">获取验证码</button>
+          
                     </span>
                         </div>
+                        <input type="password" class="form-control" id="phone" placeholder="请输入密码">
+                        <input type="password" class="form-control" id="phone" placeholder="请再次输入密码">
                         <button class="btn btn-primary" style="width:100%;" type="button">创建用户</button>
                         <div><a v-on:click="SwitchMode">&lt;&lt;返回登录界面</a></div>
                     </div>
                 </div>
             </div>
-            <!-- End Side Menu -->
         </nav>
         <!--header end-->
 

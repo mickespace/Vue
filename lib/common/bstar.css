@@ -50,3 +50,7 @@ body {
     transform: translate(-50%, -50%);
     overflow: hidden;
 }
+
+.bs_notice {
+    padding-top: 80px;
+}

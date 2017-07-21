@@ -4,11 +4,11 @@ require.config({
         "vue": "vue/vue",
         "jquery": "jquery/jquery.min",
         "bootstrap": "bootstrap/bootstrap",
-        "bootsnav": "bootstrap/bootsnav",
-        "carousel": "carousel/carousel",
-        "modernizr": "parallax/modernizr",
-        "toolbar": "toolbar/toolbar",
         "lazyload": "jquery/lazyload",
+        "bstarData": "../views/about/newsdetailData",
+        "layoutData": "../views/common/layoutData",
+        "config": "config",
+        "bootsnav": "bootstrap/bootsnav",
     },
     shim: {
         'vue': {
@@ -16,18 +16,9 @@ require.config({
         },
         'bootstrap': {
             deps: ['jquery'],
-            export: 'bootstrap'
         },
-
         'bootsnav': {
             export: 'bootsnav'
-        },
-        'carousel': {
-            deps: ['jquery'],
-            export: 'carousel'
-        },
-        'toolbar': {
-            export: 'toolbar'
         },
         'lazyload': {
             deps: ['jquery'],
@@ -36,47 +27,79 @@ require.config({
     }
 });
 
-require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'carousel', 'modernizr', 'toolbar', 'lazyload'], function (vue, jquery, bootstrap, bootsnav, carousel, modernizr, toolbar, lazyload) {
-    // alert(window.location.search);
-
+require(['vue', 'jquery', 'bootstrap', 'lazyload', 'bstarData', 'layoutData', 'config', 'bootsnav'], function (vue, jquery, bootstrap, lazyload, bstarData, layoutData, config, bootsnav) {
     var app = new vue({
         el: '#app',
         data: {
             isbusy: false,
-            methods: {
-                showmessage: function () {
-                    app.isbusy = true;
-                    jquery.ajax({
-                        type: 'get',
-                        timeout: 5000,
-                        url: 'http://192.16.10.100:19432/api/v1/user/login',
-                        data: {
-                            appKey: '908F0991-0E14-484F-91E7-DAAF0F4B2A37',
-                            userName: '13642520884',
-                            password: '123456'
-                        },
-                        dataType: 'json',
-                        success: function (res) {
-                            app.isbusy = false;
-                        },
-                        error: function () {
-                            app.isbusy = false;
-                            app.teamInfo.Teams = [{
-                                Name: 'SB GHH STAR',
-                                Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
-                                ImgUrl: 'assets/img/team/member1.jpg'
-                            }, {
-                                Name: 'SB GHH STAR',
-                                Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
-                                ImgUrl: 'assets/img/team/member3.jpg'
-                            }, {
-                                Name: 'SB GHH STAR',
-                                Abstract: '任何单位任何事情，首先强调的就是程序，因为管理界有句名言：细节决定成败。程序就是整治细节最好的工具。于是，现在我们的所有工作，无时无处不在强调程序。因为有了规范的办事程序，现在我们这些平民百姓到政府机关办事比原来容易了许多，最起码知道办什么事该找哪个部门，知道办这个事应该用多长时间了。政府公开办事程序，也拉近了',
-                                ImgUrl: 'assets/img/team/member4.jpg'
-                            }];
-                        }
-                    });
-                }
+            NewsInfo: bstarData.NewsData,
+            LoginInfo: layoutData.LoginData,
+        },
+        methods: {
+            showmessage: function () {
+                app.isbusy = true;
+                jquery.ajax({
+                    type: 'get',
+                    timeout: 5000,
+                    url: 'http://192.16.10.100:19432/api/v1/user/login',
+                    data: {
+                        appKey: '908F0991-0E14-484F-91E7-DAAF0F4B2A37',
+                        userName: '13642520884',
+                        password: '123456'
+                    },
+                    dataType: 'json',
+                    success: function (res) {
+                        app.isbusy = false;
+                    },
+                    error: function () {
+                        app.isbusy = false;
+                    }
+                });
+            },
+            SwitchMode: function () {
+                app.LoginInfo.IsLoginMode = !app.LoginInfo.IsLoginMode;
+            },
+
+            Login: function () {
+                //判断是否输入正确
+                var tip = "请输入用户名密码";
+                var account = app.LoginInfo.LoginModel.Account;
+                var password = app.LoginInfo.LoginModel.Password;
+                if (account == "" || password == "" || isNaN(account) || isNaN(password)) {
+                    tip = '账号和密码不能为空'
+                    return;
+                } else
+                    tip = '请点击登录按钮'
+                app.LoginInfo.LoginModel.ErrorTip = tip;
+                app.isbusy = true;
+                //登录操作
+                $.ajax({
+                    type: 'get',
+                    timeout: 5000,
+                    url: config.BaseUrl + '/api/v1/user/login',
+                    data: {
+                        appKey: config.Appkey,
+                        userName: account,
+                        password: password
+                    },
+                    dataType: 'json',
+                    success: function (res) {
+                        app.isbusy = false;
+                        var result = res.Data;
+                        //处理登录信息(保存到浏览器中)
+                        var storage = window.localStorage;
+                        storage["currentUser"] = result;
+                        app.LoginInfo.LoginModel.ErrorTip = '登录成功';
+                    },
+                    error: function () {
+                        app.isbusy = false;
+                        app.LoginInfo.LoginModel.ErrorTip = '登录失败';
+                    }
+                });
+            },
+            NavigationTo: function (routerUrl, data, height) {
+                var iframeurl = "../" + routerUrl + ".html?data=" + data;
+                window.location.href = iframeurl;
             }
         }
     });

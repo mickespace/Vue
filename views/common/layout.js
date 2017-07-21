@@ -7,6 +7,8 @@ require.config({
         "bootsnav": "bootstrap/bootsnav",
         "toolbar": "toolbar/toolbar",
         "iframe": "iframe/iframe",
+        "config": "config",
+        "layoutData": "../views/common/LayoutData",
     },
     shim: {
         'vue': {
@@ -25,38 +27,58 @@ require.config({
     }
 });
 
-require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'iframe'], function (v, $) {
+require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'iframe', 'config', 'layoutData'], function (v, $, bootstrap, bootsnav, iframe, config, layoutData) {
 
     var layout = new v({
         el: '#layout',
         data: {
             isbusy: false,
+            LoginInfo: layoutData.LoginData,
+
             operModel: {
-                isLoginMode: true,
-            },
-            userInfo: {
-                Name: '陈俊良',
-                LoginTime: '2017-07-11',
-                Portrait: '2017-07-11',
-                IsLogin: false
-            },
-            loginModel: {
-                Account: '',
-                Password: ''
-            },
-            registerModel: {
-                Phone: '',
 
             }
         },
         methods: {
             SwitchMode: function () {
-                layout.operModel.isLoginMode = !layout.operModel.isLoginMode;
+                layout.LoginInfo.IsLoginMode = !layout.LoginInfo.IsLoginMode;
             },
 
             Login: function () {
                 //判断是否输入正确
-
+                var tip = "请输入用户名密码";
+                var account = layout.LoginInfo.LoginModel.Account;
+                var password = layout.LoginInfo.LoginModel.Password;
+                if (account == "" || password == "" || isNaN(account) || isNaN(password)) {
+                    tip = '账号和密码不能为空'
+                    return;
+                } else
+                    tip = '请点击登录按钮'
+                layout.LoginInfo.LoginModel.ErrorTip = tip;
+                layout.isbusy = true;
+                //登录操作
+                $.ajax({
+                    type: 'get',
+                    timeout: 5000,
+                    url: config.BaseUrl + '/api/v1/user/login',
+                    data: {
+                        appKey: config.Appkey,
+                        userName: account,
+                        password: password
+                    },
+                    dataType: 'json',
+                    success: function (res) {
+                        layout.isbusy = false;
+                        var result = res.Data;
+                        //处理登录信息(保存到浏览器中)
+                        var storage = window.localStorage;
+                        storage["currentUser"] = result;
+                    },
+                    error: function () {
+                        layout.isbusy = false;
+                        layout.LoginInfo.LoginModel.ErrorTip = '登录失败';
+                    }
+                });
             },
             Logout: function () {
 
@@ -64,7 +86,9 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'iframe'], function (v, $) {
             Register: function () {
 
             },
+            CreateValidationCode: function () {
 
+            },
             NavigationTo: function (routerUrl, data, height) {
                 var iframeurl = "../" + routerUrl + ".html?data=" + data;
                 var bsiframe = $("#mainFrame");
@@ -85,6 +109,10 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'iframe'], function (v, $) {
             });
         });
     });
-
+    $(function () {
+        var storage = window.localStorage;
+        var userInfo = storage.getItem("currentUser");
+        alert(userInfo);
+    });
 
 });
