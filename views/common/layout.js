@@ -33,11 +33,7 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'iframe', 'config', 'layoutDa
         el: '#layout',
         data: {
             isbusy: false,
-            LoginInfo: layoutData.LoginData,
-
-            operModel: {
-
-            }
+            LoginInfo: layoutData.LoginData
         },
         methods: {
             SwitchMode: function () {
@@ -61,7 +57,7 @@ require(['vue', 'jquery', 'bootstrap', 'bootsnav', 'iframe', 'config', 'layoutDa
                 $.ajax({
                     type: 'get',
                     timeout: 5000,
-                    url: config.BaseUrl + '/api/v1/user/login',
+                    url: config.Api.LoginUrl,
                     data: {
                         appKey: config.Appkey,
                         userName: account,

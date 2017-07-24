@@ -73,24 +73,38 @@ require(['vue', 'jquery', 'bootstrap', 'carousel', 'modernizr', 'lazyload', 'bst
             SwitchMode: function () {
                 app.LoginInfo.IsLoginMode = !app.LoginInfo.IsLoginMode;
             },
+            InitData: function () {
+                var user = app.LoginInfo.InitData();
+                if (user == null)
+                    return;
+                app.LoginInfo.UserInfo.Avatar = user.Avatar;
+                app.LoginInfo.UserInfo.RealName = user.RealName;
+                app.LoginInfo.UserInfo.PhoneNumber = user.PhoneNumber;
+                app.LoginInfo.UserInfo.Email = user.Email;
+                app.LoginInfo.UserInfo.Id = user.Id;
+                app.LoginInfo.UserInfo.TokenKey = user.TokenKey;
+                app.LoginInfo.UserInfo.LoginDate = user.LoginDate;
+                app.LoginInfo.IsSignUp = true;
 
+            },
             Login: function () {
                 //判断是否输入正确
-                var tip = "请输入用户名密码";
+
+                app.LoginInfo.LoginModel.NormalTip = app.LoginInfo.LoginModel.Message;
+                app.LoginInfo.LoginModel.ErrorTip = '';
                 var account = app.LoginInfo.LoginModel.Account;
                 var password = app.LoginInfo.LoginModel.Password;
-                if (account == "" || password == "" || isNaN(account) || isNaN(password)) {
-                    tip = '账号和密码不能为空'
+                if (account == "" || password == "") {
+                    app.LoginInfo.LoginModel.NormalTip = "";
+                    app.LoginInfo.LoginModel.ErrorTip = '账号和密码不能为空'
                     return;
-                } else
-                    tip = '请点击登录按钮'
-                app.LoginInfo.LoginModel.ErrorTip = tip;
+                }
                 app.isbusy = true;
                 //登录操作
                 $.ajax({
                     type: 'get',
                     timeout: 5000,
-                    url: config.BaseUrl + '/api/v1/user/login',
+                    url: config.Api.LoginUrl,
                     data: {
                         appKey: config.Appkey,
                         userName: account,
@@ -99,20 +113,45 @@ require(['vue', 'jquery', 'bootstrap', 'carousel', 'modernizr', 'lazyload', 'bst
                     dataType: 'json',
                     success: function (res) {
                         app.isbusy = false;
-                        var result = JSON.stringify(res.Data);
-                        alert(result);
-                        //处理登录信息(保存到浏览器中)
+                        if (!res.IsOk) {
+                            app.LoginInfo.LoginModel.NormalTip = "";
+                            app.LoginInfo.LoginModel.ErrorTip = res.Message;
+                            return;
+                        }
+                        var userInfo = res.Data;
+                        //判断是否登陆成功
+                        app.LoginInfo.UserInfo.Avatar = userInfo.Avatar;
+                        app.LoginInfo.UserInfo.RealName = userInfo.RealName;
+                        app.LoginInfo.UserInfo.PhoneNumber = userInfo.PhoneNumber;
+                        app.LoginInfo.UserInfo.Email = userInfo.Email;
+                        app.LoginInfo.UserInfo.Id = userInfo.Id;
+                        app.LoginInfo.UserInfo.TokenKey = userInfo.TokenKey;
+                        var date = new Date();
+                        app.LoginInfo.UserInfo.LoginDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + '  ' + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+                        app.LoginInfo.IsSignUp = true;
+                        //保存到浏览器
                         var storage = window.localStorage;
-                        storage["currentUser"] = result;
-                        app.LoginInfo.LoginModel.ErrorTip = '登录成功';
+                        storage["currentUser"] = JSON.stringify(app.LoginInfo.UserInfo);
+                        //隐藏输入页面
                         $("nav.navbar.bootsnav > .side").removeClass("on");
                         $("body").removeClass("on-side");
+                        //清除输入数据
+                        app.LoginInfo.LoginModel.Account = "";
+                        app.LoginInfo.LoginModel.Password = "";
                     },
-                    error: function () {
+                    error: function (res) {
                         app.isbusy = false;
-                        app.LoginInfo.LoginModel.ErrorTip = '登录失败';
+                        var result = JSON.stringify(res.Data);
+                        alert(result);
+                        app.isbusy = false;
+                        app.LoginInfo.LoginModel.NormalTip = "";
+                        app.LoginInfo.LoginModel.ErrorTip = '出现网络异常';
                     }
                 });
+            },
+            Logout: function () {
+                app.LoginInfo.IsSignUp = false;
+                app.LoginInfo.Logout();
             },
             NavigationTo: function (routerUrl, data, height) {
                 var iframeurl = "../" + routerUrl + ".html?data=" + data;
@@ -126,9 +165,6 @@ require(['vue', 'jquery', 'bootstrap', 'carousel', 'modernizr', 'lazyload', 'bst
     })
 
     $(function () {
-        var storage = window.localStorage;
-        var userInfo = storage.getItem("currentUser");
-        var user = JSON.stringify(userInfo);
-        alert(user);
+        app.InitData();
     });
 });
