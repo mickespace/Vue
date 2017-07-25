@@ -4,7 +4,6 @@ require.config({
         "vue": "vue/vue",
         "jquery": "jquery/jquery.min",
         "bootstrap": "bootstrap/bootstrap",
-        "carousel": "carousel/carousel",
         "modernizr": "parallax/modernizr",
         "lazyload": "jquery/lazyload",
         "bstarData": "../views/index/indexData",
@@ -29,7 +28,7 @@ require.config({
     }
 });
 
-require(['vue', 'jquery', 'bootstrap', 'carousel', 'modernizr', 'lazyload', 'bstarData', 'bstarData_en', 'layoutData', 'config', 'bootsnav'], function (vue, jquery, bootstrap, carousel, modernizr, lazyload, bstarData, bstarData_en, layoutData, config, bootsnav) {
+require(['vue', 'jquery', 'bootstrap', 'modernizr', 'lazyload', 'bstarData', 'bstarData_en', 'layoutData', 'config', 'bootsnav'], function (vue, jquery, bootstrap, modernizr, lazyload, bstarData, bstarData_en, layoutData, config, bootsnav) {
     var app = new vue({
         el: '#app',
         data: {
@@ -41,6 +40,7 @@ require(['vue', 'jquery', 'bootstrap', 'carousel', 'modernizr', 'lazyload', 'bst
             TeamInfo: bstarData.TeamData,
             TrialInfo: bstarData.TrialData,
             LoginInfo: layoutData.LoginData,
+            FooterInfo: layoutData.FooterData,
         },
         methods: {
             onload: function () {
@@ -89,7 +89,6 @@ require(['vue', 'jquery', 'bootstrap', 'carousel', 'modernizr', 'lazyload', 'bst
             },
             Login: function () {
                 //判断是否输入正确
-
                 app.LoginInfo.LoginModel.NormalTip = app.LoginInfo.LoginModel.Message;
                 app.LoginInfo.LoginModel.ErrorTip = '';
                 var account = app.LoginInfo.LoginModel.Account;
@@ -124,7 +123,7 @@ require(['vue', 'jquery', 'bootstrap', 'carousel', 'modernizr', 'lazyload', 'bst
                         app.LoginInfo.UserInfo.RealName = userInfo.RealName;
                         app.LoginInfo.UserInfo.PhoneNumber = userInfo.PhoneNumber;
                         app.LoginInfo.UserInfo.Email = userInfo.Email;
-                        app.LoginInfo.UserInfo.Id = userInfo.Id;
+                        app.LoginInfo.UserInfo.Id = userInfo._Id;
                         app.LoginInfo.UserInfo.TokenKey = userInfo.TokenKey;
                         var date = new Date();
                         app.LoginInfo.UserInfo.LoginDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + '  ' + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
@@ -141,17 +140,59 @@ require(['vue', 'jquery', 'bootstrap', 'carousel', 'modernizr', 'lazyload', 'bst
                     },
                     error: function (res) {
                         app.isbusy = false;
-                        var result = JSON.stringify(res.Data);
-                        alert(result);
-                        app.isbusy = false;
                         app.LoginInfo.LoginModel.NormalTip = "";
-                        app.LoginInfo.LoginModel.ErrorTip = '出现网络异常';
+                        app.LoginInfo.LoginModel.ErrorTip = '出现网络异常！';
                     }
                 });
             },
             Logout: function () {
                 app.LoginInfo.IsSignUp = false;
                 app.LoginInfo.Logout();
+            },
+            SendCode: function () {
+                //判断是否输入正确
+                app.LoginInfo.RegisterModel.NormalTip = app.LoginInfo.RegisterModel.Message;
+                app.LoginInfo.RegisterModel.ErrorTip = '';
+                var phone = app.LoginInfo.RegisterModel.Phone;
+                if (phone == "") {
+                    app.LoginInfo.RegisterModel.NormalTip = "";
+                    app.LoginInfo.RegisterModel.ErrorTip = '手机号码不能为空！'
+                    return;
+                }
+                var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+                if (!myreg.test(phone)) {
+                    app.LoginInfo.RegisterModel.NormalTip = "";
+                    app.LoginInfo.RegisterModel.ErrorTip = '请输入有效的手机号码！'
+                    return;
+                }
+                //判断是否已经读取过
+                var storage = window.localStorage;
+                var date = new Date();
+                var currentTime = date.getTime();
+                var historyTime = storage.getItem("CodeTime");
+                if (historyTime != null || historyTime != "") {
+                    return null;
+                }
+                //请求验证码
+                app.isbusy = true;
+                // $.ajax({
+                //     type: 'get',
+                //     timeout: 5000,
+                //     url: config.Api.VerifyCodeUrl,
+                //     data: {
+                //         appKey: config.Appkey,
+                //         userName: phone,
+                //     },
+                //     dataType: 'json',
+                //     success: function (res) {
+
+                //     },
+                //     error: function (res) {
+                //         app.isbusy = false;
+                //         app.LoginInfo.RegisterModel.NormalTip = "";
+                //         app.LoginInfo.RegisterModel.ErrorTip = '出现网络异常！';
+                //     }
+                // });
             },
             NavigationTo: function (routerUrl, data, height) {
                 var iframeurl = "../" + routerUrl + ".html?data=" + data;
@@ -160,6 +201,15 @@ require(['vue', 'jquery', 'bootstrap', 'carousel', 'modernizr', 'lazyload', 'bst
         }
     });
 
+    $(function () {
+        $("#send_code").click(function () {
+            $(this).button('loading').delay(1000).queue(function () {
+                app.SendCode();
+                $(this).button('complete');
+            });
+
+        });
+    });
     $("img.lazy").lazyload({
         effect: "fadeIn"
     })

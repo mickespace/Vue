@@ -29,6 +29,7 @@
 
 .bs_platform_item {
     cursor: pointer;
+    padding-top: 10px;
 }
 
 .bs_platform_item:hover {
@@ -57,15 +58,13 @@
 /*== store ==*/
 
 .bs_store {
-    background: url(assets/img/index/platform/platform_bg.jpg);
-    background-position: center top;
-    background-attachment: fixed;
-    background-size: cover;
+    background: url(assets/img/index/platform/platform_bg.png);
     padding: 20px;
 }
 
 .bs_store_item {
-    padding: 20px;
+    text-align: left;
+    padding: 10px;
 }
 
 
@@ -87,7 +86,7 @@
 /*== team ==*/
 
 .bs_team {
-    background: url(assets/img/index/platform/platform_bg.jpg);
+    background: url(assets/img/index/team/team_bg.png);
     padding: 20px;
 }
 
@@ -95,4 +94,9 @@
     background-color: white;
     border: 1px solid #ccc;
     padding: 15px;
+}
+
+.bs_team_item_talk {
+    color: #505050;
+    font-size: 12px;
 }

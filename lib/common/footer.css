@@ -22,44 +22,6 @@
     color: #3da8f5
 }
 
-.tweet-box {
-    background: #505050;
-    padding: 8px 15px;
-    border-radius: 1px;
-    -moz-border-radius: 1px;
-    -webkit-border-radius: 1px;
-    border-bottom: 1px solid #636F79;
-    font-size: 14px;
-}
-
-.tweet-box::after {
-    background-color: #505050;
-    border-color: #505050;
-    border-image: none;
-    border-right: 1px none #505050;
-    border-style: none;
-    content: "";
-    display: block;
-    position: absolute;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-}
-
-.tweet-box a,
-.tweet-box i {
-    color: #3da8f5
-}
-
-.tweet-box a:hover {
-    color: #48cfad
-}
-
-.tweet-box i {
-    font-size: 40px;
-    float: left;
-    margin-right: 15px;
-}
-
 .social-link-footer li {
     float: right;
     margin: 5px 10px 5px 0px;
@@ -144,4 +106,32 @@ ul.page-footer-list li i {
 .address p {
     text-align: left;
     margin-bottom: 5px;
+}
+
+.bs_footer {}
+
+.bs_footer div {
+    padding: 0px;
+    margin: 0px;
+}
+
+.bs_footer img {
+    padding: 0px 1px;
+}
+
+.bs_waiter {
+    padding: 5px;
+    background-color: #505050;
+    margin-bottom: 3px;
+    border-radius: 3px;
+}
+
+.bs_waiter_phone {
+    margin-top: 5px;
+}
+
+.bs_waiter_img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
 }

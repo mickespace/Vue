@@ -1,23 +1,11 @@
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
-
-
-/* Carousel base class */
-
 .carousel {
   width: 100%;
   overflow: hidden;
 }
 
-
-/* Since positioning the image, we need to help out the caption */
-
 .carousel-caption {
   z-index: 10;
 }
-
-
-/* Declare heights because of positioning of img element */
 
 .carousel .item {
   background-color: #777;

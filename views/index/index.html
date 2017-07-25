@@ -9,7 +9,6 @@
     <link href="../../fonts/FontAwesome/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../lib/bootstrap/animate.css">
     <link rel="stylesheet" href="../../lib/carousel/carousel.css">
-    <link rel="stylesheet" href="../../lib/fullpage/fullpage.css">
     <link rel="stylesheet" href="../../lib/bootstrap/bootsnav.css">
     <link rel="stylesheet" href="../../lib/common/header.css">
     <link rel="stylesheet" href="../../lib/common/footer.css">
@@ -31,13 +30,11 @@
                     </div>
                 </div>
             </div>
-
-
             <div class="container" style="padding-bottom:0px; padding-top:0px;margin-top:0px; margin-bottom:0px;">
                 <div class="attr-nav">
                     <ul>
-                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                        <li class="dropdown" v-show="LoginInfo.IsSignUp">
+                        <li class="search"><a href="javascript:void(0);"><i class="fa fa-search"></i></a></li>
+                        <li class="dropdown" v-show="LoginInfo.IsSignUp" style="display:none;">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                          <img class="bs_nav_portrait" v-bind:src="LoginInfo.UserInfo.Avatar">
                         </a>
@@ -52,7 +49,7 @@
                                         <div class="col-md-8">
                                             <div class="row" class="bs_userinfo_detail">
                                                 <p>{{ LoginInfo.UserInfo.RealName}}</p><span>{{LoginInfo.UserInfo.LoginDate}}<span><br/>
-                                                <a v-on:click="Logout" class="bs_userinfo_logout" >注销登录</a>
+                                                <a v-on:click="Logout" class="bs_userinfo_logout" >{{LoginInfo.UserInfo.LogoutTip}}</a>
                                             </div>
                                         </div>
                                     </div>
@@ -107,30 +104,28 @@
                                 <a href="#" class="close-side"><i class="fa fa-close"></i></a>
                                 <div class="widget">
                                     <div class="bs_login" v-show="LoginInfo.IsLoginMode">
-                                        <p class="bs_login_title">用户登录</p>
+                                        <p class="bs_login_title">{{LoginInfo.LoginModel.Title}}</p>
                                         <span><i class="fa fa-quote-left"></i>&nbsp;&nbsp;<span>{{LoginInfo.LoginModel.NormalTip}}</span>
-                                        <span style="color:red;">{{LoginInfo.LoginModel.ErrorTip}}</span>
-                                        </span><br/><br/>
-                                        <input type="text" class="form-control" v-model:value="LoginInfo.LoginModel.Account" id="phone" placeholder="请输入帐号">
-                                        <input type="password" class="form-control" v-model:value="LoginInfo.LoginModel.Password" id="phone" placeholder="请输入密码">
-                                        <button class="btn btn-primary" style="width:100%;" v-on:click="Login" type="button">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
-                                        <div class="bs_login_goregister"><a v-on:click="SwitchMode">组册新用户&gt;&gt;</a></div>
+                                        <span style="color:red;">{{LoginInfo.LoginModel.ErrorTip}}</span></span><br/><br/>
+                                        <input type="text" class="form-control" v-model:value="LoginInfo.LoginModel.Account" v-bind:placeholder="LoginInfo.LoginModel.AccountTip">
+                                        <input type="password" class="form-control" v-model:value="LoginInfo.LoginModel.Password" v-bind:placeholder="LoginInfo.LoginModel.PasswordTip">
+                                        <button class="btn btn-primary" style="width:100%;" v-on:click="Login" type="button">{{LoginInfo.LoginModel.SubmitTip}}</button>
+                                        <div class="bs_login_goregister"><a v-on:click="SwitchMode">{{LoginInfo.LoginModel.RegisterTip}}&gt;&gt;</a></div>
                                     </div>
                                     <div class="bs_login" v-show="!LoginInfo.IsLoginMode">
-                                        <p class="bs_login_title">创建用户</p>
-                                        <span><i class="fa fa-quote-left"></i>&nbsp;&nbsp;完成手机验证创建用户</span><br/><br/>
-                                        <input type="text" class="form-control" id="phone" placeholder="请输入手机号">
+                                        <p class="bs_login_title">{{LoginInfo.RegisterModel.Title}}</p>
+                                        <span><i class="fa fa-quote-left"></i>&nbsp;&nbsp;<span>{{LoginInfo.RegisterModel.NormalTip}}</span>
+                                        <span style="color:red;">{{LoginInfo.RegisterModel.ErrorTip}}</span></span><br/><br/>
+                                        <input type="text" class="form-control" v-model:value="LoginInfo.RegisterModel.Phone" v-bind:placeholder="LoginInfo.RegisterModel.PhoneTip">
                                         <div class="input-group bs_login_group">
-                                            <input type="text" class="form-control" placeholder="短信验证码">
+                                            <input type="text" class="form-control" v-model:value="LoginInfo.RegisterModel.Code" v-bind:placeholder="LoginInfo.RegisterModel.CodeTip">
                                             <span class="input-group-btn">
-                        <button class="btn btn-default" id="send_code" type="button" data-complete-text="发送成功">获取验证码</button>
-          
-                    </span>
+                        <button class="btn btn-default" id="send_code"  type="button" data-complete-text="发送成功">{{LoginInfo.RegisterModel.SendCode}}</button>  </span>
                                         </div>
-                                        <input type="password" class="form-control" id="phone" placeholder="请输入密码">
-                                        <input type="password" class="form-control" id="phone" placeholder="请再次输入密码">
-                                        <button class="btn btn-primary" style="width:100%;" type="button">创建用户</button>
-                                        <div><a v-on:click="SwitchMode">&lt;&lt;返回登录界面</a></div>
+                                        <input type="password" class="form-control" v-model:value="LoginInfo.RegisterModel.Password" v-bind:placeholder="LoginInfo.RegisterModel.PasswordTip">
+                                        <input type="password" class="form-control" v-model:value="LoginInfo.RegisterModel.RePassword" v-bind:placeholder="LoginInfo.RegisterModel.RePasswordTip">
+                                        <button class="btn btn-primary" style="width:100%;" type="button">{{LoginInfo.RegisterModel.SubmitTip}}</button>
+                                        <div><a v-on:click="SwitchMode">&lt;&lt;{{LoginInfo.RegisterModel.LoginTip}}</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -150,9 +145,12 @@
                             <img class="first-slide lazy" style="height:100%" v-bind:src="parallax.ImgUrl" alt="First slide">
                             <div class="container bs_parallax_item">
                                 <div class="row">
-                                    <div class="col-sm-3 col-md-7 wow bounceInRight">
+                                    <div class="col-md-2 "></div>
+                                    <div class="col-sm-6 col-md-4 wow bounceInRight">
+                                        <img v-bind:src="parallax.DetailUrl" width="100%;">
                                     </div>
-                                    <div class="col-sm-3 col-md-4 wow bounceInLeft">
+                                    <div class=" col-md-1 "></div>
+                                    <div class="col-sm-6 col-md-4 wow bounceInLeft">
                                         <!-- <div v-html="parallax.Abstract"></div> -->
                                         <div class="bs_carousel_info"><br/><br/>
                                             <h1>{{parallax.Title}}</h1><br/><br/>
@@ -180,6 +178,8 @@
                     <div class="bs_title wow  bounceInLeft">
                         <h1>{{PlatformInfo.Title}}</h1>
                         <span>{{PlatformInfo.Abstract}}</span>
+                        <br/>
+                        <br/>
                         <br/>
                     </div>
                 </div>
@@ -224,25 +224,26 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6 col-sm-6 text-center wow  bounceInLeft" data-wow-delay=".1s">
+                    <div class="col-lg-5 col-sm-5 text-center wow  bounceInLeft" data-wow-delay=".1s">
                         <img class="lazy" v-bind:src="StoreInfo.ImgUrl" width="100%">
                     </div>
-                    <div class="col-lg-6 col-sm-6 wow  bounceInRight" v-for="plugin in StoreInfo.StoreList">
-                        <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-5 wow  bounceInRight">
+                        <div class="row" v-for="plugin in StoreInfo.StoreList">
                             <div class="bs_store_item">
-                                <div class="col-lg-2 col-sm-2">
+                                <div class="col-lg-2">
                                     <img v-bind:src="plugin.ImgUrl" width="100%">
                                 </div>
-                                <div class="col-lg-10 col-sm-10">
+                                <div class="col-lg-10">
                                     <h4>{{plugin.Title}}</h4>
                                     <p>{{plugin.Abstract}}</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="wow  bounceInRight">
-                            <a v-bind:href="StoreInfo.Link"> <button class="btn btn-info" style="margin-left:40px; margin-top:20px;">{{StoreInfo.Tip}}</button></a>
+                        <div class="row">
+                            <div class=" wow  bounceInRight">
+                                <a v-bind:href="StoreInfo.Link"> <button class="btn btn-info" style="background-color:#e99002; border:0px; margin-left:40px; margin-top:20px;" >{{StoreInfo.Tip}}</button></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -279,7 +280,8 @@
                             <div class="bs_team_item">
                                 <img v-bind:src="quotation.Portrait" width="100%">
                                 <h4>{{quotation.Name}} / {{quotation.Job}}</h4>
-                                <p>{{quotation.Talk}}
+                                <p>
+                                    <div class="bs_team_item_talk" v-html="quotation.Talk"></div>
                                 </p>
                                 <div class="text-right" style="padding:10px 5px 0px 0px; border-top:1px solid #ccc;">{{quotation.TalkDate}}</div>
                             </div>
@@ -297,9 +299,11 @@
 
                         <h3>{{TrialInfo.Abstract}}</h3>
                     </div>
-                    <div class="col-md-3">
-                        <h2>&nbsp;</h2>
+                    <div class="col-md-3 text-right">
+                        <span>&nbsp;</span><br/>
+                        <span>&nbsp;</span>
                         <a v-bind:href="TrialInfo.Link"><button type="button" style="background-color:#e99002; border:0px;" class="btn btn-primary btn-lg">{{TrialInfo.Tip}}</button></a>
+
                     </div>
                 </div>
             </div>
@@ -310,60 +314,43 @@
                 <div class="row">
                     <div class="col-lg-3 col-sm-3 address wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
                         <h1>
-                            联系方式
+                            {{FooterInfo.Contact.Title}}
                         </h1>
                         <address>
-                            <p><i class="fa fa-copyright pr-10"></i>&nbsp; 名称 ：深圳筑星科技有限公司</p>
-                            <p><i class="fa fa-phone pr-10"></i>&nbsp;&nbsp; 电话 : 0755-86240165</p>
-                            <p><i class="fa fa-fax pr-10"></i> &nbsp;传真 : 0755-86240165</p>
-                            <p><i class="fa fa-envelope pr-10"></i>&nbsp; 邮箱 : <a href="javascript:;">szbstar@bstar5.com</a></p>
-                            <p><i class="fa fa-map-signs pr-10"></i> &nbsp;地址 : 深圳市南山区凯达尔集团中心大厦A座1201 </p>
+                            <p><i class="fa fa-copyright pr-10"></i>&nbsp; {{FooterInfo.Contact.Name}}</p>
+                            <p><i class="fa fa-phone pr-10"></i>&nbsp;&nbsp; {{FooterInfo.Contact.Phone}}</p>
+                            <p><i class="fa fa-fax pr-10"></i> &nbsp;{{FooterInfo.Contact.Fax}}</p>
+                            <p><i class="fa fa-envelope pr-10"></i>&nbsp; {{FooterInfo.Contact.Email}}</p>
+                            <p><i class="fa fa-map-signs pr-10"></i> &nbsp;{{FooterInfo.Contact.Address}}</p>
                         </address>
                     </div>
                     <div class="col-lg-3 col-sm-3 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".3s">
                         <h1>
-                            产品咨询
+                            {{FooterInfo.Waiter.Title}}
                         </h1>
-                        <div id="owl-slide">
-                            <div class="tweet-box">
-                                <i class="fa fa-user-circle"> </i>蒋先生<br/>dial:
-                                <a href="javascript:;">13265731349</a>
-                            </div>
-                            <div class="tweet-box">
-                                <i class="fa fa-user-circle-o"> </i>伍先生<br/>dial:
-                                <a href="javascript:;">15118168052</a>
-                            </div>
-                            <div class="tweet-box">
-                                <i class="fa fa-user-circle"> </i>叶先生<br/>dial:
-                                <a href="javascript:;">18122776916</a>
+                        <div>
+                            <div class="bs_waiter" v-for="user in FooterInfo.Waiter.UserList">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <img class="bs_waiter_img" v-bind:src="user.ImgUrl">
+                                    </div>
+                                    <div class="col-lg-8">
+                                        {{user.Name}}
+                                        <div class="bs_waiter_phone">{{user.Phone}}</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-3">
                         <div class="page-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".5s">
                             <h1>
-                                快速导航
+                                {{FooterInfo.Navi.Title}}
                             </h1>
                             <ul class="page-footer-list">
-                                <li>
+                                <li v-for="menu in FooterInfo.Navi.MenuList">
                                     <i class="fa fa-angle-right"></i>
-                                    <a href="../contract/company.html">公司简介</a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-angle-right"></i>
-                                    <a href="../contract/company.html">产品中心</a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-angle-right"></i>
-                                    <a href="../contract/company.html">解决方案</a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-angle-right"></i>
-                                    <a href="../contract/company.html">联系我们</a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-angle-right"></i>
-                                    <a href="../contract/company.html">加入我们</a>
+                                    <a href="javascript:void(0)" v-on:click="NavigationTo(menu.Link,'','')">{{menu.Name}}</a>
                                 </li>
                             </ul>
                         </div>
@@ -372,20 +359,25 @@
 
                         <div class="text-footer wow fadeInUp" style="padding:0px;" data-wow-duration="2s" data-wow-delay=".7s">
                             <h1>
-                                关注我们
+                                {{FooterInfo.QrCode.Title}}
                             </h1>
                             <p>
-                                微信公众号，微博平台，已经发布，感谢大家的关（zhi）注（zhang）;
+                                <div v-html="FooterInfo.QrCode.Abstract">
+                                </div>
                             </p>
-                            <p>
-                                <img class="col-lg-6 col-sm-6" src="../../assets/img/weixin_qrcode.png" />
-                                <img class="col-lg-6 col-sm-6" src="../../assets/img/weibo_qrcode.png" />
-                            </p>
+                            <div class="bs_footer">
+                                <div>
+                                    <div class="col-lg-6 col-sm-6">
+                                        <img v-bind:src="FooterInfo.QrCode.WeChatImgUrl" width="100%" />
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6">
+                                        <img v-bind:src="FooterInfo.QrCode.QQImgUrl" width="100%" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
 
         </footer>
