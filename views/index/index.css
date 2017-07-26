@@ -58,8 +58,9 @@
 /*== store ==*/
 
 .bs_store {
-    background: url(assets/img/index/platform/platform_bg.png);
+    background: url(assets/img/index/store/store_bg.png);
     padding: 20px;
+    color: white;
 }
 
 .bs_store_item {
@@ -86,8 +87,17 @@
 /*== team ==*/
 
 .bs_team {
-    background: url(assets/img/index/team/team_bg.png);
+    /* background: url(assets/img/index/team/team_bg.png); */
+    background-color: #505050;
+    background-image: -webkit-radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 40px), -webkit-radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 30px), -webkit-radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px), -webkit-radial-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1) 2px, transparent 30px);
+    background-image: -moz-radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 40px), -moz-radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 30px), -moz-radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px), -moz-radial-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1) 2px, transparent 30px);
+    background-image: -ms-radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 40px), -ms-radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 30px), -ms-radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px), -ms-radial-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1) 2px, transparent 30px);
+    background-image: -o-radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 40px), -o-radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 30px), -o-radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px), -o-radial-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1) 2px, transparent 30px);
+    background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 40px), radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 30px), radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px), radial-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1) 2px, transparent 30px);
+    background-position: 0 0px, 40px 60px, 130px 270px, 70px 100px;
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
     padding: 20px;
+    color: white;
 }
 
 .bs_team_item {

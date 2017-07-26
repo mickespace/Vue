@@ -24,13 +24,16 @@ define(function () {
                 PasswordTip: '请输入密码',
                 RePasswordTip: '请再次输入密码',
                 CodeTip: '短信验证码',
+                SendCodeTip: '发送验证码',
                 SendCode: '发送验证码',
                 Message: '完成手机验证创建用户',
                 ErrorTip: '',
                 NormalTip: '完成手机验证创建用户',
                 Title: '创建用户',
                 LoginTip: '返回登录界面',
-                SubmitTip: '创建用户'
+                SubmitTip: '创建用户',
+                SendTime: 60,
+                Interval: ""
             },
             UserInfo: {
                 Avatar: '',
@@ -62,7 +65,81 @@ define(function () {
                 storage.clear();
             }
         },
-        NaviData: {},
+        NaviData: {
+            NaviList: [{
+                    Title: "&nbsp;&nbsp;首页&nbsp;&nbsp;",
+                    Link: 'index/index',
+                    ItemList: [{
+
+                    }],
+                    IsActive: true,
+                    HasItem: false
+                },
+                {
+                    Title: "&nbsp;&nbsp;开放平台&nbsp;&nbsp;",
+                    Link: 'index/index',
+                    ItemList: [{
+                        Title: "平台介绍",
+                        Link: 'index/index',
+                        IsActive: false
+                    }, {
+                        Title: "应用商店",
+                        Link: 'index/index',
+                        IsActive: false
+                    }, {
+                        Title: "二次开发",
+                        Link: 'index/index',
+                        IsActive: false
+                    }, {
+                        Title: "产品下载",
+                        Link: 'index/index',
+                        IsActive: false
+                    }],
+                    IsActive: false,
+                    HasItem: true
+                },
+                {
+                    Title: "&nbsp;&nbsp;解决方案&nbsp;&nbsp;",
+                    Link: 'service/service',
+                    ItemList: [{
+                        Title: "服务介绍",
+                        Link: 'service/service',
+                        IsActive: false
+                    }, {
+                        Title: "项目案例",
+                        Link: 'service/example',
+                        IsActive: false
+                    }],
+                    IsActive: false,
+                    HasItem: true
+                },
+                {
+                    Title: "&nbsp;&nbsp;关于筑星&nbsp;&nbsp;",
+                    Link: 'about/company',
+                    ItemList: [{
+                        Title: "筑星简介",
+                        Link: 'about/company',
+                        IsActive: false
+                    }, {
+                        Title: "新闻动态",
+                        Link: 'about/news',
+                        IsActive: false
+                    }, {
+                        Title: "联系我们",
+                        Link: 'about/contact',
+                        IsActive: false
+                    }, {
+                        Title: "加入我们",
+                        Link: 'about/join',
+                        IsActive: false
+                    }],
+                    IsActive: false,
+                    HasItem: true
+                }
+            ],
+            SearchTip: "请输入...",
+            LoginTip: '&nbsp;试&nbsp;&nbsp;&nbsp;&nbsp;用&nbsp;'
+        },
         FooterData: {
             Contact: {
                 Title: '联系方式',

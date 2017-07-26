@@ -58,17 +58,17 @@ define(function () {
             StoreList: [{
                 Id: 1,
                 Title: 'BIM协同',
-                ImgUrl: 'assets/img/index/store/store_item.png',
+                ImgUrl: 'assets/img/index/store/store_item1.png',
                 Abstract: '围绕BIM模型协同工作',
             }, {
                 Id: 2,
                 Title: '4D模拟',
-                ImgUrl: 'assets/img/index/store/store_item.png',
+                ImgUrl: 'assets/img/index/store/store_item2.png',
                 Abstract: '将WBS与BIM模型关联，进行虚拟建造',
             }, {
                 Id: 3,
                 Title: '任务管理',
-                ImgUrl: 'assets/img/index/store/store_item.png',
+                ImgUrl: 'assets/img/index/store/store_item3.png',
                 Abstract: '在平台上进行BIM相关全任务流程管理',
             }],
 

@@ -18,26 +18,54 @@
 
 <body>
     <div id="app">
-
-        <!--header start-->
         <nav class="navbar navbar-default navbar-fixed navbar-transparent dark bootsnav">
+            <!--搜索-->
             <div class="top-search">
                 <div class="container">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-search lg"></i></span>
-                        <input type="text" class="form-control" placeholder="请输入...">
+                        <input type="text" class="form-control" v-bind:placeholder="NaviInfo.SearchTip">
                         <span class="input-group-addon close-search"><i class="fa fa-close"></i></span>
                     </div>
                 </div>
             </div>
+            <!--登录界面-->
+            <div class="side">
+                <a href="#" class="close-side"><i class="fa fa-close"></i></a>
+                <div class="widget">
+                    <div class="bs_login" v-show="LoginInfo.IsLoginMode">
+                        <p class="bs_login_title">{{LoginInfo.LoginModel.Title}}</p>
+                        <span><i class="fa fa-quote-left"></i>&nbsp;&nbsp;<span>{{LoginInfo.LoginModel.NormalTip}}</span>
+                        <span style="color:red;">{{LoginInfo.LoginModel.ErrorTip}}</span></span><br/><br/>
+                        <input type="text" class="form-control" v-model:value="LoginInfo.LoginModel.Account" v-bind:placeholder="LoginInfo.LoginModel.AccountTip">
+                        <input type="password" class="form-control" v-model:value="LoginInfo.LoginModel.Password" v-bind:placeholder="LoginInfo.LoginModel.PasswordTip">
+                        <button class="btn btn-primary" style="width:100%;" v-on:click="Login" type="button">{{LoginInfo.LoginModel.SubmitTip}}</button>
+                        <div class="bs_login_goregister"><a v-on:click="SwitchMode">{{LoginInfo.LoginModel.RegisterTip}}&gt;&gt;</a></div>
+                    </div>
+                    <div class="bs_login" v-show="!LoginInfo.IsLoginMode">
+                        <p class="bs_login_title">{{LoginInfo.RegisterModel.Title}}</p>
+                        <span><i class="fa fa-quote-left"></i>&nbsp;&nbsp;<span>{{LoginInfo.RegisterModel.NormalTip}}</span>
+                        <span style="color:red;">{{LoginInfo.RegisterModel.ErrorTip}}</span></span><br/><br/>
+                        <input type="text" class="form-control" v-model:value="LoginInfo.RegisterModel.Phone" v-bind:placeholder="LoginInfo.RegisterModel.PhoneTip">
+                        <div class="input-group bs_login_group">
+                            <input type="text" class="form-control" v-model:value="LoginInfo.RegisterModel.Code" v-bind:placeholder="LoginInfo.RegisterModel.CodeTip">
+                            <span class="input-group-btn"> <button class="btn btn-default" id="send_code"  v-on:click="SendCode" type="button" >{{LoginInfo.RegisterModel.SendCode}}</button>  </span>
+                        </div>
+                        <input type="password" class="form-control" v-model:value="LoginInfo.RegisterModel.Password" v-bind:placeholder="LoginInfo.RegisterModel.PasswordTip">
+                        <input type="password" class="form-control" v-model:value="LoginInfo.RegisterModel.RePassword" v-bind:placeholder="LoginInfo.RegisterModel.RePasswordTip">
+                        <button class="btn btn-primary" v-on:click="Register" style="width:100%;" type="button">{{LoginInfo.RegisterModel.SubmitTip}}</button>
+                        <div><a v-on:click="SwitchMode">&lt;&lt;{{LoginInfo.RegisterModel.LoginTip}}</a></div>
+                    </div>
+                </div>
+            </div>
+            <!--功能菜单-->
             <div class="container" style="padding-bottom:0px; padding-top:0px;margin-top:0px; margin-bottom:0px;">
                 <div class="attr-nav">
                     <ul>
                         <li class="search"><a href="javascript:void(0);"><i class="fa fa-search"></i></a></li>
                         <li class="dropdown" v-show="LoginInfo.IsSignUp" style="display:none;">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                         <img class="bs_nav_portrait" v-bind:src="LoginInfo.UserInfo.Avatar">
-                        </a>
+                        <img class="bs_nav_portrait" v-bind:src="LoginInfo.UserInfo.Avatar"></a>
                             <ul class="dropdown-menu cart-list">
                                 <li class="bs_userinfo">
                                     <div class="row">
@@ -56,79 +84,30 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="side-menu" v-show="!LoginInfo.IsSignUp"><a href="#"><i class="fa fa-user"></i><span  class="badge">&nbsp;试&nbsp;&nbsp;&nbsp;&nbsp;用&nbsp;</span></a>
+                        <li class="side-menu" v-show="!LoginInfo.IsSignUp"><a href="#"><i class="fa fa-user"></i><span v-html="NaviInfo.LoginTip" class="badge"><span></span></a>
                                 </li>
                             </ul>
                             </div>
+                            <!--logo-->
                             <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                    <i class="fa fa-bars"></i>
-                    </button>
-                                <a class="navbar-brand" href="javascript:void(0)" v-on:click="NavigationTo('index/index', 'asdf','3000')">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu"> <i class="fa fa-bars"></i> </button>
+                                <a class="navbar-brand" href="javascript:void(0)" v-on:click="NavigationTo('index/index', '','')">
                     <img src="../../assets/img/logo_white.png" class="logo logo-display" alt="">
-                    <img src="../../assets/img/logo_black.png" class="logo logo-scrolled" alt="">
-                </a>
+                    <img src="../../assets/img/logo_black.png" class="logo logo-scrolled" alt=""></a>
                             </div>
+                            <!--导航菜单-->
                             <div class="collapse navbar-collapse" id="navbar-menu">
                                 <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                                    <li><a href="javascript:void(0)" v-on:click="NavigationTo('index/index','','3100')">&nbsp;&nbsp;首&nbsp;页&nbsp;&nbsp;</a></li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)" v-on:click="NavigationTo('product/product','','800')" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;开放平台&nbsp;&nbsp;</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/product','asdf','800')">平台介绍</a></li>
-                                            <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/store','asdf','800')">应用商店</a></li>
-                                            <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/developer','asdf','500')">二次开发</a></li>
-                                            <li><a href="javascript:void(0)" v-on:click="NavigationTo('product/download','asdf','600')">产品下载</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)" v-on:click="NavigationTo('service/service','','3000')" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;解决方案&nbsp;&nbsp;</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="javascript:void(0)" v-on:click="NavigationTo('service/service','asdf','2740')">服务介绍</a></li>
-                                            <li><a href="javascript:void(0)" v-on:click="NavigationTo('service/example','asdf','2180')">项目案例</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)" v-on:click="NavigationTo('about/company','','3000')" class="dropdown-toggle" data-toggle="dropdown">&nbsp;&nbsp;关于筑星&nbsp;&nbsp;</a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="javascript:void(0)" v-on:click="NavigationTo('about/company','','3000')">筑星简介</a></li>
-                                            <li><a href="javascript:void(0)" v-on:click="NavigationTo('about/news','','1600')">新闻动态</a></li>
-                                            <li><a href="javascript:void(0)" v-on:click="NavigationTo('about/contact','','600')">联系我们</a></li>
-                                            <li><a href="javascript:void(0)" v-on:click="NavigationTo('about/join','','2600')">加入我们</a></li>
+                                    <li v-bind:class="{dropdown:navi.HasItem}" v-for="navi in NaviInfo.NaviList">
+                                        <a href="javascript:void(0)" v-on:click="NavigationTo(navi.Link,'','')" class="dropdown-toggle" data-toggle="dropdown"><span v-html="navi.Title"></span></a>
+                                        <ul class="dropdown-menu" v-show="navi.HasItem">
+                                            <li v-for="item in navi.ItemList"><a href="javascript:void(0)" v-on:click="NavigationTo(item.Link,'','')">{{item.Title}}</a></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </div>
                             </div>
-                            <div class="side">
-                                <a href="#" class="close-side"><i class="fa fa-close"></i></a>
-                                <div class="widget">
-                                    <div class="bs_login" v-show="LoginInfo.IsLoginMode">
-                                        <p class="bs_login_title">{{LoginInfo.LoginModel.Title}}</p>
-                                        <span><i class="fa fa-quote-left"></i>&nbsp;&nbsp;<span>{{LoginInfo.LoginModel.NormalTip}}</span>
-                                        <span style="color:red;">{{LoginInfo.LoginModel.ErrorTip}}</span></span><br/><br/>
-                                        <input type="text" class="form-control" v-model:value="LoginInfo.LoginModel.Account" v-bind:placeholder="LoginInfo.LoginModel.AccountTip">
-                                        <input type="password" class="form-control" v-model:value="LoginInfo.LoginModel.Password" v-bind:placeholder="LoginInfo.LoginModel.PasswordTip">
-                                        <button class="btn btn-primary" style="width:100%;" v-on:click="Login" type="button">{{LoginInfo.LoginModel.SubmitTip}}</button>
-                                        <div class="bs_login_goregister"><a v-on:click="SwitchMode">{{LoginInfo.LoginModel.RegisterTip}}&gt;&gt;</a></div>
-                                    </div>
-                                    <div class="bs_login" v-show="!LoginInfo.IsLoginMode">
-                                        <p class="bs_login_title">{{LoginInfo.RegisterModel.Title}}</p>
-                                        <span><i class="fa fa-quote-left"></i>&nbsp;&nbsp;<span>{{LoginInfo.RegisterModel.NormalTip}}</span>
-                                        <span style="color:red;">{{LoginInfo.RegisterModel.ErrorTip}}</span></span><br/><br/>
-                                        <input type="text" class="form-control" v-model:value="LoginInfo.RegisterModel.Phone" v-bind:placeholder="LoginInfo.RegisterModel.PhoneTip">
-                                        <div class="input-group bs_login_group">
-                                            <input type="text" class="form-control" v-model:value="LoginInfo.RegisterModel.Code" v-bind:placeholder="LoginInfo.RegisterModel.CodeTip">
-                                            <span class="input-group-btn">
-                        <button class="btn btn-default" id="send_code"  type="button" data-complete-text="发送成功">{{LoginInfo.RegisterModel.SendCode}}</button>  </span>
-                                        </div>
-                                        <input type="password" class="form-control" v-model:value="LoginInfo.RegisterModel.Password" v-bind:placeholder="LoginInfo.RegisterModel.PasswordTip">
-                                        <input type="password" class="form-control" v-model:value="LoginInfo.RegisterModel.RePassword" v-bind:placeholder="LoginInfo.RegisterModel.RePasswordTip">
-                                        <button class="btn btn-primary" style="width:100%;" type="button">{{LoginInfo.RegisterModel.SubmitTip}}</button>
-                                        <div><a v-on:click="SwitchMode">&lt;&lt;{{LoginInfo.RegisterModel.LoginTip}}</a></div>
-                                    </div>
-                                </div>
-                            </div>
+
         </nav>
         <!--header end-->
         <!--图片轮播-->
@@ -142,7 +121,8 @@
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="item" v-bind:class="{active:parallax.IsFirst}" v-for="parallax in ParallaxInfo">
-                            <img class="first-slide lazy" style="height:100%" v-bind:src="parallax.ImgUrl" alt="First slide">
+                            <img class="first-slide lazy" style="height:100%" src="../../assets/img/img_bg.png" v-bind:data-original="parallax.ImgUrl"
+                                alt="First slide">
                             <div class="container bs_parallax_item">
                                 <div class="row">
                                     <div class="col-md-2 "></div>
@@ -232,7 +212,7 @@
                         <div class="row" v-for="plugin in StoreInfo.StoreList">
                             <div class="bs_store_item">
                                 <div class="col-lg-2">
-                                    <img v-bind:src="plugin.ImgUrl" width="100%">
+                                    <img v-bind:src="plugin.ImgUrl" width="60px" height="60px">
                                 </div>
                                 <div class="col-lg-10">
                                     <h4>{{plugin.Title}}</h4>
@@ -308,7 +288,7 @@
                 </div>
             </div>
         </div>
-        <!--footer start-->
+        <!--底部菜单-->
         <footer class="footer">
             <div class="container">
                 <div class="row">
@@ -342,18 +322,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-3">
-                        <div class="page-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".5s">
-                            <h1>
-                                {{FooterInfo.Navi.Title}}
-                            </h1>
-                            <ul class="page-footer-list">
-                                <li v-for="menu in FooterInfo.Navi.MenuList">
-                                    <i class="fa fa-angle-right"></i>
-                                    <a href="javascript:void(0)" v-on:click="NavigationTo(menu.Link,'','')">{{menu.Name}}</a>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="col-lg-3 col-sm-3 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".5s">
+                        <h1>
+                            {{FooterInfo.Navi.Title}}
+                        </h1>
+                        <ul class="page-footer-list">
+                            <li v-for="menu in FooterInfo.Navi.MenuList">
+                                <i class="fa fa-angle-right"></i>
+                                <a href="javascript:void(0)" v-on:click="NavigationTo(menu.Link,'','')">{{menu.Name}}</a>
+                            </li>
+                        </ul>
                     </div>
                     <div class="col-lg-3 col-sm-3">
 
@@ -379,13 +357,10 @@
                     </div>
                 </div>
             </div>
-
         </footer>
         <footer class="footer-small">
             <div class="container">
                 <div class="row">
-                    <!--<div class="col-lg-4 col-sm-4 pull-right">
-                    </div>-->
                     <div class="col-md-12 wow  bounceInLeft">
                         <div class="copyright">
                             Copyright ©2016 深圳筑星科技有限公司 All Rights Reserved 粤ICP备15080540号
@@ -394,7 +369,6 @@
                 </div>
             </div>
         </footer>
-        <!-- footer end -->
         <img class="bs_busy" v-show="isbusy" src="../../assets/img/isbusy.gif" />
         </div>
         <script src="../../lib/require/require.js" defer async="async" data-main="index"></script>
