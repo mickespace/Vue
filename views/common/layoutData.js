@@ -194,6 +194,21 @@ define(function () {
                 WeChatImgUrl: '../../assets/img/weixin_qrcode.png',
                 QQImgUrl: '../../assets/img/qq_qrcode.png'
             },
+            ToolbarList: [{
+                Title: 'QQ咨询',
+                Logo: 'fa fa-qq fa-2x',
+                Link: 'tencent://message/?uin=3323152338&Site=&Menu=yes',
+            }, {
+                Title: '立即下载',
+                Logo: 'fa fa-cloud-download fa-2x',
+                Link: '../product/download.html',
+            }, {
+                Title: '回到顶部',
+                Logo: 'fa fa-arrow-up fa-2x',
+                Link: '#app',
+            },],
+
+
             CompanyTip: 'Copyright ©2016 深圳筑星科技有限公司 All Rights Reserved 粤ICP备15080540号'
         }
     }

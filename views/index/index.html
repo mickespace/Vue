@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" name="app">
         <nav class="navbar navbar-default navbar-fixed navbar-transparent dark bootsnav">
             <!--搜索-->
             <div class="top-search">
@@ -388,8 +388,14 @@
         </footer>
         <img class="bs_busy" v-show="isbusy" src="../../assets/img/isbusy.gif" />
         <div class="bs_toolbar">
-            <div>
-                shabi
+            <div v-for="toolbar in FooterInfo.ToolbarList">
+                <a v-bind:href="toolbar.Link">
+                    <div class="bs_toolbar_item">
+                        <i v-bind:class="toolbar.Logo"></i>
+                        <span v-html="toolbar.Title"></span>
+                    </div>
+                </a>
+                <div style="clear:both"></div>
             </div>
         </div>
         </div>
