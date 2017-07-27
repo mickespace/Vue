@@ -1,52 +1,29 @@
-#section1 {
-    background-image: url(assets/img/products/section1.jpg);
+.bs_use{
+    background-image: url(assets/img/products/platform.png);
     background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 80px;
+    background-size:100% auto;
+    min-height: 600px;
+}
+.bs_feature{
+
+    background-size:100% auto;
+    min-height: 600px;
 }
 
-#section1 div {
-    position: absolute;
-    right: 50%;
-    -webkit-transform: translate(50%, 0%);
-    -moz-transform: translate(50%, 0%);
-    -ms-transform: translate(50%, 0%);
-    -o-transform: translate(50%, 0%);
-    transform: translate(50%, 0);
-}
-
-#section2 {
-    background-image: url(assets/img/products/section2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 80px;
-}
-
-.section_logo {
-    background-color: #505050;
-    color: white;
+.bs_feature_item{
+    border:1px solid #505050;
     padding: 10px;
-    min-height: 100px;
-    min-width: 100px;
-    border-radius: 15px 50px 30px
 }
 
-#section3 {
+.bs_coordination{
     background-color: white;
-    padding-top: 100px;
+    min-height: 600px;
 }
-
-#section4 {
-    background-image: url(assets/img/products/section4.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-}
-
-#section4_side {}
 
 @media screen and (max-width:1024px) {
-    .section4_img {
-        display: none;
-    }
+    .bs_use{
+    background-image: url(assets/img/products/platform.png);
+    background-repeat: no-repeat;
+    background-size:auto 100%;
+}
 }

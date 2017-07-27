@@ -4,19 +4,14 @@ require.config({
         "vue": "vue/vue",
         "jquery": "jquery/jquery.min",
         "bootstrap": "bootstrap/bootstrap",
-        "modernizr": "parallax/modernizr",
         "lazyload": "jquery/lazyload",
         "bstarData": "../views/index/indexData",
-        "bstarData_en": "../views/index/indexData_en",
         "layoutData": "../views/common/layoutData",
         "config": "config",
         "bootsnav": "bootstrap/bootsnav",
     },
     shim: {
         'bootstrap': {
-            deps: ['jquery'],
-        },
-        'carousel': {
             deps: ['jquery'],
         },
         'bootsnav': {
@@ -28,7 +23,7 @@ require.config({
     }
 });
 
-require(['vue', 'jquery', 'bootstrap', 'modernizr', 'lazyload', 'bstarData', 'bstarData_en', 'layoutData', 'config', 'bootsnav'], function (vue, jquery, bootstrap, modernizr, lazyload, bstarData, bstarData_en, layoutData, config, bootsnav) {
+require(['vue', 'jquery', 'bootstrap', 'lazyload', 'bstarData', 'layoutData', 'config', 'bootsnav'], function (vue, jquery, bootstrap, lazyload, bstarData, layoutData, config, bootsnav) {
     var app = new vue({
         el: '#app',
         data: {
@@ -44,15 +39,6 @@ require(['vue', 'jquery', 'bootstrap', 'modernizr', 'lazyload', 'bstarData', 'bs
             FooterInfo: layoutData.FooterData,
         },
         methods: {
-            SwitchEng: function () {
-                app.ExampleInfo = bstarData_en.ExampleData;
-                app.ParallaxInfo = bstarData_en.ParallaxData;
-                app.PlatformInfo = bstarData_en.PlatformData;
-                app.StoreInfo = bstarData_en.StoreData;
-                app.TeamInfo = bstarData_en.TeamData;
-                app.TrialInfo = bstarData_en.TrialData;
-                app.LoginInfo = layoutData.LoginData;
-            },
             SwitchMode: function () {
                 app.LoginInfo.IsLoginMode = !app.LoginInfo.IsLoginMode;
             },
@@ -68,7 +54,14 @@ require(['vue', 'jquery', 'bootstrap', 'modernizr', 'lazyload', 'bstarData', 'bs
                 app.LoginInfo.UserInfo.TokenKey = user.TokenKey;
                 app.LoginInfo.UserInfo.LoginDate = user.LoginDate;
                 app.LoginInfo.IsSignUp = true;
-
+            },
+            InitNavi: function (id) {
+                for (var item in app.NaviInfo.NaviList) {
+                    var obj = app.NaviInfo.NaviList[item]
+                    if (obj.Id == id) {
+                        obj.IsActive = true;
+                    }
+                }
             },
             Login: function () {
                 //判断是否输入正确
@@ -266,7 +259,7 @@ require(['vue', 'jquery', 'bootstrap', 'modernizr', 'lazyload', 'bstarData', 'bs
                             var intervalTime = parseInt((currentTime - afterTime) / 1000);
                             if (intervalTime < 60) {
                                 app.LoginInfo.RegisterModel.NormalTip = "";
-                                app.LoginInfo.RegisterModel.ErrorTip = (app.LoginInfo.RegisterModel.SendTime - intervalTime) + ' 秒后重新获取验证码'
+                                app.LoginInfo.RegisterModel.ErrorTip = (app.LoginInfo.RegisterModel.SendTime - intervalTime) + ' 秒后再操作'
                                 return null;
                             }
                         }
@@ -335,10 +328,11 @@ require(['vue', 'jquery', 'bootstrap', 'modernizr', 'lazyload', 'bstarData', 'bs
             }
         }
     });
-    $("img.lazy").lazyload({
-        effect: "fadeIn"
-    });
     $(function () {
         app.InitData();
+        app.InitNavi('Index');
+    });
+    $("img.lazy").lazyload({
+        effect: "fadeIn"
     });
 });

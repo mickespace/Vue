@@ -1,8 +1,8 @@
 define(function () {
     return {
         ExampleData: {
-            Title: '为什么成千上万的客户信任筑星云？',
-            Abstract: '针对各行业业务特性，打造个性化行业解决方案，为用户提供一站式的产品与服务。包括新零售、新金融、新能源、新技术、大健康、大制造、大传媒等行业领域。',
+            Title: '筑星BIM服务与技术行业领先',
+            Abstract: '丰富的多领域BIM成功实施案例与解决方案，行业顶尖的实施与开发团队',
             ImgUrl: 'assets/img/example/notice_detail.png',
             ExampleList: [{
                 Id: 1,

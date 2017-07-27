@@ -9,17 +9,107 @@
     <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.css">
     <link href="../../fonts/FontAwesome/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../lib/bootstrap/animate.css">
-
+    <link rel="stylesheet" href="../../lib/common/bstar.css">
     <link rel="stylesheet" href="../../lib/bootstrap/bootsnav.css">
     <link rel="stylesheet" href="../../lib/common/header.css">
     <link rel="stylesheet" href="../../lib/common/footer.css">
-    <link rel="stylesheet" href="../../lib/common/bstar.css">
     <link rel="stylesheet" href="developer.css">
 </head>
 
 <body>
     <div id="app">
-        <!--container start-->
+        <nav class="navbar navbar-default navbar-fixed navbar-transparent dark bootsnav">
+            <!--搜索-->
+            <div class="top-search">
+                <div class="container">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-search lg"></i></span>
+                        <input type="text" class="form-control" v-bind:placeholder="NaviInfo.SearchTip">
+                        <span class="input-group-addon close-search"><i class="fa fa-close"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!--登录界面-->
+            <div class="side">
+                <a href="#" class="close-side"><i class="fa fa-close"></i></a>
+                <div class="widget">
+                    <div class="bs_login" v-show="LoginInfo.IsLoginMode">
+                        <p class="bs_login_title">{{LoginInfo.LoginModel.Title}}</p>
+                        <span><i class="fa fa-quote-left"></i>&nbsp;&nbsp;<span>{{LoginInfo.LoginModel.NormalTip}}</span>
+                        <span style="color:red;">{{LoginInfo.LoginModel.ErrorTip}}</span></span><br/><br/>
+                        <input type="text" class="form-control" v-model:value="LoginInfo.LoginModel.Account" v-bind:placeholder="LoginInfo.LoginModel.AccountTip">
+                        <input type="password" class="form-control" v-model:value="LoginInfo.LoginModel.Password" v-bind:placeholder="LoginInfo.LoginModel.PasswordTip">
+                        <button class="btn btn-primary" style="width:100%;" v-on:click="Login" type="button">{{LoginInfo.LoginModel.SubmitTip}}</button>
+                        <div class="bs_login_goregister"><a v-on:click="SwitchMode">{{LoginInfo.LoginModel.RegisterTip}}&gt;&gt;</a></div>
+                    </div>
+                    <div class="bs_login" v-show="!LoginInfo.IsLoginMode">
+                        <p class="bs_login_title">{{LoginInfo.RegisterModel.Title}}</p>
+                        <span><i class="fa fa-quote-left"></i>&nbsp;&nbsp;<span>{{LoginInfo.RegisterModel.NormalTip}}</span>
+                        <span style="color:red;">{{LoginInfo.RegisterModel.ErrorTip}}</span></span><br/><br/>
+                        <input type="text" class="form-control" v-model:value="LoginInfo.RegisterModel.Phone" v-bind:placeholder="LoginInfo.RegisterModel.PhoneTip">
+                        <div class="input-group bs_login_group">
+                            <input type="text" class="form-control" v-model:value="LoginInfo.RegisterModel.Code" v-bind:placeholder="LoginInfo.RegisterModel.CodeTip">
+                            <span class="input-group-btn"> <button class="btn btn-default" id="send_code"  v-on:click="SendCode" type="button" >{{LoginInfo.RegisterModel.SendCode}}</button>  </span>
+                        </div>
+                        <input type="password" class="form-control" v-model:value="LoginInfo.RegisterModel.Password" v-bind:placeholder="LoginInfo.RegisterModel.PasswordTip">
+                        <input type="password" class="form-control" v-model:value="LoginInfo.RegisterModel.RePassword" v-bind:placeholder="LoginInfo.RegisterModel.RePasswordTip">
+                        <button class="btn btn-primary" v-on:click="Register" style="width:100%;" type="button">{{LoginInfo.RegisterModel.SubmitTip}}</button>
+                        <div><a v-on:click="SwitchMode">&lt;&lt;{{LoginInfo.RegisterModel.LoginTip}}</a></div>
+                    </div>
+                </div>
+            </div>
+            <!--功能菜单-->
+            <div class="container" style="padding-bottom:0px; padding-top:0px;margin-top:0px; margin-bottom:0px;">
+                <div class="attr-nav">
+                    <ul>
+                        <li class="search"><a href="javascript:void(0);"><i class="fa fa-search"></i></a></li>
+                        <li class="dropdown" v-show="LoginInfo.IsSignUp" style="display:none;">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                        <img class="bs_nav_portrait" v-bind:src="LoginInfo.UserInfo.Avatar"></a>
+                            <ul class="dropdown-menu cart-list">
+                                <li class="bs_userinfo">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="row">
+                                                <img width="100%" height="100%" v-bind:src="LoginInfo.UserInfo.Avatar">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="row" class="bs_userinfo_detail">
+                                                <p>{{ LoginInfo.UserInfo.RealName}}</p><span>{{LoginInfo.UserInfo.LoginDate}}<span><br/>
+                                                <a v-on:click="Logout" class="bs_userinfo_logout" >{{LoginInfo.UserInfo.LogoutTip}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="side-menu" v-show="!LoginInfo.IsSignUp"><a href="#"><i class="fa fa-user"></i><span v-html="NaviInfo.LoginTip" class="badge"><span></span></a>
+                                </li>
+                            </ul>
+                            </div>
+                            <!--logo-->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu"> <i class="fa fa-bars"></i> </button>
+                                <a class="navbar-brand" href="javascript:void(0)" v-on:click="NavigationTo('index/index', '','')">
+                    <img src="../../assets/img/logo_white.png" class="logo logo-display" alt="">
+                    <img src="../../assets/img/logo_black.png" class="logo logo-scrolled" alt=""></a>
+                            </div>
+                            <!--导航菜单-->
+                            <div class="collapse navbar-collapse" id="navbar-menu">
+                                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                    <li v-bind:class="{dropdown:navi.HasItem}" v-for="navi in NaviInfo.NaviList">
+                                        <a href="javascript:void(0)" v-on:click="NavigationTo(navi.Link,'','')" class="dropdown-toggle" data-toggle="dropdown"><span v-bind:class="{'bs_navi_active':navi.IsActive}" v-html="navi.Title"></span></a>
+                                        <ul class="dropdown-menu" v-show="navi.HasItem">
+                                            <li v-for="item in navi.ItemList"><a href="javascript:void(0)" v-on:click="NavigationTo(item.Link,'','')">{{item.Title}}</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            </div>
+
+        </nav>
+        <div class="bs_notice"></div>
         <div class="row">
             <div class="container">
                 <div class="col-md-12 bs_developer_form">
@@ -36,20 +126,101 @@
                 </div>
             </div>
         </div>
-        <!--container end-->
-    </div>
-    <script src="../../lib/require/require.js" defer async="async" data-main="developer"></script>
-    <script src="../../lib/wow/wow.js"></script>
-    <script>
-        var wow = new WOW({
-            boxClass: 'wow',
-            animateClass: 'animated',
-            offset: 0,
-            mobile: true,
-            live: true
-        });
-        wow.init();
-    </script>
+        <!--底部菜单-->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-3 address wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                        <h1>
+                            {{FooterInfo.Contact.Title}}
+                        </h1>
+                        <address>
+                            <p><i class="fa fa-copyright pr-10"></i>&nbsp; {{FooterInfo.Contact.Name}}</p>
+                            <p><i class="fa fa-phone pr-10"></i>&nbsp;&nbsp; {{FooterInfo.Contact.Phone}}</p>
+                            <p><i class="fa fa-fax pr-10"></i> &nbsp;{{FooterInfo.Contact.Fax}}</p>
+                            <p><i class="fa fa-envelope pr-10"></i>&nbsp; {{FooterInfo.Contact.Email}}</p>
+                            <p><i class="fa fa-map-signs pr-10"></i> &nbsp;{{FooterInfo.Contact.Address}}</p>
+                        </address>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".3s">
+                        <h1>
+                            {{FooterInfo.Waiter.Title}}
+                        </h1>
+                        <div>
+                            <div class="bs_waiter" v-for="user in FooterInfo.Waiter.UserList">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <img class="bs_waiter_img" v-bind:src="user.ImgUrl">
+                                    </div>
+                                    <div class="col-lg-8">
+                                        {{user.Name}}
+                                        <div class="bs_waiter_phone">{{user.Phone}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".5s">
+                        <h1>
+                            {{FooterInfo.Navi.Title}}
+                        </h1>
+                        <ul class="page-footer-list">
+                            <li v-for="menu in FooterInfo.Navi.MenuList">
+                                <i class="fa fa-angle-right"></i>
+                                <a href="javascript:void(0)" v-on:click="NavigationTo(menu.Link,'','')">{{menu.Name}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-sm-3">
+
+                        <div class="text-footer wow fadeInUp" style="padding:0px;" data-wow-duration="2s" data-wow-delay=".7s">
+                            <h1>
+                                {{FooterInfo.QrCode.Title}}
+                            </h1>
+                            <p>
+                                <div v-html="FooterInfo.QrCode.Abstract">
+                                </div>
+                            </p>
+                            <div class="bs_footer">
+                                <div>
+                                    <div class="col-lg-6 col-sm-6">
+                                        <img v-bind:src="FooterInfo.QrCode.WeChatImgUrl" width="100%" />
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6">
+                                        <img v-bind:src="FooterInfo.QrCode.QQImgUrl" width="100%" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <footer class="footer-small">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 wow  bounceInLeft">
+                        <div class="copyright">
+                            <span v-html="FooterInfo.CompanyTip"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <img class="bs_busy" v-show="isbusy" src="../../assets/img/isbusy.gif" />
+        </div>
+        <script src="../../lib/require/require.js" defer async="async" data-main="product"></script>
+        <script src="../../lib/wow/wow.js"></script>
+        <script>
+            var wow = new WOW({
+                boxClass: 'wow',
+                animateClass: 'animated',
+                offset: 0,
+                mobile: true,
+                live: true
+            });
+            wow.init();
+        </script>
 </body>
 
 </html>

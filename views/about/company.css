@@ -7,13 +7,9 @@
 
 #intro {
     width: 100%;
-    z-index: 1;
-    background: url(assets/img/company/notice.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background: url(assets/img/company/notice.png);
     color: white;
-    position: static;
-    padding-top: 80px;
+        min-height: 300px;
 }
 
 

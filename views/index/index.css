@@ -1,9 +1,5 @@
 /*== parallax ==*/
 
-#app {
-    color: #606060;
-}
-
 .bs_parallax_item {
     width: 100%;
     min-height: 500px;
@@ -30,6 +26,8 @@
 .bs_platform_item {
     cursor: pointer;
     padding-top: 10px;
+        border: 1px solid white;
+    box-shadow: 3px 3px 3px white;
 }
 
 .bs_platform_item:hover {
@@ -59,7 +57,7 @@
 
 .bs_store {
     background: url(assets/img/index/store/store_bg.png);
-    padding: 20px;
+    padding: 20px;    
     color: white;
 }
 
@@ -97,9 +95,13 @@
     background-position: 0 0px, 40px 60px, 130px 270px, 70px 100px;
     background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
     padding: 20px;
-    color: white;
 }
-
+.bs_team h1{
+    color:white;
+}
+.bs_team span{
+    color:white;
+}
 .bs_team_item {
     background-color: white;
     border: 1px solid #ccc;

@@ -1,7 +1,7 @@
 .bs_download {
     background-image: url(assets/img/download/download.png);
-    background-size: 100%;
-    color: white;
+    background-color:white;
+    padding: 20px;
     min-height: 600px;
 }
 

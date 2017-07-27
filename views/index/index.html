@@ -9,10 +9,10 @@
     <link href="../../fonts/FontAwesome/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../lib/bootstrap/animate.css">
     <link rel="stylesheet" href="../../lib/carousel/carousel.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="../../lib/bootstrap/bootsnav.css">
     <link rel="stylesheet" href="../../lib/common/header.css">
     <link rel="stylesheet" href="../../lib/common/footer.css">
-    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="../../lib/common/bstar.css">
 </head>
 
@@ -99,7 +99,7 @@
                             <div class="collapse navbar-collapse" id="navbar-menu">
                                 <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                                     <li v-bind:class="{dropdown:navi.HasItem}" v-for="navi in NaviInfo.NaviList">
-                                        <a href="javascript:void(0)" v-on:click="NavigationTo(navi.Link,'','')" class="dropdown-toggle" data-toggle="dropdown"><span v-html="navi.Title"></span></a>
+                                        <a href="javascript:void(0)" v-on:click="NavigationTo(navi.Link,'','')" class="dropdown-toggle" data-toggle="dropdown"><span v-bind:class="{'bs_navi_active':navi.IsActive}" v-html="navi.Title"></span></a>
                                         <ul class="dropdown-menu" v-show="navi.HasItem">
                                             <li v-for="item in navi.ItemList"><a href="javascript:void(0)" v-on:click="NavigationTo(item.Link,'','')">{{item.Title}}</a></li>
                                         </ul>
@@ -109,9 +109,9 @@
                             </div>
 
         </nav>
-        <!--header end-->
+        <div class="bs_notice"></div>
         <!--图片轮播-->
-        <div class="row bs_notice">
+        <div class="row">
             <div class="col-sm-12 col-md-12 ">
                 <div id="customCarousel" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -133,9 +133,9 @@
                                     <div class="col-sm-6 col-md-4 wow bounceInLeft">
                                         <!-- <div v-html="parallax.Abstract"></div> -->
                                         <div class="bs_carousel_info"><br/><br/>
-                                            <h1>{{parallax.Title}}</h1><br/><br/>
-                                            <h3>{{parallax.Abstract}}</h3><br/>
-                                            <a v-bind:href="parallax.Link"><button type="button" style="background-color:#e99002; border:0px;" class="btn btn-primary btn-lg">{{parallax.Tip}}</button></a></div>
+                                            <h1 v-html="parallax.Title"></h1><br/><br/>
+                                            <h3 v-html="parallax.Abstract"></h3><br/>
+                                            <a v-bind:href="parallax.Link"><button type="button" style="background-color:#e99002; border:0px;" v-html="parallax.Tip" class="btn btn-primary btn-lg"></button></a></div>
                                     </div>
                                 </div>
                             </div>
@@ -156,8 +156,8 @@
             <div class="container text-center">
                 <div class="wow  bounceInLeft">
                     <div class="bs_title wow  bounceInLeft">
-                        <h1>{{PlatformInfo.Title}}</h1>
-                        <span>{{PlatformInfo.Abstract}}</span>
+                        <h1 v-html="PlatformInfo.Title"></h1>
+                        <span v-html="PlatformInfo.Abstract"></span>
                         <br/>
                         <br/>
                         <br/>
@@ -168,8 +168,9 @@
                         <div class="bs_platform_item">
                             <figure class="wow fadeInUp"><img class="bs_platform_img" v-bind:src="service.ImgUrl" width="100%" alt=""></figure>
                             <br/>
-                            <h4>{{service.Title}}</h4>
-                            <p>{{service.Abstract}}</p>
+                            <h4 v-html="service.Title"></h4>
+                            <p v-html="service.Abstract"></p>
+
                         </div>
                     </div>
                 </div>
@@ -181,11 +182,8 @@
                                 <img class="lazy" v-bind:src="PlatformInfo.Detail.ShowImgUrl" width="100%">
                             </div>
                             <div class="col-md-6">
-                                <img class="lazy" v-bind:src="PlatformInfo.Detail.LogoImgUrl" width="100px"><br/>
-                                <h2>{{PlatformInfo.Detail.Title}}</h2>
-                                <p>
-                                    {{PlatformInfo.Detail.Abstract}}
-                                </p>
+                                <h2 v-html="PlatformInfo.Detail.Title"></h2>
+                                <p v-html="PlatformInfo.Detail.Abstract"></p>
                             </div>
                         </div>
                     </div>
@@ -194,36 +192,56 @@
         </div>
         <!--应用商店-->
         <div class="bs_store">
-            <div class="container">
-                <div class="row">
-                    <div class="bs_title wow  bounceInLeft">
-                        <h1>{{StoreInfo.Title}}</h1>
-                        <span>{{StoreInfo.Abstract}}</span>
-                        <br/>
-                        <br/>
-                    </div>
+            <div class="row">
+                <div class="bs_title wow  bounceInLeft">
+                    <h1 v-html="StoreInfo.Title"></h1>
+                    <span v-html="StoreInfo.Abstract"></span>
+                    <br/>
+                    <br/>
                 </div>
-                <div class="row">
-                    <div class="col-lg-5 col-sm-5 text-center wow  bounceInLeft" data-wow-delay=".1s">
-                        <img class="lazy" v-bind:src="StoreInfo.ImgUrl" width="100%">
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 text-center wow  bounceInLeft" data-wow-delay=".1s">
+                    <img class="lazy" v-bind:src="StoreInfo.ImgUrl" width="100%">
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-5">
+                    <div>
+                        <p>&nbsp;<br/>&nbsp;</p>
                     </div>
-                    <div class="col-lg-1"></div>
-                    <div class="col-lg-5 wow  bounceInRight">
-                        <div class="row" v-for="plugin in StoreInfo.StoreList">
-                            <div class="bs_store_item">
-                                <div class="col-lg-2">
-                                    <img v-bind:src="plugin.ImgUrl" width="60px" height="60px">
-                                </div>
-                                <div class="col-lg-10">
-                                    <h4>{{plugin.Title}}</h4>
-                                    <p>{{plugin.Abstract}}</p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="row" v-for="plugin in StoreInfo.StoreTypeList">
+                                <div class="bs_store_item">
+                                    <div class="col-lg-2 wow bounceInRight">
+                                        <img v-bind:src="plugin.ImgUrl" width="60px" height="60px">
+                                    </div>
+                                    <div class="col-lg-10 wow bounceInRight" data-wow-delay=".1s">
+                                        <h4 v-html="plugin.Title"></h4>
+                                        <p v-html="plugin.Abstract"></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class=" wow  bounceInRight">
-                                <a v-bind:href="StoreInfo.Link"> <button class="btn btn-info" style="background-color:#e99002; border:0px; margin-left:40px; margin-top:20px;" >{{StoreInfo.Tip}}</button></a>
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="row" v-for="plugin in StoreInfo.StoreList">
+                                    <div class="bs_store_item">
+                                        <div class="col-lg-2 wow bounceInRight">
+                                            <img v-bind:src="plugin.ImgUrl" width="60px" height="60px">
+                                        </div>
+                                        <div class="col-lg-10 wow bounceInRight" data-wow-delay=".1s">
+                                            <h4 v-html="plugin.Title"></h4>
+                                            <p v-html="plugin.Abstract"></p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="pull-right">
+                            <a class="wow bounceInRight" data-wow-delay=".3s" v-bind:href="StoreInfo.Link"> <button class="btn btn-info" style="background-color:#e99002; border:0px; margin-top:40px; margin-right:30px; " v-html="StoreInfo.Tip"></button></a>
                         </div>
                     </div>
                 </div>
@@ -233,8 +251,8 @@
         <div class="bs_example">
             <div class="row">
                 <div class="bs_title wow  bounceInLeft">
-                    <h1>{{ ExampleInfo.Title}}</h1>
-                    <span>{{ ExampleInfo.Abstract}}</span>
+                    <h1 v-html="ExampleInfo.Title"></h1>
+                    <span v-html=" ExampleInfo.Abstract"></span>
                     <br/>
                     <br/>
                 </div>
@@ -249,14 +267,14 @@
                 <div class="container">
                     <div class="row">
                         <div class="bs_title wow  bounceInLeft">
-                            <h1>{{ TeamInfo.Title}}</h1>
-                            <span>{{ TeamInfo.Abstract}}</span>
+                            <h1 v-html="TeamInfo.Title"></h1>
+                            <span v-html="TeamInfo.Abstract"></span>
                             <br/>
                             <br/>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-4 col-sm-4 wow  fadeInUp" v-for="quotation in TeamInfo.QuotationList">
+                        <div class="col-lg-4 col-sm-4 wow  fadeInUp" data-wow-duration="2s" data-wow-delay=".2s" v-for="quotation in TeamInfo.QuotationList">
                             <div class="bs_team_item">
                                 <img v-bind:src="quotation.Portrait" width="100%">
                                 <h4>{{quotation.Name}} / {{quotation.Job}}</h4>
@@ -283,7 +301,6 @@
                         <span>&nbsp;</span><br/>
                         <span>&nbsp;</span>
                         <a v-bind:href="TrialInfo.Link"><button type="button" style="background-color:#e99002; border:0px;" class="btn btn-primary btn-lg">{{TrialInfo.Tip}}</button></a>
-
                     </div>
                 </div>
             </div>
@@ -363,13 +380,18 @@
                 <div class="row">
                     <div class="col-md-12 wow  bounceInLeft">
                         <div class="copyright">
-                            Copyright ©2016 深圳筑星科技有限公司 All Rights Reserved 粤ICP备15080540号
+                            <span v-html="FooterInfo.CompanyTip"></span>
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
         <img class="bs_busy" v-show="isbusy" src="../../assets/img/isbusy.gif" />
+        <div class="bs_toolbar">
+            <div>
+                shabi
+            </div>
+        </div>
         </div>
         <script src="../../lib/require/require.js" defer async="async" data-main="index"></script>
         <script src="../../lib/wow/wow.js"></script>

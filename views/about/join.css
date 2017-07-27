@@ -1,12 +1,14 @@
 .bs_join_video {
     width: 100%;
-    z-index: 1;
-    background: url(assets/img/join/notice.png);
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-    min-height: 500px;
+    background-color: #fff;
+    background-size: 100% 1.2em;
+    background-image: -webkit-linear-gradient(0deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), -webkit-linear-gradient(#eee .05em, transparent .05em);
+    background-image: -moz-linear-gradient(0deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), -moz-linear-gradient(#eee .05em, transparent .05em);
+    background-image: -ms-linear-gradient(0deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), -ms-linear-gradient(#eee .05em, transparent .05em);
+    background-image: -o-linear-gradient(0deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), -o-linear-gradient(#eee .05em, transparent .05em);
+    background-image: linear-gradient(0deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), linear-gradient(#eee .05em, transparent .05em);
+
+    min-height: 300px;
     padding: 0;
     color: white;
 }
@@ -18,7 +20,7 @@
     width: 100%;
     padding: 20px;
     color: white;
-    background: url(assets/img/join/search.jpg);
+    background: url(assets/img/join/search.png);
 }
 
 
@@ -117,8 +119,22 @@
 }
 
 @media screen and (max-width:1024px) {
+    .bs_join_video{
+    width: 100%;
+    background-color: #fff;
+    padding: 0;
+    color: white;
+    }
     .bs_join_tip {
-        margin: auto;
-        background-color: white;
+           padding: 20px;
+    margin: 0;
+    background-color: white;
+        -webkit-box-shadow: 3px 3px 3px white;
+    -moz-box-shadow: 3px 3px 3px white;
+    box-shadow: 3px 3px 3px white;
+    border: 1px solid white;
+    border-radius: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     }
 }

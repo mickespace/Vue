@@ -1,36 +1,36 @@
 define(function () {
     return {
         NoticeData: {
-            Title: '筑星科技-我真的不知道说些什么好',
-            Abstract: '<p>是我比较傻逼，还是真心想不到内容</p></br><p>我真心感觉没时间想这些内容</p></br><p>fuck 连填空格都填不好，有没有走心。</p></br>',
+            Title: '筑星科技',
+            Abstract: '致力于为客户提供最优质的BIM全生命周期解决方案',
             ImgUrl: 'assets/img/company/notice_detail.png',
         },
         CompanyData: {
             Title: '公司简介',
-            Abstract: '深圳筑星科技有限公司以工程领域信息化为驱动，<br/> 以智慧城市为目标，公司专注于工程领域施工与运维阶段的BIM服务，致力于建设领域<br/><br/> BIM及信息技术的产品与服务，具有深厚的行业背景和丰富的从业经验。公司核心团队由毕业于清华大学的博士、硕士组成，自主研发了技术领先并具有自主知识产权的BIM-STAR平台。筑星科技作为BIM行业的开拓者和领先者，在轨道交通、桥梁、机场、城市综合体等多个领域，深入探索了BIM技术在工程施工与运维阶段的应用，其中包括广州地铁、国家体育馆鸟巢等项目。',
+            Abstract: '&nbsp;&nbsp;&nbsp;&nbsp;深圳筑星科技有限公司以工程领域信息化为驱动，以智慧城市为目标，公司专注于工程领域施工与运维阶段的BIM服务，致力于建设领域<br/><br/> &nbsp;&nbsp;&nbsp;&nbsp;BIM及信息技术的产品与服务，具有深厚的行业背景和丰富的从业经验。公司核心团队由毕业于清华大学的博士、硕士组成，自主研发了技术领先并具有自主知识产权的BIM-STAR平台。<br/> <br/> &nbsp;&nbsp;&nbsp;&nbsp;筑星科技作为BIM行业的开拓者和领先者，在轨道交通、桥梁、机场、城市综合体等多个领域，深入探索了BIM技术在工程施工与运维阶段的应用，其中包括广州地铁、国家体育馆鸟巢等项目。',
             ImgUrl: 'assets/img/company/company.png',
         },
         HonorData: {
             Title: '荣誉资质',
-            Abstract: '  深圳筑星科技有限公司以工程领域信息化为驱动，以智慧城市为目标，公',
+            Abstract: '&nbsp;&nbsp;',
             ImgUrls: [{
-                    ImgUrl: 'assets/img/company/honor.jpg'
-                }, {
-                    ImgUrl: 'assets/img/company/honor.jpg'
-                }, {
-                    ImgUrl: 'assets/img/company/honor.jpg'
-                }, {
-                    ImgUrl: 'assets/img/company/honor.jpg'
-                },
-                {
-                    ImgUrl: 'assets/img/company/honor.jpg'
-                }, {
-                    ImgUrl: 'assets/img/company/honor.jpg'
-                }, {
-                    ImgUrl: 'assets/img/company/honor.jpg'
-                }, {
-                    ImgUrl: 'assets/img/company/honor.jpg'
-                }
+                ImgUrl: 'assets/img/company/honor.jpg'
+            }, {
+                ImgUrl: 'assets/img/company/honor.jpg'
+            }, {
+                ImgUrl: 'assets/img/company/honor.jpg'
+            }, {
+                ImgUrl: 'assets/img/company/honor.jpg'
+            },
+            {
+                ImgUrl: 'assets/img/company/honor.jpg'
+            }, {
+                ImgUrl: 'assets/img/company/honor.jpg'
+            }, {
+                ImgUrl: 'assets/img/company/honor.jpg'
+            }, {
+                ImgUrl: 'assets/img/company/honor.jpg'
+            }
             ]
         },
         QuotationData: {

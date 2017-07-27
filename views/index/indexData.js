@@ -9,16 +9,16 @@ define(function () {
             Link: '../product/download.html',
             IsFirst: true
         }, {
-            Title: '很多很多的牛逼应用',
-            Abstract: '建设领域的软件开发者，在BIMFACE提供的基础功能上进行二次开发， 就能为用户提供更加丰富的BIM应用',
+            Title: 'BIM应用商店',
+            Abstract: '应用商店具有丰富的包括协同、设计、施工、运维等工程领域全生命周期BIM应用',
             ImgUrl: 'assets/img/index/parallax/2.png',
             DetailUrl: 'assets/img/index/parallax/side_2.png',
             Tip: '进入应用商店',
             Link: '../product/download.html',
             IsFirst: false
         }, {
-            Title: '案例傻逼大傻逼',
-            Abstract: '建设领域的软件开发者，在BIMFACE提供的基础功能上进行二次开发， 就能为用户提供更加丰富的BIM应用',
+            Title: '项目案例',
+            Abstract: '筑星在轨道交通、路桥、综合管廊、建筑等领域有多个成功BIM实施案例',
             ImgUrl: 'assets/img/index/parallax/3.png',
             DetailUrl: 'assets/img/index/parallax/side_3.png',
             Tip: '查看更多案例',
@@ -29,49 +29,70 @@ define(function () {
             Title: '开放平台',
             Abstract: '更开放的姿态拥抱BIM',
             ServiceData: [{
-                Title: 'API接口',
+                Title: '三端SDK',
                 ImgUrl: 'assets/img/index/platform/platform_icon.png',
-                Abstract: '丰富的API接口，便于应用扩展',
+                Abstract: '开放CS、BS、MS三端SDK，提供SDK说明文档',
             }, {
-                Title: '高效的图形引擎',
+                Title: '丰富的API接口',
                 ImgUrl: 'assets/img/index/platform/platform_icon2.png',
-                Abstract: '大模型流程浏览操作',
+                Abstract: '开放Web API，提供API说明文档',
             }, {
-                Title: '应用商店',
+                Title: '跨平台插件开发',
                 ImgUrl: 'assets/img/index/platform/platform_icon3.png',
-                Abstract: '丰富的建设领域功能应用',
+                Abstract: '一次开发、CS、BS、MS三端共用',
             }],
 
             Detail: {
                 ShowImgUrl: 'assets/img/index/platform/platform_detail.png',
                 LogoImgUrl: 'assets/img/index/platform/platform_detail_logo.png',
                 Title: '平台理念',
-                Abstract: '大量的项目实践经验，要想把BIM软件真真正正的应用到工程中，必须要',
+                Abstract: '<div><h4>降低开发成本80%，提高开发效率95%</h4><br/><p>1.提供CS/MS/BS三端基础框架，开发单位无需再次架构系统<br/><br/>2.CS/MS/BS可采用相同技术跨平台开发插件，一次开发、三端共用<br/><br/>3.提供数据引擎、图形引擎、文件引擎、工作流引擎等基础服务，业务层开发更快</P></div>',
             }
         },
         StoreData: {
             Title: '应用商店',
             Abstract: '大量的应用，任您挑选',
-            Tip: '进入应用商店',
+            Tip: '>>进入应用商店',
             Link: '../product/download.html',
             ImgUrl: 'assets/img/index/store/store_show.png',
             StoreList: [{
                 Id: 1,
                 Title: 'BIM协同',
                 ImgUrl: 'assets/img/index/store/store_item1.png',
-                Abstract: '围绕BIM模型协同工作',
+                Abstract: '多用户对BIM模型进行查看、模型变更等工作<br/>&nbsp;',
+                Link: '../product/download.html',
             }, {
                 Id: 2,
                 Title: '4D模拟',
                 ImgUrl: 'assets/img/index/store/store_item2.png',
-                Abstract: '将WBS与BIM模型关联，进行虚拟建造',
+                Abstract: '将WBS与BIM模型关联，进行虚拟建造、进度管理',
+                Link: '../product/download.html',
             }, {
                 Id: 3,
-                Title: '任务管理',
+                Title: '视频监控',
                 ImgUrl: 'assets/img/index/store/store_item3.png',
-                Abstract: '在平台上进行BIM相关全任务流程管理',
+                Abstract: '在平台上集成视频监控系统并与BIM模型关联',
+                Link: '../product/download.html',
             }],
-
+            StoreTypeList: [{
+                Id: 1,
+                Title: '设计阶段',
+                ImgUrl: 'assets/img/index/store/store_item1.png',
+                Abstract: '设计阶段的BIM应用<br/>&nbsp;',
+                Link: '../product/download.html',
+            }, {
+                Id: 2,
+                Title: '施工阶段',
+                ImgUrl: 'assets/img/index/store/store_item2.png',
+                Abstract: '施工阶段的BIM应用<br/>&nbsp;',
+                Link: '../product/download.html',
+            }, {
+                Id: 3,
+                Title: '运维阶段',
+                ImgUrl: 'assets/img/index/store/store_item3.png',
+                Abstract: '运维阶段的BIM应用理',
+                Link: '../product/download.html',
+            }],
         },
         ExampleData: {
             Title: '成功案例',
